@@ -1,4 +1,6 @@
-
+// importing antd components---------->
+// import { Form, Input, Button } from 'antd';
+// import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 // importing bootstrap elements------->
 import {
@@ -206,9 +208,9 @@ export default function FormSDR() {
                         placeholder="permanentAddress"
                         className="inputfields"
                         type="text"
-                        id="permanentAddress"
-                        name="permanentAddress"
-                        value={userFormvals.permanentAddress}
+                        id="SDR"
+                        name="SDR"
+                        value={userIdentity || ""}
                         onChange={handleChange}
                         required />
                 </Col>

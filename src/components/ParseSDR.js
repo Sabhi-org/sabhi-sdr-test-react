@@ -1,5 +1,6 @@
 // importing bootstrap elements------->
-import { Button, Form } from 'react-bootstrap';
+import { Input, Form, Button } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 
 // importing hooks and axios------------>
 import React, { useState, useEffect } from 'react';
@@ -41,9 +42,9 @@ export default function ParseSDR() {
     function handleClick() {
         history.push({
             pathname: "/parse_sdr",
-            state: {
-                uri: myuri
-            }
+            // state: {
+            //     uri: myuri
+            // }
         });
     }
 
@@ -51,13 +52,13 @@ export default function ParseSDR() {
 
     return (
         <Form>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>SDR uri</Form.Label>
-                <Form.Control as="textarea" rows={10} value={myuri} />
-            </Form.Group>
-            <Form.Group>
-                <Button variant="success" onClick={handleClick}>Parse SDR</Button>
-            </Form.Group>
+            <TextArea
+                // value={value}
+                // onChange={onChange}
+                placeholder="uri generate here..."
+                autoSize={{ minRows: 8, maxRows: 12 }}
+            />
+            <Button type="primary" onClick={handleClick} shape="round" size='large' style={{ marginTop: 10 }}>Parse SDR</Button>
         </Form>
     );
 }

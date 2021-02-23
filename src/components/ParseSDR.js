@@ -11,7 +11,7 @@ import axios from 'axios';
 import '../App.css';
 
 export default function ParseSDR() {
-
+    const { TextArea } = Input;
     let [myuri, setmyuri] = useState(" ");
 
 
@@ -48,12 +48,10 @@ export default function ParseSDR() {
         });
     }
 
-
-
     return (
         <Form>
             <TextArea
-                // value={value}
+                value={myuri}
                 // onChange={onChange}
                 placeholder="uri generate here..."
                 autoSize={{ minRows: 8, maxRows: 12 }}

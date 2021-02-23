@@ -1,6 +1,7 @@
 
 // importing antd modules for file uploader-------------------->
 import { Upload, Modal, Row, Col, Divider, Form, Input, Button } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
 import { PlusOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
@@ -17,6 +18,8 @@ function getBase64(file) {
         reader.onerror = error => reject(error);
     });
 }
+
+
 
 export default function PictureUploader() {
 
@@ -90,7 +93,7 @@ export default function PictureUploader() {
     const uploadButton = (
         <div>
             <PlusOutlined />
-            <div style={{ marginTop: 8 }}>Upload Front CNIC</div>
+            <div style={{ marginTop: 8 }}><b>Upload Front CNIC</b></div>
         </div>
     );
 
@@ -98,35 +101,42 @@ export default function PictureUploader() {
     const uploadButtonTwo = (
         <div>
             <PlusOutlined />
-            <div style={{ marginTop: 8 }}>Upload Back CNIC</div>
+            <div style={{ marginTop: 8 }}><b>Upload Back CNIC</b></div>
         </div>
     );
 
     // upload button styling for front CNIC---------------------->
     const uploadButtonThree = (
         <div>
+
             <PlusOutlined />
-            <div style={{ marginTop: 8 }}>Upload Profile Pic</div>
+            <div style={{ marginTop: 8 }}><b>Upload Profile Pic</b></div>
         </div>
     );
+
+
 
     // rendering uploader---------------------------------------------->
     return (
         <>
-            <Form>
+            <Form
+                layout="vertical"
+                name="basic"
+                initialValues={{ remember: true }}>
                 <Row>
                     <Col span={24}>
                         <Form.Item
-                            label="DiD"
+                            style={{ marginTop: "30px" }}
+                            label="Decentralized Identifier"
                             name="DiD"
                             rules={[{ required: true, message: 'cannot submit without did' }]}>
                             <Input size="large" disabled />
                         </Form.Item>
                     </Col>
                 </Row>
-                <Divider orientation="left">Upload Cnic Front and Back Also provide a profile picture</Divider>
+                <Divider orientation="left"><b>Upload Cnic Front and Back Also provide a profile picture</b></Divider>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={4} offset={12}>
+                    <Col className="gutter-row" span={4} offset={6}>
                         <Upload
                             action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                             listType="picture-card"
@@ -158,7 +168,7 @@ export default function PictureUploader() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span={24}>
+                    <Col offset={8} span={8} style={{ marginTop: "30px" }}>
                         <Form.Item>
                             <Button type="primary" htmlType="submit" block>
                                 Submit

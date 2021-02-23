@@ -15,15 +15,21 @@ import antsdrform from './components/Antd-form';
 // importing css files----------------->
 import './App.css';
 
+// importing image files---------------->
+import sabhilogo from './images/dark.svg';
+
 
 // rendering view------------------------>
 export default function App() {
 
   return (
     <div className="App">
-      <Container>
-        <Row className="justify-content-center">
+      <Container className="containsCard">
+        <Row className="justify-content-center centered">
           <Card className="theCard">
+            <div className="circle">
+              <img src={sabhilogo} />
+            </div>
             <Card.Body>
               <main>
                 <Switch>

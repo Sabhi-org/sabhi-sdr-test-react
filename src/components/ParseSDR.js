@@ -11,7 +11,7 @@ import axios from 'axios';
 import '../App.css';
 
 export default function ParseSDR() {
-    const { TextArea } = Input;
+    //const { TextArea } = Input;
     let [myuri, setmyuri] = useState(" ");
 
 
@@ -50,11 +50,15 @@ export default function ParseSDR() {
 
     return (
         <Form>
+            <div>
+
+            </div>
             <TextArea
                 value={myuri}
                 // onChange={onChange}
                 placeholder="uri generate here..."
                 autoSize={{ minRows: 8, maxRows: 12 }}
+                style={{ marginTop: 30 }}
             />
             <Button type="primary" onClick={handleClick} shape="round" size='large' style={{ marginTop: 10 }}>Parse SDR</Button>
         </Form>

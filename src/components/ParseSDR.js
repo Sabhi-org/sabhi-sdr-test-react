@@ -19,7 +19,7 @@ export default function ParseSDR() {
         fetchProducts()
     }, [])
 
-
+    const { TextArea } = Input;
 
     const fetchProducts = async () => {
         try {

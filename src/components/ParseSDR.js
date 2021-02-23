@@ -9,10 +9,6 @@ import axios from 'axios';
 // importing css files----------------->
 import '../App.css';
 
-
-
-
-
 export default function ParseSDR() {
 
     let [myuri, setmyuri] = useState(" ");
@@ -28,7 +24,7 @@ export default function ParseSDR() {
         try {
 
             // const response = await axios.get('https://sabhi-task.com/user/uri');
-            const response = await axios.get('http://localhost:12345/user/uri');
+            const response = await axios.get('https://sabhi-task.com/user/uri');
             console.log(response.data.data.uri);
             setmyuri(response.data.data.uri);
             console.log(myuri);

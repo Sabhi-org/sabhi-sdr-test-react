@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.css'; 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(

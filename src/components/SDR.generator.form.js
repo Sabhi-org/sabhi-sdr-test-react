@@ -1,4 +1,6 @@
-
+// importing antd components---------->
+// import { Form, Input, Button } from 'antd';
+// import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 // importing bootstrap elements------->
 import {
@@ -16,6 +18,7 @@ import {
 import React, { useState, useEffect } from 'react';
 import { apiInstance } from '../axios-instance';
 import { useLocation } from 'react-router-dom';
+import Antdform from './Antd-form';
 
 // importing css files----------------->
 import '../App.css';
@@ -73,147 +76,150 @@ export default function FormSDR() {
 
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <InputGroup className="sdrinput">
+        <div>
+            <Antdform />
+            {/* <Form onSubmit={handleSubmit}>
+                <InputGroup className="sdrinput">
 
-                <FormControl
-                    placeholder="user identity"
-                    type="text"
-                    id="SDR"
-                    name="SDR"
-                    value={userIdentity || ""}
-                    onChange={handleChange}
-                    disabled
-                />
-                <InputGroup.Append>
-                    <Button variant="success" onClick={!isLoading ? handleClick : null}>
-                        {isLoading ? 'Loading…' : 'generate identity'}
-                    </Button>
-                </InputGroup.Append>
-            </InputGroup>
-            <Row>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="fullName"
-                        className="inputfields"
+                    <FormControl
+                        placeholder="user identity"
                         type="text"
-                        id="fullName"
-                        name="fullName"
-                        value={userFormvals.fullName}
+                        id="SDR"
+                        name="SDR"
+                        value={userIdentity || ""}
                         onChange={handleChange}
-                        required />
-                </Col>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="fatherName"
-                        className="inputfields"
-                        type="text"
-                        id="fatherName"
-                        name="fatherName"
-                        value={userFormvals.fatherName}
-                        onChange={handleChange}
-                        required />
-                </Col>
-            </Row>
-            <Row>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="gender"
-                        className="inputfields"
-                        type="text"
-                        id="gender"
-                        name="gender"
-                        value={userFormvals.gender}
-                        onChange={handleChange}
-                        required />
-                </Col>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="countryOfStay"
-                        className="inputfields"
-                        type="text"
-                        id="countryOfStay"
-                        name="countryOfStay"
-                        value={userFormvals.countryOfStay}
-                        onChange={handleChange}
-                        required />
-                </Col>
-            </Row>
-            <Row>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="identityNumber"
-                        className="inputfields"
-                        type="text"
-                        id="identityNumber"
-                        name="identityNumber"
-                        value={userFormvals.identityNumber}
-                        onChange={handleChange}
-                        required />
-                </Col>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="birthDate"
-                        className="inputfields"
-                        type="text"
-                        id="birthDate"
-                        name="birthDate"
-                        value={userFormvals.birthDate}
-                        onChange={handleChange}
-                        required />
-                </Col>
-            </Row>
-            <Row>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="issueDate"
-                        className="inputfields"
-                        type="text"
-                        id="issueDate"
-                        name="issueDate"
-                        value={userFormvals.issueDate}
-                        onChange={handleChange}
-                        required />
-                </Col>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="expireDate"
-                        className="inputfields"
-                        type="text"
-                        id="expireDate"
-                        name="expireDate"
-                        value={userFormvals.expireDate}
-                        onChange={handleChange}
-                        required />
-                </Col>
-            </Row>
-            <Row>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="temporaryAddress"
-                        className="inputfields"
-                        type="text"
-                        id="temporaryAddress"
-                        name="temporaryAddress"
-                        value={userFormvals.temporaryAddress}
-                        onChange={handleChange}
-                        required />
-                </Col>
-                <Col xs={6}>
-                    <Form.Control
-                        placeholder="permanentAddress"
-                        className="inputfields"
-                        type="text"
-                        id="permanentAddress"
-                        name="permanentAddress"
-                        value={userFormvals.permanentAddress}
-                        onChange={handleChange}
-                        required />
-                </Col>
-            </Row>
-            <Row>
-                <Button className="downbutton" type="submit" variant="success">Submit</Button>
-            </Row>
-        </Form>
+                        disabled
+                    />
+                    <InputGroup.Append>
+                        <Button variant="success" onClick={!isLoading ? handleClick : null}>
+                            {isLoading ? 'Loading…' : 'generate identity'}
+                        </Button>
+                    </InputGroup.Append>
+                </InputGroup>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="fullName"
+                            className="inputfields"
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            value={userFormvals.fullName}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="fatherName"
+                            className="inputfields"
+                            type="text"
+                            id="fatherName"
+                            name="fatherName"
+                            value={userFormvals.fatherName}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="gender"
+                            className="inputfields"
+                            type="text"
+                            id="gender"
+                            name="gender"
+                            value={userFormvals.gender}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="countryOfStay"
+                            className="inputfields"
+                            type="text"
+                            id="countryOfStay"
+                            name="countryOfStay"
+                            value={userFormvals.countryOfStay}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="identityNumber"
+                            className="inputfields"
+                            type="text"
+                            id="identityNumber"
+                            name="identityNumber"
+                            value={userFormvals.identityNumber}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="birthDate"
+                            className="inputfields"
+                            type="text"
+                            id="birthDate"
+                            name="birthDate"
+                            value={userFormvals.birthDate}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="issueDate"
+                            className="inputfields"
+                            type="text"
+                            id="issueDate"
+                            name="issueDate"
+                            value={userFormvals.issueDate}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="expireDate"
+                            className="inputfields"
+                            type="text"
+                            id="expireDate"
+                            name="expireDate"
+                            value={userFormvals.expireDate}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="temporaryAddress"
+                            className="inputfields"
+                            type="text"
+                            id="temporaryAddress"
+                            name="temporaryAddress"
+                            value={userFormvals.temporaryAddress}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Control
+                            placeholder="permanentAddress"
+                            className="inputfields"
+                            type="text"
+                            id="permanentAddress"
+                            name="permanentAddress"
+                            value={userFormvals.permanentAddress}
+                            onChange={handleChange}
+                            required />
+                    </Col>
+                </Row>
+                <Row>
+                    <Button className="downbutton" type="submit" variant="success">Submit</Button>
+                </Row>
+            </Form> */}
+        </div>
     );
 }

@@ -1,5 +1,5 @@
 // importing bootstrap elements------->
-import { Input, Form, Button } from 'antd';
+import { Input, Form, Button, Row, Col } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 
 // importing hooks and axios------------>
@@ -60,7 +60,12 @@ export default function ParseSDR() {
                 autoSize={{ minRows: 8, maxRows: 12 }}
                 style={{ marginTop: 30 }}
             />
-            <Button type="primary" onClick={handleClick} shape="round" size='large' style={{ marginTop: 10 }}>Parse SDR</Button>
+            <Row>
+                <Col span={8} offset={10}>
+                    <Button type="primary" onClick={handleClick} shape="round" size='large' style={{ marginTop: 10 }}>Parse SDR</Button>
+                </Col>
+            </Row>
+
         </Form>
     );
 }

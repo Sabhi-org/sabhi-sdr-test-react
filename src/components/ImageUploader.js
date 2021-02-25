@@ -1,11 +1,10 @@
 
 // importing antd modules for file uploader-------------------->
-import { Upload, Modal, Row, Col, Divider, Form, Input, Button } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
-import { PlusOutlined } from '@ant-design/icons';
+import { Upload, Row, Col, Divider, Form, Input, Button, Steps, message } from 'antd';
+import { FileImageOutlined, InboxOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
-
+import axios from 'axios';
 
 
 
@@ -22,7 +21,79 @@ function getBase64(file) {
 
 
 export default function PictureUploader() {
+    const { Step } = Steps;
+    const { Dragger } = Upload;
 
+    const [fileList, setFileList] = useState([]);
+
+    const steps = [
+        {
+            title: 'First',
+            content: 'First-content',
+        },
+        {
+            title: 'Second',
+            content: 'Second-content',
+        },
+        {
+            title: 'Last',
+            content: 'Last-content',
+        },
+    ];
+
+    function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    }
+
+    function handleUpload(file) {
+        return new Promise(async (resolve, reject) => {
+            const did = '123123123123';
+            const base64Img = await getBase64(file);
+            const response = await axios.post("http://localhost:12345/ocr/cnic/front", {
+                did: did,
+                cnic: base64Img
+            });
+            if (response) resolve(response.data);
+            else reject('something went wrong!');
+        });
+    }
+
+    const imageUploader = {
+        name: 'cnic',
+        multiple: false,
+        customRequest: async ({ file, onSuccess, }) => {
+            const res = await handleUpload(file);
+            if (res.status) onSuccess('ok');
+        },
+        onChange(info) {
+            console.log(info, '   <<<<<<<<<<<<<<<<<<');
+            const { status } = info.file;
+            console.log(status);
+            if (status !== 'uploading') {
+                console.log(info.file, info.fileList);
+            }
+            if (status === 'done') {
+                message.success(`${info.file.name} file uploaded successfully.`);
+            } else if (status === 'error') {
+                message.error(`${info.file.name} file upload failed.`);
+            }
+        },
+    };
+
+    const [current, setCurrent] = useState(0);
+
+    const next = () => {
+        setCurrent(current + 1);
+    };
+
+    const prev = () => {
+        setCurrent(current - 1);
+    };
     // using history hook to navigate-------->
     const history = useHistory();
     function handleClick() {
@@ -32,89 +103,12 @@ export default function PictureUploader() {
         });
     }
 
-    // preview state hooks for image---------------------------->
-    const [previewVisible, setPreviewVisible] = useState(false);
-    const [previewImage, setPreviewImage] = useState('');
-    const [previewTitle, setPreviewTitle] = useState('');
-
-    // preview state hooks for back cnic image------------------->
-    const [previewVisibleTwo, setPreviewVisibleTwo] = useState(false);
-    const [previewImageTwo, setPreviewImageTwo] = useState('');
-    const [previewTitleTwo, setPreviewTitleTwo] = useState('');
-
-    // preview state hooks for back cnic image------------------->
-    const [previewVisibleThree, setPreviewVisibleThree] = useState(false);
-    const [previewImageThree, setPreviewImageThree] = useState('');
-    const [previewTitleThree, setPreviewTitleThree] = useState('');
-
-    // image file hooks--------------------------->
-    const [fileList, setFileList] = useState([]);
-    const [backCNIC, setbackCNIC] = useState([]);
-    const [profilePic, setprofilePic] = useState([]);
-
-    // events for front of cnic image-------------------->
-    const handleCancel = () => setPreviewVisible(false);
-    const handlePreview = async file => {
-        if (!file.url && !file.preview) {
-            file.preview = await getBase64(file.originFileObj);
-        }
-        setPreviewImage(file.url || file.preview);
-        setPreviewVisible(true);
-        setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
-    };
-    const handleChange = ({ fileList }) => setFileList(fileList);
-
-    // events for back of cnic image------------------------->
-    const handleCancelTwo = () => setPreviewVisibleTwo(false);
-    const handlePreviewTwo = async file => {
-        if (!file.url && !file.preview) {
-            file.preview = await getBase64(file.originFileObj);
-        }
-        setPreviewImageTwo(file.url || file.preview);
-        setPreviewVisibleTwo(true);
-        setPreviewTitleTwo(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
-    };
-    const handleChangeTwo = ({ fileList }) => setbackCNIC(fileList);
-
-    // events for back of cnic image------------------------->
-    const handleCancelThree = () => setPreviewVisibleThree(false);
-    const handlePreviewThree = async file => {
-        if (!file.url && !file.preview) {
-            file.preview = await getBase64(file.originFileObj);
-        }
-        setPreviewImageThree(file.url || file.preview);
-        setPreviewVisibleThree(true);
-        setPreviewTitleThree(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
-    };
-    const handleChangeThree = ({ fileList }) => setprofilePic(fileList);
-
-
-    // upload button styling for front CNIC---------------------->
     const uploadButton = (
         <div>
-            <PlusOutlined />
-            <div style={{ marginTop: 8 }}><b>Upload Front CNIC</b></div>
+            <FileImageOutlined />
+            <div style={{ marginTop: 8 }}>Upload</div>
         </div>
     );
-
-    // upload button styling for front CNIC---------------------->
-    const uploadButtonTwo = (
-        <div>
-            <PlusOutlined />
-            <div style={{ marginTop: 8 }}><b>Upload Back CNIC</b></div>
-        </div>
-    );
-
-    // upload button styling for front CNIC---------------------->
-    const uploadButtonThree = (
-        <div>
-
-            <PlusOutlined />
-            <div style={{ marginTop: 8 }}><b>Upload Profile Pic</b></div>
-        </div>
-    );
-
-
 
     // rendering uploader---------------------------------------------->
     return (
@@ -135,69 +129,43 @@ export default function PictureUploader() {
                     </Col>
                 </Row>
                 <Divider orientation="left"><b>Upload Cnic Front and Back Also provide a profile picture</b></Divider>
-                <Row gutter={16}>
-                    <Col className="gutter-row" span={4} offset={6}>
-                        <Upload
-                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                            listType="picture-card"
-                            fileList={fileList}
-                            onPreview={handlePreview}
-                            onChange={handleChange}>
-                            {fileList.length >= 1 ? null : uploadButton}
-                        </Upload>
-                    </Col>
-                    <Col className="gutter-row" span={4}>
-                        <Upload
-                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                            listType="picture-card"
-                            fileList={backCNIC}
-                            onPreview={handlePreviewTwo}
-                            onChange={handleChangeTwo}>
-                            {backCNIC.length >= 1 ? null : uploadButtonTwo}
-                        </Upload>
-                    </Col>
-                    <Col className="gutter-row" span={4}>
-                        <Upload
-                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                            listType="picture-card"
-                            fileList={profilePic}
-                            onPreview={handlePreviewThree}
-                            onChange={handleChangeThree}>
-                            {profilePic.length >= 1 ? null : uploadButtonThree}
-                        </Upload>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col offset={8} span={8} style={{ marginTop: "30px" }}>
-                        <Form.Item>
-                            <Button type="primary" htmlType="submit" block>
-                                Submit
-                            </Button>
-                        </Form.Item>
-                    </Col>
-                </Row>
+                <Steps current={current}>
+                    {steps.map(item => (
+                        <Step key={item.title} title={item.title} />
+                    ))}
+                </Steps>
+
+                <div className="steps-content">
+
+                    <Dragger {...imageUploader}>
+                        <p className="ant-upload-drag-icon">
+                            <InboxOutlined />
+                        </p>
+                        <p className="ant-upload-text">Click or drag file to this area to upload</p>
+                        <p className="ant-upload-hint">
+                            Support for a single or bulk upload. Strictly prohibit from uploading company data or other
+                            band files
+                        </p>
+                    </Dragger>
+                </div>
+                <div className="steps-action">
+                    {current < steps.length - 1 && (
+                        <Button type="primary" onClick={() => next()}>
+                            Next
+                        </Button>
+                    )}
+                    {current === steps.length - 1 && (
+                        <Button type="primary" onClick={() => message.success('Processing complete!')}>
+                            Done
+                        </Button>
+                    )}
+                    {/* {current > 0 && (
+                        <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+                            Previous
+                        </Button>
+                    )} */}
+                </div>
             </Form>
-            <Modal
-                visible={previewVisible}
-                title={previewTitle}
-                footer={null}
-                onCancel={handleCancel}>
-                <img alt="example" style={{ width: '100%' }} src={previewImage} />
-            </Modal>
-            <Modal
-                visible={previewVisibleTwo}
-                title={previewTitleTwo}
-                footer={null}
-                onCancel={handleCancelTwo}>
-                <img alt="example" style={{ width: '100%' }} src={previewImageTwo} />
-            </Modal>
-            <Modal
-                visible={previewVisibleThree}
-                title={previewTitleThree}
-                footer={null}
-                onCancel={handleCancelThree}>
-                <img alt="example" style={{ width: '100%' }} src={previewImageThree} />
-            </Modal>
         </>
     );
 }

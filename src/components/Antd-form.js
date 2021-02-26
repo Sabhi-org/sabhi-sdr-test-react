@@ -58,7 +58,6 @@ export default function Antdform() {
                         </Row>
                         <Row gutter={16} offset={4}>
                             <Col className="gutter-row" span={2}>
-                                {/* <div style={style}>col-6</div> */}
                             </Col>
                             <Col className="gutter-row" span={11}>
                                 <Form.Item
@@ -91,7 +90,6 @@ export default function Antdform() {
                                 <Input size="small" />
                             </Form.Item>
                         </Col>
-
                         <Col className="gutter-row" span={6}>
                             <Form.Item
                                 label="Date of Issue"
@@ -117,35 +115,6 @@ export default function Antdform() {
                             </Form.Item>
                         </Col>
                     </Row>
-                    {/* <Col span={12}>
-                        <Form.Item
-                            label="Identity Number"
-                            name="identityNumber"
-                            rules={[{ required: true, message: 'Please enter the Identity Number' }]}>
-                            <Input size="small" />
-                        </Form.Item>
-                        <Form.Item
-                            label="Date of Issue"
-                            name="issueDate"
-                            rules={[{ required: true, message: 'Please enter date of issuance' }]}>
-                            <Input size="small" />
-                        </Form.Item>
-                    </Col> */}
-                    {/* <Divider type="vertical" /> */}
-                    {/* <Col span={11}>
-                        <Form.Item
-                            label="Date of Birth"
-                            name="birthDate"
-                            rules={[{ required: true, message: 'Please enter Date of Birth' }]}>
-                            <Input size="small" />
-                        </Form.Item>
-                        <Form.Item
-                            label="Date of Expiry"
-                            name="expireDate"
-                            rules={[{ required: true, message: 'Please enter Date of expiry' }]}>
-                            <Input size="small" />
-                        </Form.Item>
-                    </Col> */}
                     <Col span={24}>
                         <Form.Item
                             label="Permanent Address"

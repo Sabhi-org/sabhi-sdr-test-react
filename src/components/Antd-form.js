@@ -73,10 +73,6 @@ export default function Antdform() {
                                         name="fullName"
                                         rules={[{ required: true, message: 'Please enter Complete Name' }]}>
                                         <Input size="small" />
-
-
-
-
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={11}>
@@ -172,9 +168,10 @@ export default function Antdform() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col span={24}>
+                        <Col span={4} offset={10}>
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" block>
+                                <Button type="primary" htmlType="submit" shape="round" size='large' block>
+                                    <FileDoneOutlined />
                                     Submit
                             </Button>
                             </Form.Item>

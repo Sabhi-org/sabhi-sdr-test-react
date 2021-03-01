@@ -1,15 +1,36 @@
 // importing antd components------------------------->
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Col, Row, Divider, Image, Avatar, Spin, Space } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-import { axios } from 'react';
+import { Form, Input, Button, Col, Row, Image, Avatar, Spin, Space } from 'antd';
+import { useLocation, useHistory } from 'react-router-dom';
+import { sabhiApiInstance } from '../axios-instance';
 
 
 // creating antdform----------------->
 export default function Antdform() {
-
+    let history = useHistory();
+    const location = useLocation();
     const [isloading, setisloading] = useState('false');
+    const [userDetail, setUserDetail] = useState({});
+    const [identityCardFrontData, setIdentityCardFrontData] = useState({});
+    const [identityCardBackData, setIdentityCardBackData] = useState({});
 
+    const did = location.state;
+
+    const getOcrRecord = async () => {
+        try {
+            const response = await sabhiApiInstance.get(`ocr/${did}`);
+            console.log(response.data.data);
+            setUserDetail(response.data.data[0]);
+            setIdentityCardFrontData(response.data.data[0].identityCardFrontData);
+            setIdentityCardBackData(response.data.data[0].identityCardBackData);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getOcrRecord();
+    }, []);
 
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -19,54 +40,25 @@ export default function Antdform() {
         console.log('Failed:', errorInfo);
     };
 
-
-    const data = [
-        {
-            _id: "6038e54ea31cb7ad2c13b07b",
-            cnic: "https://sabhi.s3.ap-southeast-1.amazonaws.com/123123123123-1614341443639",
-            did: "123123123123",
-            identityCardFrontData: {
-                issuingCountry: "Pakistan",
-                documentType: "National Identity Carc",
-                nameEnglish: "Ameer Hamza",
-                fatherNameEnglish: "Sarfraz",
-                gender: "Male",
-                countryOfStay: "Pakistan",
-                identityNumber: "16101-1121202-1",
-                dateOfBirth: "07.11.1987",
-                dateOfIssue: "06.02.1987",
-                dateOfExpiry: "07.11.1987"
-            },
-            createdAt: "2021-02-26T12:10:54.183Z",
-            updatedAt: "2021-02-26T12:11:31.417Z",
-            identityCardBackData: {
-                presentAddress: "Bahria town phase 6",
-                permenantAddress: "Layyah Town, Layyah",
-                holder: "Drlkram,Opposite GPO The Mall Road"
-            }
-        }
-    ]
-
-    const { identityCardFrontData, identityCardBackData, did, cnic } = data[0];
-
-    const hello = 'hello';
     // rendering antd form ---------------------->
     return (
         <div>
+            {
+                console.log(identityCardFrontData)
+            }
             <Space size="large">
                 {/* <Spin size="large"> */}
                 <Form
                     style={{ marginTop: "18px" }}
                     layout="vertical"
                     name="basic"
-                    initialValues={{ remember: true }}
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}>
                     <Row>
                         <Col span={4}>
                             <Avatar
                                 style={{ marginTop: "18px" }}
-                                src={<Image src={cnic} />}
+                                src={<Image src={userDetail.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                                 size={140}
                             />
                         </Col>
@@ -76,7 +68,7 @@ export default function Antdform() {
                                 </Col>
                                 <Col className="gutter-row" span={11}>
                                     <Form.Item
-                                        initialValue={identityCardFrontData.nameEnglish}
+                                        initialValue={identityCardFrontData.nameEnglish ?? 'name not detected by ocr'}
                                         label="Name"
                                         name="fullName"
                                         rules={[{ required: true, message: 'Please enter Complete Name' }]}>
@@ -89,7 +81,7 @@ export default function Antdform() {
                                 </Col>
                                 <Col className="gutter-row" span={11}>
                                     <Form.Item
-                                        initialValue={identityCardFrontData.fatherNameEnglish}
+                                        initialValue={identityCardFrontData.fatherNameEnglish ?? 'father name not detected by ocr'}
                                         label="Father Name"
                                         name="fatherName"
                                         rules={[{ required: true, message: 'Please enter Father Name' }]}>
@@ -164,14 +156,14 @@ export default function Antdform() {
                         </Row>
                         <Col span={24}>
                             <Form.Item
-                                initialValue={identityCardBackData.permenantAddress}
+                                initialValue={identityCardBackData.presentAddress}
                                 label="Permanent Address"
                                 name="permanentAddress"
                                 rules={[{ required: true, message: 'Please enter permanent address' }]}>
                                 <Input size="small" />
                             </Form.Item>
                             <Form.Item
-                                initialValue={identityCardBackData.presentAddress}
+                                initialValue={identityCardBackData.permenantAddress}
                                 label="Temporary Address"
                                 name="temporaryAddress"
                                 rules={[{ required: true, message: 'Please enter temporary address' }]}>
@@ -194,4 +186,4 @@ export default function Antdform() {
         </div >
     );
 
-} 
+}

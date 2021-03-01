@@ -1,13 +1,14 @@
 
 // importing antd modules for file uploader-------------------->
-import { Upload, Row, Col, Divider, Form, Input, Button, Steps, message, Progress, Anchor } from 'antd';
+import { Upload, Row, Col, Divider, Form, Input, Button, Steps, message, Spin, Anchor } from 'antd';
 import { PictureOutlined, IdcardOutlined } from '@ant-design/icons';
 import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
+import { apiInstance, sabhiApiInstance } from '../axios-instance';
 
 
 export default function PictureUploader() {
+    let history = useHistory();
     const { Step } = Steps;
     const { Dragger } = Upload;
     const { Link } = Anchor;
@@ -15,10 +16,42 @@ export default function PictureUploader() {
     const [isDisable, setIsDisable] = useState(false);
     const [identityCardFrontUrl, setIdentityCardFrontUrl] = useState('');
     const [identityCardBackUrl, setIdentityCardBackUrl] = useState('');
+    const [identity, setIdentity] = useState("");
+    const [isLoading, setIsloading] = useState(false);
 
+    const labelStyle = {
+        display: "block",
+        marginTop: "30px",
+        fontSize: "16px",
+        fontWeight: "400",
+        paddingBottom: "10px",
+    };
+
+    const getIdentity = async () => {
+        try {
+            setIsloading(true);
+            const response = await apiInstance.get('did');
+            console.log(response);
+            if (response) setIdentity(response.data.did);
+            console.log(identity);
+            setIsloading(false);
+        } catch (error) {
+            console.log(error);
+        }
+    }
     useEffect(() => {
-        console.log(isDisable);
-    }, [isDisable]);
+
+        getIdentity();
+
+    }, []);
+
+
+    function doneBtnHandler() {
+        history.push({
+            pathname: '/form_sdr',
+            state: identity,
+        });
+    }
 
     function getBase64(file) {
         return new Promise((resolve, reject) => {
@@ -32,11 +65,22 @@ export default function PictureUploader() {
     function handleUploadIdenitytCardFront(file, onProgress) {
         return new Promise(async (resolve, reject) => {
             try {
-                const did = '123123123123';
+                const config = {
+                    onUploadProgress: function (progressEvent) {
+                        let percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+                        console.log(percentCompleted)
+                    }
+                }
                 const base64Img = await getBase64(file);
-                const response = await axios.post("http://localhost:12345/ocr/cnic/front", {
-                    did: did,
+                const response = await sabhiApiInstance.post("ocr/cnic/front", {
+                    did: identity,
                     cnic: base64Img
+                }, {
+                    onUploadProgress: (progressEvent) => {
+                        const { loaded, total } = progressEvent;
+                        console.log(loaded, total);
+                        // dispatch(updateImageUploadProgress(loaded, total));
+                    }
                 });
                 if (response) resolve(response.data);
             } catch (error) {
@@ -48,10 +92,9 @@ export default function PictureUploader() {
     function handleUploadIdenitytCardBack(file) {
         return new Promise(async (resolve, reject) => {
             try {
-                const did = '123123123123';
                 const base64Img = await getBase64(file);
-                const response = await axios.put("http://localhost:12345/ocr/cnic/back", {
-                    did: did,
+                const response = await sabhiApiInstance.put("ocr/cnic/back", {
+                    did: identity,
                     cnic: base64Img
                 });
                 if (response) resolve(response.data);
@@ -64,10 +107,9 @@ export default function PictureUploader() {
     function handleProfileImageUpload(file) {
         return new Promise(async (resolve, reject) => {
             try {
-                const did = '123123123123';
                 const base64Img = await getBase64(file);
-                const response = await axios.put("http://localhost:12345/ocr/profile", {
-                    did: did,
+                const response = await sabhiApiInstance.put("ocr/profile", {
+                    did: identity,
                     profileImage: base64Img
                 });
                 if (response) resolve(response.data);
@@ -104,7 +146,6 @@ export default function PictureUploader() {
             return isJpgOrPng;
         },
         onChange({ file, fileList }) {
-            if (fileList.length > 1) message.warn(`you can not upload more than oe file`);
             const { status } = file;
             console.log(status);
             if (status !== 'uploading') {
@@ -124,6 +165,7 @@ export default function PictureUploader() {
         listType: "picture",
         customRequest: async ({ file, onSuccess, onError }) => {
             try {
+
                 setIsDisable(true);
                 const res = await handleUploadIdenitytCardFront(file);
                 setIdentityCardFrontUrl(res.data.cnic);
@@ -147,11 +189,9 @@ export default function PictureUploader() {
             return isJpgOrPng;
         },
         onChange({ file, fileList }) {
-            console.log(file, '   <<<<<<<<<<<  ');
-            if (fileList.length > 1) {
-                message.warn(`you can not upload more than oe file`);
-                return;
-            }
+            // setInterval(() => {
+            //     console.log(file, '   <<<<<<<<<<<  ');
+            // }, 1000);
             const { status } = file;
             console.log(status);
             if (status !== 'uploading') {
@@ -195,11 +235,6 @@ export default function PictureUploader() {
             return isJpgOrPng;
         },
         onChange({ file, fileList }) {
-            console.log(file, '   <<<<<<<<<<<  ');
-            if (fileList.length > 1) {
-                message.warn(`you can not upload more than oe file`);
-                return;
-            }
             const { status } = file;
             console.log(status);
             if (status !== 'uploading') {
@@ -215,7 +250,7 @@ export default function PictureUploader() {
 
     const steps = [
         {
-            title: 'In Progress',
+            title: 'Identity Card Front',
             content: <Dragger {...identityCardFrontImageUploader}>
                 <p className="ant-upload-drag-icon">
                     <IdcardOutlined />
@@ -262,57 +297,50 @@ export default function PictureUploader() {
     //     setCurrent(current - 1);
     // };
     // using history hook to navigate-------->
-    const history = useHistory();
-    function handleClick() {
-        history.push({
-            pathname: "/form_sdr",
 
-        });
-    }
 
     // rendering uploader---------------------------------------------->
     return (
         <>
-            <Form
-                layout="vertical"
-                name="basic"
-                initialValues={{ remember: true }}>
-                <Row>
-                    <Col span={24}>
-                        <Form.Item
-                            style={{ marginTop: "30px" }}
-                            label="Decentralized Identifier"
-                            name="DiD"
-                            rules={[{ required: true, message: 'cannot submit without did' }]}>
-                            <Input size="large" disabled />
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <Divider orientation="left"></Divider>
-                <Steps current={current}>
-                    {steps.map(item => (
-                        <Step key={item.title} title={item.title} />
-                    ))}
-                </Steps>
-                <div className="steps-content">{steps[current].content}</div>
-                <div className="steps-action">
-                    {current < steps.length - 1 && (
-                        <Button type="primary" onClick={() => next()}>
-                            Next
-                        </Button>
-                    )}
-                    {current === steps.length - 1 && (
-                        <Button type="primary" onClick={() => message.success('Processing complete!')}>
-                            Done
-                        </Button>
-                    )}
-                    {/* {current > 0 && (
+            <Spin spinning={isLoading}>
+                <Form
+                    layout="vertical"
+                    name="basic"
+                >
+                    <Row>
+                        <Col span={24}>
+                            <label htmlFor="identityValue" style={labelStyle}>
+                                Identity
+                                <Input size="large" disabled value={identity ?? ''} id="identityValue" />
+                            </label>
+                        </Col>
+                    </Row>
+                    <Divider orientation="left"></Divider>
+                    <Steps current={current}>
+                        {steps.map(item => (
+                            <Step key={item.title} title={item.title} />
+                        ))}
+                    </Steps>
+                    <div className="steps-content">{steps[current].content}</div>
+                    <div className="steps-action">
+                        {current < steps.length - 1 && (
+                            <Button type="primary" onClick={() => next()}>
+                                Next
+                            </Button>
+                        )}
+                        {current === steps.length - 1 && (
+                            <Button type="primary" onClick={doneBtnHandler}>
+                                Done
+                            </Button>
+                        )}
+                        {/* {current > 0 && (
                         <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
                             Previous
                         </Button>
                     )} */}
-                </div>
-            </Form>
+                    </div>
+                </Form>
+            </Spin>
         </>
     );
 }

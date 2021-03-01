@@ -295,23 +295,27 @@ export default function PictureUploader() {
                     ))}
                 </Steps>
                 <div className="steps-content">{steps[current].content}</div>
-                <div className="steps-action">
-                    {current < steps.length - 1 && (
-                        <Button type="primary" onClick={() => next()}>
-                            Next
-                        </Button>
-                    )}
-                    {current === steps.length - 1 && (
-                        <Button type="primary" onClick={() => message.success('Processing complete!')}>
-                            Done
-                        </Button>
-                    )}
-                    {/* {current > 0 && (
+                <Row>
+                    <Col offset={11}>
+                        <div className="steps-action">
+                            {current < steps.length - 1 && (
+                                <Button type="primary" shape="round" block onClick={() => next()}>
+                                    Next
+                                </Button>
+                            )}
+                            {current === steps.length - 1 && (
+                                <Button type="primary" shape="round" block onClick={() => message.success('Processing complete!')}>
+                                    Done
+                                </Button>
+                            )}
+                            {/* {current > 0 && (
                         <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
                             Previous
                         </Button>
                     )} */}
-                </div>
+                        </div>
+                    </Col>
+                </Row>
             </Form>
         </>
     );

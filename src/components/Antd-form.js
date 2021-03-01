@@ -1,14 +1,14 @@
 // importing antd components------------------------->
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Col, Row, Divider, Image, Avatar, Spin, Space } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { FileDoneOutlined } from '@ant-design/icons';
 import { axios } from 'react';
 
 
 // creating antdform----------------->
 export default function Antdform() {
 
-    const [isloading, setisloading] = useState('false');
+    const [loading, setloading] = useState('false');
 
 
     const onFinish = (values) => {
@@ -27,9 +27,9 @@ export default function Antdform() {
             did: "123123123123",
             identityCardFrontData: {
                 issuingCountry: "Pakistan",
-                documentType: "National Identity Carc",
-                nameEnglish: "Ameer Hamza",
-                fatherNameEnglish: "Sarfraz",
+                documentType: "National Identity Card",
+                nameEnglish: "Muhammed Ameer Hamza",
+                fatherNameEnglish: "Muhammad Sarfraz Ahmed",
                 gender: "Male",
                 countryOfStay: "Pakistan",
                 identityNumber: "16101-1121202-1",
@@ -40,8 +40,8 @@ export default function Antdform() {
             createdAt: "2021-02-26T12:10:54.183Z",
             updatedAt: "2021-02-26T12:11:31.417Z",
             identityCardBackData: {
-                presentAddress: "Bahria town phase 6",
-                permenantAddress: "Layyah Town, Layyah",
+                presentAddress: "Street No 5 House No 12 near PSO Petrol PUMP Bahria town phase 6 Rawalpindi, Pakistan",
+                permenantAddress: "Layyah Town, street no 89 house no 1443 muhallah lal Deen khan Layyah, Punjab ,Pakaistan",
                 holder: "Drlkram,Opposite GPO The Mall Road"
             }
         }
@@ -49,7 +49,7 @@ export default function Antdform() {
 
     const { identityCardFrontData, identityCardBackData, did, cnic } = data[0];
 
-    const hello = 'hello';
+
     // rendering antd form ---------------------->
     return (
         <div>
@@ -81,10 +81,6 @@ export default function Antdform() {
                                         name="fullName"
                                         rules={[{ required: true, message: 'Please enter Complete Name' }]}>
                                         <Input size="small" />
-
-
-
-
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={11}>
@@ -180,9 +176,10 @@ export default function Antdform() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col span={24}>
+                        <Col span={4} offset={10}>
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" block>
+                                <Button type="primary" htmlType="submit" shape="round" size='large' block>
+                                    <FileDoneOutlined />
                                     Submit
                             </Button>
                             </Form.Item>

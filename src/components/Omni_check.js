@@ -29,7 +29,7 @@ export default function OmniCheck() {
             console.log(data);
         });
 
-        socket.on('sendOmniCheckClient', data => {
+        socket.on('displayOmniCheck', data => {
             console.log(data);
         });
 

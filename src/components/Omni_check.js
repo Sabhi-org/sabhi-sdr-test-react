@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 import { Card, Typography, Space } from 'antd';
+import { io } from "socket.io-client";
+
 
 const { Text, Link } = Typography;
 
@@ -16,7 +18,22 @@ export default function OmniCheck() {
     useEffect(() => {
         handleswirlone();
 
-    }, [])
+    }, []);
+
+    // socket
+    useEffect(() => {
+        const ENDPOINT = 'http://localhost:12345/';
+        const socket = io(ENDPOINT);
+        console.log(socket);
+        socket.on('chat', data => {
+            console.log(data);
+        });
+
+        socket.on('sendOmniCheckClient', data => {
+            console.log(data);
+        });
+
+    }, []);
 
     function handleswirlone() {
         console.log('its me...');

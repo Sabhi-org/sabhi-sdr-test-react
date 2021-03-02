@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Swal from 'sweetalert2'
+import { Card, Typography, Space } from 'antd';
 
+const { Text, Link } = Typography;
 
 export default function OmniCheck() {
 
@@ -21,9 +23,12 @@ export default function OmniCheck() {
         let timerInterval
         Swal.fire({
             title: 'Waiting for omni check',
-            html: 'I will close in <b></b> milliseconds.',
-            timer: 10000,
+            // html: 'I will close in <b></b> milliseconds.',
+            text: 'please wait while we validate your information it will take a few minutes..',
+            timer: 30000,
             timerProgressBar: true,
+            allowOutsideClick: false,
+            icon: 'info',
             didOpen: () => {
                 Swal.showLoading()
                 timerInterval = setInterval(() => {
@@ -41,10 +46,12 @@ export default function OmniCheck() {
             }
         }).then((result) => {
             /* Read more about handling dismissals below */
-            if (result.dismiss === Swal.DismissReason.timer) {
-                console.log('I was closed by the timer')
-                handleswirlTwo();
-            }
+            // if (result.dismiss === Swal.DismissReason.timer) {
+            //     console.log('I was closed by the timer')
+
+            // }
+
+            handleswirlTwo();
         })
     }
 
@@ -63,9 +70,9 @@ export default function OmniCheck() {
             buttonsStyling: false
         })
         swalWithBootstrapButtons.fire({
-            title: 'Please confirm',
-            text: "please check if this is your information" + username + fathername,
-
+            title: 'Please confirm following',
+            html: "please check if this is your information" + '</br>' + 'username:' + username + '</br>' + 'fathername:' + fathername,
+            allowOutsideClick: false,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Yes, it is me',
@@ -94,7 +101,11 @@ export default function OmniCheck() {
 
     return (
         <div>
+            <Card style={{ textAlign: 'center', marginTop: 18 }}>
+                <p><Text><h3>You are all set</h3></Text></p>
+                <p><Text type="secondary"><h4>Thank you for using Sabhi</h4></Text></p>
 
+            </Card>
         </div>
     );
 }

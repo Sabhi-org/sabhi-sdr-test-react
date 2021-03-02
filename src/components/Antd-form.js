@@ -25,7 +25,7 @@ export default function Antdform() {
                 gender: identityCardFrontData.gender,
                 countryOfStay: identityCardFrontData.countryOfStay,
                 identityNumber: identityCardFrontData.identityNumber,
-                issueDate: identityCardFrontData.issueDate,
+                issueDate: identityCardFrontData.dateOfIssue,
                 birthDate: identityCardFrontData.dateOfBirth,
                 expireDate: identityCardFrontData.dateOfExpiry,
                 permanentAddress: identityCardBackData.permenantAddress,

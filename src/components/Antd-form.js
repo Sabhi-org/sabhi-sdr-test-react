@@ -8,6 +8,7 @@ import { FileDoneOutlined } from '@ant-design/icons';
 // creating antdform----------------->
 
 export default function Antdform() {
+    let history = useHistory();
     const [form] = Form.useForm();
     const location = useLocation();
     const [isLoading, setIsloading] = useState('false');
@@ -61,6 +62,10 @@ export default function Antdform() {
         console.log('Success:', values);
         createVerifiablePresentation(values);
         setIsloading(false);
+        history.push({
+            pathname: '/omni_check',
+
+        });
     };
 
     const onFinishFailed = (errorInfo) => {

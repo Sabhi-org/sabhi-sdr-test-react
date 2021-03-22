@@ -73,8 +73,8 @@ export default function PictureUploader() {
                 console.log(response);
                 if (response) resolve(response.data);
             } catch (error) {
-                message.error(error.response.data.error.message);
-                reject(error);
+                message.error(error.response.data.error.message)
+                    .then(() => reject(error));
             }
         });
     }
@@ -89,7 +89,8 @@ export default function PictureUploader() {
                 });
                 if (response) resolve(response.data);
             } catch (error) {
-                reject(error);
+                message.error(error.response.data.error.message)
+                    .then(() => reject(error));
             }
         });
     }
@@ -104,8 +105,8 @@ export default function PictureUploader() {
                 });
                 if (response) resolve(response.data);
             } catch (error) {
-                console.log(error);
-                reject(error);
+                message.error(error.response.data.error.message)
+                    .then(() => reject(error));
             }
         });
     }

@@ -46,12 +46,12 @@ export default function PictureUploader() {
     }, []);
 
 
-    function doneBtnHandler() {
-        history.push({
-            pathname: '/form_sdr',
-            state: identity,
-        });
-    }
+    // function doneBtnHandler() {
+    //     history.push({
+    //         pathname: '/form_sdr',
+    //         state: identity,
+    //     });
+    // }
 
     function getBase64(file) {
         return new Promise((resolve, reject) => {
@@ -62,28 +62,18 @@ export default function PictureUploader() {
         });
     }
 
-    function handleUploadIdenitytCardFront(file, onProgress) {
+    function handleUploadIdenitytCardFront(file) {
         return new Promise(async (resolve, reject) => {
             try {
-                const config = {
-                    onUploadProgress: function (progressEvent) {
-                        let percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
-                        console.log(percentCompleted)
-                    }
-                }
                 const base64Img = await getBase64(file);
                 const response = await sabhiApiInstance.post("ocr/cnic/front", {
                     did: identity,
                     cnic: base64Img
-                }, {
-                    onUploadProgress: (progressEvent) => {
-                        const { loaded, total } = progressEvent;
-                        console.log(loaded, total);
-                        // dispatch(updateImageUploadProgress(loaded, total));
-                    }
                 });
+                console.log(response);
                 if (response) resolve(response.data);
             } catch (error) {
+                message.error(error.response.data.error.message);
                 reject(error);
             }
         });
@@ -114,6 +104,7 @@ export default function PictureUploader() {
                 });
                 if (response) resolve(response.data);
             } catch (error) {
+                console.log(error);
                 reject(error);
             }
         });
@@ -126,9 +117,12 @@ export default function PictureUploader() {
         customRequest: async ({ file, onSuccess, onError, onProgress }) => {
             try {
                 const res = await handleUploadIdenitytCardBack(file, onProgress);
-                if (res.status) onSuccess('ok');
+                if (res.status) {
+                    onSuccess('ok');
+                    setCurrent(current + 1);
+                }
             } catch (error) {
-                console.log('i am here in error');
+                console.log(error, '   <<<<<<< ');
                 onError(error);
             }
         },
@@ -169,9 +163,13 @@ export default function PictureUploader() {
                 setIsDisable(true);
                 const res = await handleUploadIdenitytCardFront(file);
                 setIdentityCardFrontUrl(res.data.cnic);
-                if (res.status) onSuccess('ok');
+                if (res.status) {
+                    onSuccess('ok');
+                    setCurrent(current + 1);
+                }
             } catch (error) {
                 console.log('i am here in error');
+                console.log(error);
                 onError(error);
             }
         },
@@ -215,7 +213,13 @@ export default function PictureUploader() {
                 setIsDisable(true);
                 const res = await handleProfileImageUpload(file);
                 setIdentityCardFrontUrl(res.data.cnic);
-                if (res.status) onSuccess('ok');
+                if (res.status) {
+                    onSuccess('ok');
+                    history.push({
+                        pathname: '/form_sdr',
+                        state: identity,
+                    });
+                }
             } catch (error) {
                 console.log('i am here in error');
                 onError(error);
@@ -258,7 +262,7 @@ export default function PictureUploader() {
                 <p className="ant-upload-text">Click or drag identity card front side image to this area to upload</p>
                 <p className="ant-upload-hint">
                     Make sure the information on the front side of identity card is clear and readable
-            </p>
+                </p>
             </Dragger>,
         },
         {
@@ -270,7 +274,7 @@ export default function PictureUploader() {
                 <p className="ant-upload-text">Click or drag identity card back side image to this area to upload</p>
                 <p className="ant-upload-hint">
                     Make sure the information on the back side of identity card is clear and readable
-        </p>
+                </p>
             </Dragger>,
         },
         {
@@ -282,7 +286,7 @@ export default function PictureUploader() {
                 <p className="ant-upload-text">Click or drag an image of your face as profile picture</p>
                 <p className="ant-upload-hint">
                     make sure your face is clear in the image we recommend you use an updated picture
-        </p>
+                </p>
             </Dragger>,
         },
     ];
@@ -322,7 +326,7 @@ export default function PictureUploader() {
                         ))}
                     </Steps>
                     <div className="steps-content">{steps[current].content}</div>
-                    <div className="steps-action">
+                    {/* <div className="steps-action">
                         {current < steps.length - 1 && (
                             <Button type="primary" onClick={() => next()}>
                                 Next
@@ -333,12 +337,7 @@ export default function PictureUploader() {
                                 Done
                             </Button>
                         )}
-                        {/* {current > 0 && (
-                        <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-                            Previous
-                        </Button>
-                    )} */}
-                    </div>
+                    </div> */}
                 </Form>
             </Spin>
         </>

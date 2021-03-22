@@ -8,20 +8,28 @@ const { Text, Link } = Typography;
 
 export default function OmniCheck() {
 
-    const arr = [
-        {
-            username: 'Ameer',
-            fathername: 'Sarfraz'
-        }
-    ];
 
+    const [omniData, setOmniData] = useState("");
     useEffect(() => {
-        handleswirlone();
+        Swal.fire({
+            title: 'Waiting for omni check',
+            text: 'please wait while we validate your information it will take a few minutes..',
+            timer: 500000,
+            timerProgressBar: true,
+            allowOutsideClick: false,
+            icon: 'info',
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
 
     }, []);
 
+
+    let test = ""
     // socket
     useEffect(() => {
+
         const ENDPOINT = 'http://localhost:12345/';
         const socket = io(ENDPOINT);
         console.log(socket);
@@ -31,64 +39,26 @@ export default function OmniCheck() {
 
         socket.on('displayOmniCheck', data => {
             console.log(data);
+            test = data.message;
+            setOmniData(data.message);
+            Swal.hideLoading();
+            handleswirlTwo();
         });
 
     }, []);
 
-    function handleswirlone() {
-        console.log('its me...');
-        let timerInterval
-        Swal.fire({
-            title: 'Waiting for omni check',
-            // html: 'I will close in <b></b> milliseconds.',
-            text: 'please wait while we validate your information it will take a few minutes..',
-            timer: 30000,
-            timerProgressBar: true,
-            allowOutsideClick: false,
-            icon: 'info',
-            didOpen: () => {
-                Swal.showLoading()
-                timerInterval = setInterval(() => {
-                    const content = Swal.getContent()
-                    if (content) {
-                        const b = content.querySelector('b')
-                        if (b) {
-                            b.textContent = Swal.getTimerLeft()
-                        }
-                    }
-                }, 100)
-            },
-            willClose: () => {
-                clearInterval(timerInterval)
-            }
-        }).then((result) => {
-            /* Read more about handling dismissals below */
-            // if (result.dismiss === Swal.DismissReason.timer) {
-            //     console.log('I was closed by the timer')
 
-            // }
-
-            handleswirlTwo();
-        })
-    }
-
-
-
-    function handleswirlTwo(arr) {
-
-        var username = 'Ameer Hamza';
-        var fathername = 'Sarfraz';
-
+    function handleswirlTwo() {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
                 cancelButton: 'btn btn-danger'
             },
             buttonsStyling: false
-        })
+        });
         swalWithBootstrapButtons.fire({
             title: 'Please confirm following',
-            html: "please check if this is your information" + '</br>' + 'username:' + username + '</br>' + 'fathername:' + fathername,
+            html: `${test}`,
             allowOutsideClick: false,
             icon: 'warning',
             showCancelButton: true,
@@ -112,7 +82,7 @@ export default function OmniCheck() {
                     'error'
                 )
             }
-        })
+        });
     }
 
 

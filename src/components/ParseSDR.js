@@ -6,6 +6,7 @@ import { DownloadOutlined } from '@ant-design/icons';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
+import QRCode from 'qrcode.react';
 
 // importing css files----------------->
 import '../App.css';
@@ -50,9 +51,7 @@ export default function ParseSDR() {
 
     return (
         <Form>
-            <div>
-
-            </div>
+            
             <TextArea
                 value={myuri}
                 // onChange={onChange}

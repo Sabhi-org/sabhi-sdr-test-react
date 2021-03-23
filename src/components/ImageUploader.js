@@ -73,8 +73,12 @@ export default function PictureUploader() {
                 console.log(response);
                 if (response) resolve(response.data);
             } catch (error) {
-                message.error(error.response.data.error.message)
-                    .then(() => reject(error));
+                if (error.response) {
+                    message.error(error.response.data.error.message)
+                        .then(() => reject(error));
+                } else {
+                    reject(error);
+                }
             }
         });
     }

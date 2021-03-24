@@ -12,6 +12,7 @@ import ParseSDR from './components/ParseSDR';
 import fileUploader from './components/ImageUploader';
 import antsdrform from './components/Antd-form';
 import OmniCheck from './components/Omni_check';
+import UserProfile from './components/UserProfile';
 
 // importing css files----------------->
 import './App.css';
@@ -38,6 +39,7 @@ export default function App() {
                   <Route path='/parse_sdr' component={fileUploader} />
                   <Route path='/form_sdr' component={antsdrform} />
                   <Route path='/omni_check' component={OmniCheck} />
+                  <Route path='/user_profile' component={UserProfile} />
                 </Switch>
               </main>
             </Card.Body>

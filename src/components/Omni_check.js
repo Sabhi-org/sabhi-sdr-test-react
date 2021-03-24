@@ -27,11 +27,12 @@ export default function OmniCheck() {
 
 
     let test = ""
+    let socket;
     // socket
     useEffect(() => {
 
         const ENDPOINT = 'http://localhost:12345/';
-        const socket = io(ENDPOINT);
+        socket = io(ENDPOINT);
         console.log(socket);
         socket.on('chat', data => {
             console.log(data);
@@ -67,6 +68,8 @@ export default function OmniCheck() {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
+                console.log('i am confirmed !!! ');
+                socket.emit('omniResponse',  {status: true, message: "omni is accepted!"});
                 swalWithBootstrapButtons.fire(
                     'Confirmed!',
                     'Your data has been confirmed',
@@ -76,6 +79,8 @@ export default function OmniCheck() {
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
             ) {
+                console.log('i am rejected !!!');
+                socket.emit('omniResponse', {status: false, message: "omni is rejected!"});
                 swalWithBootstrapButtons.fire(
                     'Cancelled',
                     'Your data could not be confirmed :(',

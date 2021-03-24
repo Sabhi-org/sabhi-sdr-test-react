@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { apiInstance, sabhiApiInstance } from '../axios-instance';
 
-
 export default function PictureUploader() {
     let history = useHistory();
     const { Step } = Steps;
@@ -30,10 +29,14 @@ export default function PictureUploader() {
     const getIdentity = async () => {
         try {
             setIsloading(true);
+
             const response = await apiInstance.get('did');
             console.log(response);
             if (response) setIdentity(response.data.did);
             console.log(identity);
+
+            localStorage.setItem('DID', response.data.did);
+            console.log(localStorage.getItem('DID'));
             setIsloading(false);
         } catch (error) {
             console.log(error);
@@ -93,8 +96,12 @@ export default function PictureUploader() {
                 });
                 if (response) resolve(response.data);
             } catch (error) {
-                message.error(error.response.data.error.message)
-                    .then(() => reject(error));
+                if (error.response) {
+                    message.error(error.response.data.error.message)
+                        .then(() => reject(error));
+                } else {
+                    reject(error);
+                }
             }
         });
     }
@@ -109,8 +116,12 @@ export default function PictureUploader() {
                 });
                 if (response) resolve(response.data);
             } catch (error) {
-                message.error(error.response.data.error.message)
-                    .then(() => reject(error));
+                if (error.response) {
+                    message.error(error.response.data.error.message)
+                        .then(() => reject(error));
+                } else {
+                    reject(error);
+                }
             }
         });
     }
@@ -222,7 +233,6 @@ export default function PictureUploader() {
                     onSuccess('ok');
                     history.push({
                         pathname: '/form_sdr',
-                        state: identity,
                     });
                 }
             } catch (error) {

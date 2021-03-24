@@ -1,79 +1,37 @@
-// importing antd components------------------------->
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Col, Row, Image, Avatar, Spin, Space } from 'antd';
-import { useHistory } from 'react-router-dom';
-import { sabhiApiInstance, apiInstance } from '../axios-instance';
-import { FileDoneOutlined } from '@ant-design/icons';
-// import Store from 'Store';
+import { Form, Input, Col, Row, Image, Avatar, Spin, Space } from 'antd';
+import { useLocation, useHistory } from 'react-router-dom';
+import { sabhiApiInstance } from "../axios-instance";
 
-// creating antdform----------------->
+export default function UserProfile() {
 
-export default function Antdform() {
+
     let history = useHistory();
     const [form] = Form.useForm();
-    const [did, setDID] = useState('');
+    const location = useLocation();
     const [isLoading, setIsloading] = useState('false');
+    const [userData, setUserData] = useState(null);
     const [images, setImages] = useState({});
+    const did = location.state;
 
-    const getOcrRecord = async () => {
+    useEffect(() => {
+        setIsloading(false);
+        getData();
+
+    })
+
+    async function getData() {
         try {
-            setIsloading(true);
-            const response = await sabhiApiInstance.get(`ocr/${did}`);
-            const { identityCardFrontData, identityCardBackData, profileImage, identityCardFrontImage, identityCardBackImage } = response.data.data[0];
-            setImages({ profileImage: profileImage, identityCardFrontImage: identityCardFrontImage, identityCardBackImage: identityCardBackImage });
-            form.setFieldsValue({
-                fullName: identityCardFrontData.nameEnglish,
-                fatherName: identityCardFrontData.fatherNameEnglish,
-                gender: identityCardFrontData.gender,
-                countryOfStay: identityCardFrontData.countryOfStay,
-                identityNumber: identityCardFrontData.identityNumber,
-                issueDate: identityCardFrontData.dateOfIssue,
-                birthDate: identityCardFrontData.dateOfBirth,
-                expireDate: identityCardFrontData.dateOfExpiry,
-                permanentAddress: identityCardBackData.permenantAddress,
-                temporaryAddress: identityCardBackData.presentAddress,
-            });
-            setIsloading(false);
+            const response = await sabhiApiInstance.get(`/application/${did}`);
+            setUserData(response.data.data[0]);
+            console.log(response.data.data[0]);
         } catch (error) {
             console.log(error);
         }
     }
 
-    useEffect(() => {
-        setDID(localStorage.getItem('DID'));
-        getOcrRecord();
-    }, []);
 
 
-    const createVerifiablePresentation = async (values) => {
-        try {
-            const response = await apiInstance.post('vp', values);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    const onFinish = (values) => {
-        setIsloading(true);
-        values.profileImage = images.profileImage;
-        values.did = did;
-        values.identityCardBackImage = images.identityCardBackImage;
-        values.identityCardFrontImage = images.identityCardFrontImage;
-        console.log('Success:', values);
-        createVerifiablePresentation(values);
-        setIsloading(false);
-        history.push({
-            pathname: '/omni_check',
-
-        });
-    };
-
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
-
-    // rendering antd form ---------------------->
     return (
         <div>
             <Space size="large">
@@ -83,8 +41,6 @@ export default function Antdform() {
                         layout="vertical"
                         form={form}
                         name="basic"
-                        onFinish={onFinish}
-                        onFinishFailed={onFinishFailed}
                     >
                         <Row>
                             <Col span={4}>
@@ -103,7 +59,7 @@ export default function Antdform() {
                                             label="Name"
                                             name="fullName"
                                             rules={[{ required: true, message: 'Please enter Complete Name' }]}>
-                                            <Input size="small" />
+                                            <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
                                     <Col className="gutter-row" span={11}>
@@ -111,7 +67,7 @@ export default function Antdform() {
                                             label="Father Name"
                                             name="fatherName"
                                             rules={[{ required: true, message: 'Please enter Father Name' }]}>
-                                            <Input size="small" />
+                                            <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
                                 </Row>
@@ -123,7 +79,7 @@ export default function Antdform() {
                                             label="Gender"
                                             name="gender"
                                             rules={[{ required: true, message: 'Please enter gender' }]}>
-                                            <Input size="small" />
+                                            <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
                                     <Col className="gutter-row" span={11}>
@@ -131,7 +87,7 @@ export default function Antdform() {
                                             label="Country of Stay"
                                             name="countryOfStay"
                                             rules={[{ required: true, message: 'Please enter the country of stay' }]}>
-                                            <Input size="small" />
+                                            <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
                                     <Col className="gutter-row" span={6}>
@@ -146,7 +102,7 @@ export default function Antdform() {
                                         label="Identity Number"
                                         name="identityNumber"
                                         rules={[{ required: true, message: 'Enter the Identity Number' }]}>
-                                        <Input size="small" />
+                                        <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={6}>
@@ -154,7 +110,7 @@ export default function Antdform() {
                                         label="Date of Issue"
                                         name="issueDate"
                                         rules={[{ required: true, message: 'Enter Date of Issue' }]}>
-                                        <Input size="small" />
+                                        <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={6}>
@@ -162,7 +118,7 @@ export default function Antdform() {
                                         label="Date of Birth"
                                         name="birthDate"
                                         rules={[{ required: true, message: 'Enter Date of Birth' }]}>
-                                        <Input size="small" />
+                                        <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={6}>
@@ -170,7 +126,7 @@ export default function Antdform() {
                                         label="Date of Expiry"
                                         name="expireDate"
                                         rules={[{ required: true, message: 'Enter expiry Date' }]}>
-                                        <Input size="small" />
+                                        <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                             </Row>
@@ -179,23 +135,13 @@ export default function Antdform() {
                                     label="Permanent Address"
                                     name="permanentAddress"
                                     rules={[{ required: true, message: 'Please enter permanent address' }]}>
-                                    <Input size="small" />
+                                    <Input size="small" disabled />
                                 </Form.Item>
                                 <Form.Item
                                     label="Temporary Address"
                                     name="temporaryAddress"
                                     rules={[{ required: true, message: 'Please enter temporary address' }]}>
-                                    <Input size="small" />
-                                </Form.Item>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col span={4} offset={10}>
-                                <Form.Item>
-                                    <Button type="primary" htmlType="submit" shape="round" size='large' block>
-                                        <FileDoneOutlined />
-                                    Submit
-                            </Button>
+                                    <Input size="small" disabled />
                                 </Form.Item>
                             </Col>
                         </Row>
@@ -204,5 +150,4 @@ export default function Antdform() {
             </Space>
         </div >
     );
-
 }

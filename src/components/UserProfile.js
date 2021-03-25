@@ -1,32 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Col, Row, Image, Avatar, Spin, Space } from 'antd';
-import { useLocation, useHistory } from 'react-router-dom';
+import { Form, Input, Col, Row, Image, Avatar, Spin, Space, message } from 'antd';
+import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance } from "../axios-instance";
 
 export default function UserProfile() {
 
-
-    let history = useHistory();
     const [form] = Form.useForm();
-    const location = useLocation();
     const [isLoading, setIsloading] = useState('false');
     const [userData, setUserData] = useState(null);
     const [images, setImages] = useState({});
-    const did = location.state;
+    const [did, setDID] = useState('');
 
     useEffect(() => {
-        setIsloading(false);
+        setDID(localStorage.getItem('DID'));
+        console.log(localStorage.getItem('DID'));
         getData();
-
-    })
+    }, []);
 
     async function getData() {
         try {
-            const response = await sabhiApiInstance.get(`/application/${did}`);
-            setUserData(response.data.data[0]);
+            setIsloading(true);
+            const response = await sabhiApiInstance.get(`application/${did}`);
             console.log(response.data.data[0]);
+            const { fullName, fatherName, profileImage, countryOfStay, gender, identityNumber, issueDate, birthDate, expireDate, permanentAddress, temporaryAddress } = response.data.data[0];
+            setImages({ profileImage: profileImage, });
+            form.setFieldsValue({
+                fullName: fullName.value,
+                fatherName: fatherName.value,
+                gender: gender.value,
+                countryOfStay: countryOfStay.value,
+                identityNumber: identityNumber.value,
+                issueDate: issueDate.value,
+                birthDate: birthDate.value,
+                expireDate: expireDate.value,
+                permanentAddress: permanentAddress.value,
+                temporaryAddress: temporaryAddress.value,
+            });
+            setIsloading(false);
         } catch (error) {
-            console.log(error);
+            message.error('something went wrong!', error);
         }
     }
 
@@ -57,16 +69,14 @@ export default function UserProfile() {
                                     <Col className="gutter-row" span={11}>
                                         <Form.Item
                                             label="Name"
-                                            name="fullName"
-                                            rules={[{ required: true, message: 'Please enter Complete Name' }]}>
+                                            name="fullName">
                                             <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
                                     <Col className="gutter-row" span={11}>
                                         <Form.Item
                                             label="Father Name"
-                                            name="fatherName"
-                                            rules={[{ required: true, message: 'Please enter Father Name' }]}>
+                                            name="fatherName">
                                             <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
@@ -77,16 +87,14 @@ export default function UserProfile() {
                                     <Col className="gutter-row" span={11}>
                                         <Form.Item
                                             label="Gender"
-                                            name="gender"
-                                            rules={[{ required: true, message: 'Please enter gender' }]}>
+                                            name="gender">
                                             <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
                                     <Col className="gutter-row" span={11}>
                                         <Form.Item
                                             label="Country of Stay"
-                                            name="countryOfStay"
-                                            rules={[{ required: true, message: 'Please enter the country of stay' }]}>
+                                            name="countryOfStay">
                                             <Input size="small" disabled />
                                         </Form.Item>
                                     </Col>
@@ -100,32 +108,28 @@ export default function UserProfile() {
                                 <Col className="gutter-row" span={6}>
                                     <Form.Item
                                         label="Identity Number"
-                                        name="identityNumber"
-                                        rules={[{ required: true, message: 'Enter the Identity Number' }]}>
+                                        name="identityNumber">
                                         <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={6}>
                                     <Form.Item
                                         label="Date of Issue"
-                                        name="issueDate"
-                                        rules={[{ required: true, message: 'Enter Date of Issue' }]}>
+                                        name="issueDate">
                                         <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={6}>
                                     <Form.Item
                                         label="Date of Birth"
-                                        name="birthDate"
-                                        rules={[{ required: true, message: 'Enter Date of Birth' }]}>
+                                        name="birthDate">
                                         <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col className="gutter-row" span={6}>
                                     <Form.Item
                                         label="Date of Expiry"
-                                        name="expireDate"
-                                        rules={[{ required: true, message: 'Enter expiry Date' }]}>
+                                        name="expireDate">
                                         <Input size="small" disabled />
                                     </Form.Item>
                                 </Col>
@@ -133,14 +137,12 @@ export default function UserProfile() {
                             <Col span={24}>
                                 <Form.Item
                                     label="Permanent Address"
-                                    name="permanentAddress"
-                                    rules={[{ required: true, message: 'Please enter permanent address' }]}>
+                                    name="permanentAddress">
                                     <Input size="small" disabled />
                                 </Form.Item>
                                 <Form.Item
                                     label="Temporary Address"
-                                    name="temporaryAddress"
-                                    rules={[{ required: true, message: 'Please enter temporary address' }]}>
+                                    name="temporaryAddress">
                                     <Input size="small" disabled />
                                 </Form.Item>
                             </Col>

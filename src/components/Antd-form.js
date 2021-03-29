@@ -8,9 +8,9 @@ import { FileDoneOutlined } from '@ant-design/icons';
 // creating antdform----------------->
 
 export default function Antdform() {
+    const did = localStorage.getItem('DID');
     let history = useHistory();
     const [form] = Form.useForm();
-    const [did, setDID] = useState('');
     const [isLoading, setIsloading] = useState('false');
     const [images, setImages] = useState({});
 
@@ -39,7 +39,6 @@ export default function Antdform() {
     }
 
     useEffect(() => {
-        setDID(localStorage.getItem('DID'));
         getOcrRecord();
     }, []);
 
@@ -47,7 +46,6 @@ export default function Antdform() {
     const createVerifiablePresentation = async (values) => {
         try {
             const response = await apiInstance.post('vp', values);
-            console.log(response.data);
         } catch (error) {
             console.error(error);
         }
@@ -59,12 +57,10 @@ export default function Antdform() {
         values.did = did;
         values.identityCardBackImage = images.identityCardBackImage;
         values.identityCardFrontImage = images.identityCardFrontImage;
-        console.log('Success:', values);
         createVerifiablePresentation(values);
         setIsloading(false);
         history.push({
-            pathname: '/omni_check',
-
+            pathname: '/user_profile',
         });
     };
 

@@ -11,7 +11,6 @@ import { Route, Switch } from 'react-router-dom';
 import ParseSDR from './components/ParseSDR';
 import fileUploader from './components/ImageUploader';
 import antsdrform from './components/Antd-form';
-import OmniCheck from './components/Omni_check';
 import UserProfile from './components/UserProfile';
 
 // importing css files----------------->
@@ -38,7 +37,6 @@ export default function App() {
                   <Route path='/' component={ParseSDR} exact />
                   <Route path='/parse_sdr' component={fileUploader} />
                   <Route path='/form_sdr' component={antsdrform} />
-                  <Route path='/omni_check' component={OmniCheck} />
                   <Route path='/user_profile' component={UserProfile} />
                 </Switch>
               </main>

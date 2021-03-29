@@ -2,19 +2,41 @@ import React, { useEffect, useState } from 'react';
 import { Form, Input, Col, Row, Image, Avatar, Spin, Space, message } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance } from "../axios-instance";
+import { io } from "socket.io-client";
+import Swal from 'sweetalert2';
 
 export default function UserProfile() {
-
+    const did = localStorage.getItem('DID');
+    const [omniData, setOmniData] = useState("");
     const [form] = Form.useForm();
     const [isLoading, setIsloading] = useState('false');
     const [userData, setUserData] = useState(null);
     const [images, setImages] = useState({});
-    const [did, setDID] = useState('');
 
     useEffect(() => {
-        setDID(localStorage.getItem('DID'));
-        console.log(localStorage.getItem('DID'));
         getData();
+    }, []);
+
+
+    let test = ""
+    let socket;
+    // socket
+    useEffect(() => {
+
+        const ENDPOINT = 'http://localhost:12345/';
+        socket = io(ENDPOINT);
+        console.log(socket);
+        socket.on('chat', data => {
+            console.log(data);
+        });
+
+        socket.on('displayOmniCheck', data => {
+            console.log(data);
+            test = data.message;
+            setOmniData(data.message);
+            handleswirlTwo();
+        });
+
     }, []);
 
     async function getData() {
@@ -40,6 +62,47 @@ export default function UserProfile() {
         } catch (error) {
             message.error('something went wrong!', error);
         }
+    }
+
+    function handleswirlTwo() {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: 'Please confirm following',
+            html: `${test}`,
+            allowOutsideClick: false,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, it is me',
+            cancelButtonText: 'No,it is not me',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                console.log('i am confirmed !!! ');
+                socket.emit('omniResponse', { status: true, message: "omni is accepted!" });
+                swalWithBootstrapButtons.fire(
+                    'Confirmed!',
+                    'Your data has been confirmed',
+                    'success'
+                )
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                console.log('i am rejected !!!');
+                socket.emit('omniResponse', { status: false, message: "omni is rejected!" });
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your data could not be confirmed :(',
+                    'error'
+                )
+            }
+        });
     }
 
 

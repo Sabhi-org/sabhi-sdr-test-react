@@ -13,6 +13,7 @@ import fileUploader from './components/ImageUploader';
 import antsdrform from './components/Antd-form';
 import UserProfile from './components/UserProfile';
 import OnBoardScreen from './components/OnBoardScreen';
+import PicturesWall from "./components/ImageUploader-1";
 // importing css files----------------->
 import './App.css';
 
@@ -32,7 +33,7 @@ export default function App() {
       <Switch>
         <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
-        <Route path='/parse_sdr' component={fileUploader} />
+        <Route path='/ocr' component={PicturesWall} />
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
       </Switch>

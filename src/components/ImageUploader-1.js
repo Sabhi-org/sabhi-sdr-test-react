@@ -9,9 +9,12 @@ class ClCamera extends Component {
         this.state = {
             capturedImage: null,
             captured: false,
+
             uploading: false
         }
     }
+
+
 
     componentDidMount() {
         // initialize the camera
@@ -33,8 +36,13 @@ class ClCamera extends Component {
     }
 
     render() {
+
+        const style = {};
+        if (this.state.captured) {
+            style.display = 'none'
+        }
         const imageDisplay = this.state.capturedImage ?
-            <img src={this.state.capturedImage} alt="captured" width="350" />
+            <img src={this.state.capturedImage} alt="captured" width="350"  />
             :
             <span />;
 
@@ -53,11 +61,15 @@ class ClCamera extends Component {
         return (
             <div>
                 {uploading}
-                <video autoPlay playsInline muted id="webcam" width="100%" height="200" />
+                <video autoPlay playsInline muted id="webcam" width="100%" height="400" style={style} />
                 <br />
-                <div className="imageCanvas">
-                    {imageDisplay}
-                </div>
+
+                {
+                    this.state.captured && <div className="imageCanvas">
+                        {imageDisplay}
+                    </div>
+                }
+
                 {buttons}
             </div>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Webcam } from './webcam';
-import axios from 'axios';
+// import axios from 'axios';
+import { sabhiApiInstance } from '../axios-instance';
 
 class ClCamera extends Component {
     constructor() {
@@ -42,7 +43,7 @@ class ClCamera extends Component {
             style.display = 'none'
         }
         const imageDisplay = this.state.capturedImage ?
-            <img src={this.state.capturedImage} alt="captured" width="350"  />
+            <img src={this.state.capturedImage} alt="captured" width="350" />
             :
             <span />;
 
@@ -77,7 +78,7 @@ class ClCamera extends Component {
 
     captureImage = async () => {
         const capturedData = this.webcam.takeBase64Photo({ type: 'jpeg', quality: 0.8 });
-        console.log(capturedData);
+        console.log(capturedData.base64);
         this.setState({
             captured: true,
             capturedImage: capturedData.base64
@@ -104,11 +105,11 @@ class ClCamera extends Component {
             // save image to local storage
         } else {
             this.setState({ 'uploading': true });
-            axios.post(
-                `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+            sabhiApiInstance.post(
+                `ocr/cnic/front`,
                 {
                     file: this.state.capturedImage,
-                    upload_preset: process.env.REACT_APP_CLOUD_PRESET
+                    did: localStorage.getItem('DID'),
                 }
             ).then(
                 (data) => this.checkUploadStatus(data)
@@ -150,11 +151,11 @@ class ClCamera extends Component {
             this.setState({ 'uploading': true });
             for (let i = 0; i < images.length; i++) {
                 // upload
-                axios.post(
-                    `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+                sabhiApiInstance.post(
+                    `ocr/cnic/front`,
                     {
                         file: images[i].val,
-                        upload_preset: process.env.REACT_APP_CLOUD_PRESET
+                        did: localStorage.getItem('DID'),
                     }
                 ).then((data) => this.checkUploadStatus(data)).catch((error) => {
                     error = true;

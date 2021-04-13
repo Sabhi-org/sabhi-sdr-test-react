@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Button, message } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { UserAddOutlined } from '@ant-design/icons';
@@ -13,7 +13,7 @@ export default function OnBoardScreen() {
 
     const createIdentity = async () => {
         try {
-            message.loading('creating identity...')
+            message.loading('creating identity...', 0.5)
                 .then(async () => {
                     const response = await apiInstance.get('did');
                     if (response) {

@@ -34,7 +34,7 @@ export default function App() {
         <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />
-        {/* <Route path='/ocr_back' component={IdentityCardBackScan} /> */}
+        <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
       </Switch>

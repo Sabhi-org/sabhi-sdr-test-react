@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Webcam } from './webcam';
 // import axios from 'axios';
 import { sabhiApiInstance } from '../axios-instance';
-
+// for class component only will change later
+import { withRouter } from "react-router-dom";
 class IdentityCardFrontScan extends Component {
     constructor() {
         super();
@@ -139,6 +140,7 @@ class IdentityCardFrontScan extends Component {
         this.setState({ 'uploading': false });
         if (data.status === 200) {
             alert('Image Uploaded to Sabhi Media Library');
+            this.props.history.push('/ocr_back');
             this.discardImage();
         } else {
             alert('Sorry, we encountered an error uploading your image');

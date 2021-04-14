@@ -65,7 +65,7 @@ class IdentityCardBackScan extends Component {
 
         return (
             <div>
-                <h1> Front</h1>
+                <h1> Back </h1>
                 {uploading}
                 <video autoPlay playsInline muted id="webcam" width="100%" style={style} />
                 <br />

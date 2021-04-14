@@ -7,7 +7,6 @@ import Swal from 'sweetalert2';
 
 export default function UserProfile() {
     const did = localStorage.getItem('DID');
-    console.log(localStorage.getItem('DID'));
     const [omniData, setOmniData] = useState("");
     const [form] = Form.useForm();
     const [isLoading, setIsloading] = useState('false');
@@ -212,9 +211,6 @@ export default function UserProfile() {
                             </Col>
                         </Row>
                     </Form>
-                    <Row>
-                        Verified By: XYZ
-                    </Row>
                 </Spin>
             </Space>
         </div >

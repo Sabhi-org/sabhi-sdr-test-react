@@ -69,6 +69,7 @@ export default function PictureUploader() {
         return new Promise(async (resolve, reject) => {
             try {
                 const base64Img = await getBase64(file);
+                console.log(base64Img);
                 const response = await sabhiApiInstance.post("ocr/cnic/front", {
                     did: identity,
                     cnic: base64Img

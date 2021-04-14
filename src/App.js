@@ -8,12 +8,11 @@ import {
 // importing components and router components------------>
 import { Route, Switch } from 'react-router-dom';
 // import FormSDR from './components/SDR.generator.form';
-import SplashScreen from './components/SplashScreen';
+import ParseSDR from './components/ParseSDR';
+import fileUploader from './components/ImageUploader';
 import antsdrform from './components/Antd-form';
 import UserProfile from './components/UserProfile';
-import OnBoardScreen from './components/OnBoardScreen';
-import IdentityCardFrontScan from './components/IdentityCardFrontScan';
-import IdentityCardBackScan from './components/IdentityCardBackScan';
+
 // importing css files----------------->
 import './App.css';
 
@@ -25,19 +24,26 @@ import sabhilogo from './images/dark.svg';
 export default function App() {
 
   return (
-    <div className="App" style={{
-      'background': 'rgb(95, 130, 189)',
-      'background': 'linear - gradient(180deg, rgba(95, 130, 189, 1) 0 %, rgba(47, 77, 125, 1) 100 %)',
-
-    }} >
-      <Switch>
-        <Route path='/' component={SplashScreen} exact />
-        <Route path='/onboard' component={OnBoardScreen} />
-        <Route path='/ocr_front' component={IdentityCardFrontScan} />
-        <Route path='/ocr_back' component={IdentityCardBackScan} />
-        <Route path='/form_sdr' component={antsdrform} />
-        <Route path='/user_profile' component={UserProfile} />
-      </Switch>
+    <div className="App">
+      <Container className="containsCard">
+        <Row className="justify-content-center centered">
+          <Card className="theCard">
+            <div className="circle">
+              <img src={sabhilogo} />
+            </div>
+            <Card.Body>
+              <main>
+                <Switch>
+                  <Route path='/' component={ParseSDR} exact />
+                  <Route path='/parse_sdr' component={fileUploader} />
+                  <Route path='/form_sdr' component={antsdrform} />
+                  <Route path='/user_profile' component={UserProfile} />
+                </Switch>
+              </main>
+            </Card.Body>
+          </Card>
+        </Row>
+      </Container>
     </div>
   );
 }

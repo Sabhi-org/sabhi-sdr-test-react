@@ -22,7 +22,7 @@ export default function OnBoardScreen() {
 
                         message.success('Identity created succesfully!')
                             .then(() => message.loading('redirecting...', 1)
-                                .then(() => history.push('/ocr')));
+                                .then(() => history.push('/ocr_front')));
 
                     }
                 })
@@ -39,7 +39,5 @@ export default function OnBoardScreen() {
                 Create Identity
             </Button>
         </div>
-
-
     );
 }

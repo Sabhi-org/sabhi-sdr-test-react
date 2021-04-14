@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { Webcam } from './webcam';
 // import axios from 'axios';
 import { sabhiApiInstance } from '../axios-instance';
+// import { useHistory } from 'react-router-dom';
 
-class ClCamera extends Component {
+
+class IdentityCardBackScan extends Component {
+
+
     constructor() {
         super();
         this.webcam = null;
@@ -37,7 +41,7 @@ class ClCamera extends Component {
     }
 
     render() {
-
+        // let history = useHistory();
         const style = {};
         if (this.state.captured) {
             style.display = 'none'
@@ -61,8 +65,9 @@ class ClCamera extends Component {
 
         return (
             <div>
+                <h1> Front</h1>
                 {uploading}
-                <video autoPlay playsInline muted id="webcam" width="100%" height="400" style={style} />
+                <video autoPlay playsInline muted id="webcam" width="100%" style={style} />
                 <br />
 
                 {
@@ -100,7 +105,7 @@ class ClCamera extends Component {
             // create random string
             const rs = Math.random().toString(36).substr(2, 5);
             localStorage.setItem(`${prefix}${rs}`, this.state.capturedImage);
-            alert('Image saved locally, it will be uploaded to your Cloudinary media library once internet connection is detected');
+            alert('Image saved locally, it will be uploaded to your Sabhi media library once internet connection is detected');
             this.discardImage();
             // save image to local storage
         } else {
@@ -137,7 +142,7 @@ class ClCamera extends Component {
     checkUploadStatus = (data) => {
         this.setState({ 'uploading': false });
         if (data.status === 200) {
-            alert('Image Uploaded to Cloudinary Media Library');
+            alert('Image Uploaded to Sabhi Media Library');
             this.discardImage();
         } else {
             alert('Sorry, we encountered an error uploading your image');
@@ -163,9 +168,9 @@ class ClCamera extends Component {
             }
             this.setState({ 'uploading': false });
             if (!error) {
-                alert("All saved images have been uploaded to your Cloudinary Media Library");
+                alert("All saved images have been uploaded to your Sabhi Media Library");
             }
         }
     }
 }
-export default ClCamera;
+export default IdentityCardBackScan;

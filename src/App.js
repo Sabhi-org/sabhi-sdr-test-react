@@ -9,11 +9,11 @@ import {
 import { Route, Switch } from 'react-router-dom';
 // import FormSDR from './components/SDR.generator.form';
 import SplashScreen from './components/SplashScreen';
-import fileUploader from './components/ImageUploader';
 import antsdrform from './components/Antd-form';
 import UserProfile from './components/UserProfile';
 import OnBoardScreen from './components/OnBoardScreen';
-import PicturesWall from "./components/ImageUploader-1";
+import IdentityCardFrontScan from './components/IdentityCardFrontScan';
+import IdentityCardBackScan from './components/IdentityCardBackScan';
 // importing css files----------------->
 import './App.css';
 
@@ -33,7 +33,8 @@ export default function App() {
       <Switch>
         <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
-        <Route path='/ocr' component={PicturesWall} />
+        <Route path='/ocr_front' component={IdentityCardFrontScan} />
+        {/* <Route path='/ocr_back' component={IdentityCardBackScan} /> */}
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
       </Switch>

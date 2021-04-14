@@ -7,14 +7,18 @@ import Swal from 'sweetalert2';
 
 export default function UserProfile() {
     const did = localStorage.getItem('DID');
+    console.log('use profile did:::::  ', did);
     const [omniData, setOmniData] = useState("");
     const [form] = Form.useForm();
     const [isLoading, setIsloading] = useState('false');
     const [userData, setUserData] = useState(null);
     const [images, setImages] = useState({});
+    const [applicationVerifiedBy, setApplicationVerifiedBy] = useState('pending');
 
     useEffect(() => {
-        getData();
+        setTimeout(() => {
+            getData();
+        }, 2000);
     }, []);
 
 
@@ -36,6 +40,12 @@ export default function UserProfile() {
             setOmniData(data.message);
             handleswirlTwo();
         });
+
+        socket.on('ppp', data => {
+            console.log(data);
+            setApplicationVerifiedBy(data.did);
+            message.success(`Your application has been verified by ${data.did}`);
+        })
 
     }, []);
 
@@ -211,6 +221,7 @@ export default function UserProfile() {
                             </Col>
                         </Row>
                     </Form>
+                    <h5>Application Verified By: {applicationVerifiedBy}</h5>
                 </Spin>
             </Space>
         </div >

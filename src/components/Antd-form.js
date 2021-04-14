@@ -46,6 +46,7 @@ export default function Antdform() {
     const createVerifiablePresentation = async (values) => {
         try {
             const response = await apiInstance.post('vp', values);
+            console.log(response);
         } catch (error) {
             console.error(error);
         }
@@ -189,8 +190,8 @@ export default function Antdform() {
                                 <Form.Item>
                                     <Button type="primary" htmlType="submit" shape="round" size='large' block>
                                         <FileDoneOutlined />
-                                    Submit
-                            </Button>
+                                        Submit
+                                    </Button>
                                 </Form.Item>
                             </Col>
                         </Row>

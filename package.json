@@ -7,6 +7,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "caniuse-lite": "^1.0.30001204",
+    "mobiscroll-react": "^4.0.0",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

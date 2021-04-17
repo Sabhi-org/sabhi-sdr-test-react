@@ -25,11 +25,7 @@ import sabhilogo from './images/dark.svg';
 export default function App() {
 
   return (
-    <div className="App" style={{
-      'background': 'rgb(95, 130, 189)',
-      'background': 'linear - gradient(180deg, rgba(95, 130, 189, 1) 0 %, rgba(47, 77, 125, 1) 100 %)',
-
-    }} >
+    <div className="App">
       <Switch>
         <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />

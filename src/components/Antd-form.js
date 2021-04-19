@@ -52,6 +52,7 @@ export default function Antdform() {
     }
 
     const onFinish = (values) => {
+        console.log(values);
         setIsloading(true);
         values.profileImage = images.profileImage;
         values.did = did;
@@ -77,26 +78,38 @@ export default function Antdform() {
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
             >
-                <Form.Item label="Field A" required tooltip="This is a required field">
+                <Form.Item label="Name" required tooltip="This is a required field" name="fullName">
                     <Input placeholder="input placeholder" />
                 </Form.Item>
-                <Form.Item
-                    label="Field B"
-                    tooltip="This is a required field"
-                >
+                <Form.Item label="Father Name" required tooltip="This is a required field" name="fatherName">
                     <Input placeholder="input placeholder" />
                 </Form.Item>
-                <Form.Item label="Field A" required tooltip="This is a required field">
+                <Form.Item label="Gender" required tooltip="This is a required field" name="gender">
                     <Input placeholder="input placeholder" />
                 </Form.Item>
-                <Form.Item label="Field A" required tooltip="This is a required field">
+                <Form.Item label="Country of Stay" required tooltip="This is a required field" name="countryOfStay">
                     <Input placeholder="input placeholder" />
                 </Form.Item>
-                <Form.Item label="Field A" required tooltip="This is a required field">
+                <Form.Item label="Identity Number" required tooltip="This is a required field" name="identityNumber">
+                    <Input placeholder="input placeholder" />
+                </Form.Item>
+                <Form.Item label="Date of Issue" required tooltip="This is a required field" name="issueDate">
+                    <Input placeholder="input placeholder" />
+                </Form.Item>
+                <Form.Item label="Date of Birth" required tooltip="This is a required field" name="birthDate">
+                    <Input placeholder="input placeholder" />
+                </Form.Item>
+                <Form.Item label="Date of Expiry" required tooltip="This is a required field" name="expireDate">
+                    <Input placeholder="input placeholder" />
+                </Form.Item>
+                <Form.Item label="Permanent Address" required tooltip="This is a required field" name="permanentAddress">
+                    <Input placeholder="input placeholder" />
+                </Form.Item>
+                <Form.Item label="Temporary Address" required tooltip="This is a required field" name="temporaryAddress">
                     <Input placeholder="input placeholder" />
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary">Submit</Button>
+                    <Button type="primary" htmlType="submit">Submit</Button>
                 </Form.Item>
 
 

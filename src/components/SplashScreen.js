@@ -22,7 +22,7 @@ export default function SplashScreen() {
 
     return (
         <div class="container" style={style}>
-            <img src={Logo} width="200px" />
+            <img class="splashScreenlogo" src={Logo} width="200px" />
         </div>
     );
 }

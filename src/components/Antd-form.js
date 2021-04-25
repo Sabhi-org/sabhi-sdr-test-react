@@ -72,6 +72,11 @@ export default function Antdform() {
     // rendering antd form ---------------------->
     return (
         <div class="containsform">
+            <Avatar
+                style={{ marginTop: "18px" }}
+                src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
+                size={140}
+            />
             <Form
                 layout="horizontal"
                 form={form}
@@ -80,11 +85,7 @@ export default function Antdform() {
                 onFinishFailed={onFinishFailed}
             // style={{ height: "1900px" }}  
             >
-                <Avatar
-                    style={{ marginTop: "18px" }}
-                    src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
-                    size={140}
-                />
+
                 <Form.Item label="Name" required tooltip="This is a required field" name="fullName">
                     <Input placeholder="input placeholder" />
                 </Form.Item>

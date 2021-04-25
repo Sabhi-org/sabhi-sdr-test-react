@@ -73,7 +73,7 @@ export default function Antdform() {
     return (
         <div class="containsform">
             <Avatar
-                style={{ marginTop: "18px" }}
+                style={{ marginTop: "18px", marginLeft: "85px" }}
                 src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                 size={140}
             />

@@ -120,7 +120,7 @@ export default function UserProfile() {
             >
                 {/* <Spin spinning={isLoading}> */}
                 <Avatar
-                    style={{ marginTop: "10px" }}
+                    style={{ marginTop: "10px", marginLeft: "85px" }}
                     src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                     size={140}
                 />

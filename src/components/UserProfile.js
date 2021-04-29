@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance } from "../axios-instance";
 import { io } from "socket.io-client";
 import Swal from 'sweetalert2';
+import '../Userprofile.css';
 
 export default function UserProfile() {
     const did = localStorage.getItem('DID');
@@ -109,11 +110,11 @@ export default function UserProfile() {
 
 
     return (
-        <div>
+        <div className="background">
             {/* <Space size="large"> */}
 
             <Form
-                style={{ marginTop: "18px" }}
+                style={{ marginTop: "18px", paddingLeft: "25px", paddingRight: "33px" }}
                 layout="horizontal"
                 form={form}
                 name="basic"
@@ -122,7 +123,7 @@ export default function UserProfile() {
                 <Avatar
                     style={{ marginTop: "10px", marginLeft: "85px" }}
                     src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
-                    size={140}
+                    size={160}
                 />
                 <Form.Item
                     label="Name"

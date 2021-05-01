@@ -4,6 +4,7 @@ import { Form, Input, Button, Col, Row, Image, Avatar, Spin, Space } from 'antd'
 import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance, apiInstance } from '../axios-instance';
 import { InfoCircleOutlined } from '@ant-design/icons';
+import '../Antdform.css';
 
 // creating antdform----------------->
 
@@ -71,9 +72,9 @@ export default function Antdform() {
 
     // rendering antd form ---------------------->
     return (
-        <div class="containsform">
+        <div class="backs">
             <Avatar
-                style={{ marginTop: "18px", marginLeft: "85px" }}
+                style={{ marginTop: "18px", marginLeft: "95px" }}
                 src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                 size={140}
             />

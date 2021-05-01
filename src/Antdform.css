@@ -1,0 +1,11 @@
+    .backs {
+        background: rgb(95, 130, 189);
+  background: linear-gradient(180deg, rgba(95, 130, 189, 1) 0%, rgba(47, 77, 125, 1) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  padding-left: 9px;
+  padding-right: 12px;
+
+    }

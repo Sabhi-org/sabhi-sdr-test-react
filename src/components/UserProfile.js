@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Col, Row, Image, Avatar, Spin, Space, message } from 'antd';
+import { Form, Input, Col, Row, Image, Avatar, Spin, Space, message, Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance } from "../axios-instance";
 import { io } from "socket.io-client";
@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import '../Userprofile.css';
 
 export default function UserProfile() {
+    const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };
     const did = localStorage.getItem('DID');
     console.log(localStorage.getItem('DID'));
     const [omniData, setOmniData] = useState("");
@@ -175,6 +176,12 @@ export default function UserProfile() {
                     name="temporaryAddress">
                     <Input size="small" disabled />
                 </Form.Item>
+                <Form.Item style={{ paddingLeft: "85px" }}>
+                    <Button type="primary" shape="round" style={btnStyle} size='large'>
+                        Submit Form
+                    </Button>
+                </Form.Item>
+
                 {/* </Spin> */}
             </Form>
             {/* <Row>

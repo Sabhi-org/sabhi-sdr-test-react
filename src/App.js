@@ -14,6 +14,7 @@ import UserProfile from './components/UserProfile';
 import OnBoardScreen from './components/OnBoardScreen';
 import IdentityCardFrontScan from './components/IdentityCardFrontScan';
 import IdentityCardBackScan from './components/IdentityCardBackScan';
+import welcomenewuser from './components/welcomeNewUser';
 // importing css files----------------->
 import './App.css';
 
@@ -33,6 +34,7 @@ export default function App() {
         <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
+        <Route path='/welcome' component={welcomenewuser} />
       </Switch>
     </div>
   );

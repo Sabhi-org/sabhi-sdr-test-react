@@ -16,6 +16,7 @@ import IdentityCardFrontScan from './components/IdentityCardFrontScan';
 import IdentityCardBackScan from './components/IdentityCardBackScan';
 import welcomenewuser from './components/welcomeNewUser';
 import SabhiONlineIdentity from './components/Sabhionlineidentity';
+import SecureOnlineIdentity from './components/Secureonlineidentity';
 // importing css files----------------->
 import './App.css';
 
@@ -37,6 +38,7 @@ export default function App() {
         <Route path='/user_profile' component={UserProfile} />
         <Route path='/welcome' component={welcomenewuser} />
         <Route path='/sabhionlineidentity' component={SabhiONlineIdentity} />
+        <Route path='/Secureonlineidentity' component={SecureOnlineIdentity} />
       </Switch>
     </div>
   );

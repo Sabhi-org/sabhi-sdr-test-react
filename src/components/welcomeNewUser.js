@@ -19,8 +19,8 @@ export default function welcomeNewUser() {
 
                 <Row span={24}>
                     <Col span={22}>
-                        <div className="fontone">Welcome,</div>
-                        <div className="fonttwo">New User!</div>
+                        <div className="fontonewelcome">Welcome,</div>
+                        <div className="fonttwonewuser">New User!</div>
                     </Col>
                     <Col>
                         <div className="block2"></div>
@@ -30,7 +30,7 @@ export default function welcomeNewUser() {
 
                 <Row>
                     <Col span={22}>
-                        <div className="fontthree">Profile</div>
+                        <div className="fontthreeprof">Profile</div>
                     </Col>
                     <Col>
                         <SearchOutlined style={{ fontSize: '20px', color: '#35568D', marginLeft: '6px', marginTop: '30px' }} />

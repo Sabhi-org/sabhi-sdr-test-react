@@ -17,19 +17,41 @@ export default function Secureonlineidentity() {
 
             <Row span={24}>
                 <Col span={6} offset={2}>
-                    <div className="fontone">Secure</div>
+                    <div className="fontonesecure">Secure</div>
                 </Col>
             </Row>
 
             <Row span={24}>
                 <Col span={19} offset={2}>
-                    <div className="fonttwo">Online Identity</div>
+                    <div className="fonttwoidentity">Online Identity</div>
                 </Col>
             </Row>
 
             <Row span={24}>
+                <Col offset={2}>
+                    <div className="fontthreedescone">Your online buisness identity, secure</div>
+                    <div className="fontthreedesctwo">at your fingertips. Send credentials to</div>
+                    <div className="fontthreedescthree">a Sabhi 3rd party service.</div>
+                </Col>
+            </Row>
+
+            <Row span={24}>
+                <Col offset={2}>
+                    <div className="fontfourverify">View privacy policy</div>
+                </Col>
+            </Row>
+
+            <Row span={24}>
+
+                <Col offset={2}>
+                    <div className="buttontwosecure" type="primary" shape="round" size='large'>
+                        <p className="buttontwofontsecure">Recover</p>
+                    </div>
+                </Col>
                 <Col>
-                    <div className="fontthree">hello</div>
+                    <div className="buttononesecure" type="primary" shape="round" size='large'>
+                        <p className="buttononefontsecure">Create Sabhi ID</p>
+                    </div>
                 </Col>
             </Row>
 

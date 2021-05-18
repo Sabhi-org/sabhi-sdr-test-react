@@ -15,6 +15,7 @@ import OnBoardScreen from './components/OnBoardScreen';
 import IdentityCardFrontScan from './components/IdentityCardFrontScan';
 import IdentityCardBackScan from './components/IdentityCardBackScan';
 import welcomenewuser from './components/welcomeNewUser';
+import SabhiONlineIdentity from './components/Sabhionlineidentity';
 // importing css files----------------->
 import './App.css';
 
@@ -35,6 +36,7 @@ export default function App() {
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
         <Route path='/welcome' component={welcomenewuser} />
+        <Route path='/sabhionlineidentity' component={SabhiONlineIdentity} />
       </Switch>
     </div>
   );

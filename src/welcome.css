@@ -1,3 +1,6 @@
+
+/* <------------------------------background css -------------------------------------------> */
+
 .background {
     background:#F5F9FF;
     background-position: center;
@@ -11,48 +14,128 @@
     padding-bottom: 25px;
 }
 
+
+/* <---------------------------this section contains button css--------------------------> */
+
 .buttonone {
 
-
-width: 108px;
-height: 50px;
-background-color: #4DDFBC;
-box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
-border-radius: 16px;
-
-}
-
-.buttononefont {
-
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 132%;
-text-align: center;
-color: #FFFFFF;
-
-}
+    width: 108px;
+    height: 47px;
+    background-color: #4DDFBC;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    
+    }
 
 .buttontwo {
 
-margin-left: 9px;
-width: 182px;
-height: 50px;
-background-color: #FFFFFF;
-box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
-border-radius: 16px;
+    margin-left: 9px;
+    width: 178px;
+    height: 47px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    
+    }
 
+.buttonthree {
+
+    /* margin-right: 30px; */
+    width: 318px;
+    height: 82px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    
+    }
+
+    .buttonfour {
+
+    /* margin-right: 30px; */
+    margin-top: 10px;
+    width: 318px;
+    height: 82px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    
+    }
+
+/* <------------------------------this section contains font css -------------------------------> */
+
+.buttononefont {
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 132%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+    padding: 15px;
+    
+    }
+
+.buttontwofont {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 132%;
+    color: #35568D;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-left: 22px;
+
+    }
+
+.buttonthreefont {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 132%;
+    color: #35568D;
+    margin-bottom: 0px;
+    padding-right: 15px;
+    padding-left: 22px;
+    padding-top: 23px;
+
+}
+
+.buttonfourfont {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 132%;
+    color: #35568D;
+    margin-bottom: 0px;
+    padding-left: 22px;
+    padding-top: 23px;
+
+}
+
+.pending {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 132%;
+    color: #95A7C6;
+    margin-bottom: 0px;
+    padding-left: 21px;
 }
 
 .fontone {
 
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 132%;
-color: #35568D;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 132%;
+    color: #35568D;
 
 }
 
@@ -61,7 +144,7 @@ color: #35568D;
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 font-style: normal;
 font-weight: 500;
-font-size: 25px;
+font-size: 20px;
 line-height: 132%;
 color: #35568D;
 
@@ -75,6 +158,7 @@ font-weight: 500;
 font-size: 35px;
 line-height: 132%;
 color: #35568D;
+margin-top: 17px;
 
 }
 
@@ -91,24 +175,95 @@ margin-bottom: 9px;
 
 }
 
-.buttonthree {
+/* <-------------------------------------this section contains ui blocks---------------------------------------> */
 
-/* margin-left: 9px; */
-width: 318px;
-height: 82px;
-background-color: #FFFFFF;
-box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
-border-radius: 16px;
+.block {
+    width: 24px;
+    height: 24px;
+    background: #35568D;
+    margin: 0px;
+    border-radius: 2px;
+    margin-top: 28px;
+    margin-left: 30px;
+
+}
+
+.block2 {
+    width: 24px;
+    height: 24px;
+    background: #4DDFBC;
+    margin: 0px;
+    border-radius: 2px;
+    margin-top: 13px;
+    /* margin-left: 30px; */
+
+}
+
+/* <-----------------------------------------this section contains bottom bar uis---------------------------------> */
+
+.bottombar {
     
+    background: #FFFFFF;
+    box-shadow: 0px -16px 64px rgba(6, 45, 80, 0.1);
+    border-radius: 20px 16px 1px 1px;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 87.12%;
+    bottom: 0%;
 }
 
-.buttonfour {
+.left {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 132%;
+text-align: center;
+color: #35568D;
+}
 
-margin-top: 10px;
-width: 318px;
-height: 82px;
-background-color: #FFFFFF;
-box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
-border-radius: 16px;
+.center {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 132%;
+text-align: center;
+color: #95A7C6;
+margin-top: 48px;
+}
+
+.right {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 132%;
+text-align: center;
+color: #95A7C6;
+}
+
+.QRcodecircle {
+    
+    width: 71px;
+    height: 71px;
+    position: absolute;
+    left: 40.69%;
+    right: 4.69%;
+    top: -31.31%;
+    bottom: 4.69%;
+    background: #4DDFBC;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.icon {
+
+    width: 119px;
+    height: 28px;
 
 }
+
+
+

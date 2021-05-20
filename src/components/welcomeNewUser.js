@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row, Typography } from 'antd';
 import { ShrinkOutlined, QrcodeOutlined, CodepenOutlined, SearchOutlined, RightOutlined } from '@ant-design/icons';
 
-import '../welcome.css';
+import '../styles/welcome.css';
 
 export default function welcomeNewUser() {
     const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };

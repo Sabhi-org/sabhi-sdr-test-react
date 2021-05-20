@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../images/dark.svg';
 import { Col, Row, Typography } from 'antd';
-import '../Sabhionlineidentity.css';
+import '../styles/Sabhionlineidentity.css';
 
 export default function Sabhionlineidentity() {
 

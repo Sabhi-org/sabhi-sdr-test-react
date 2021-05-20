@@ -4,7 +4,7 @@ import { Form, Input, Button, Col, Row, Image, Avatar, Spin, Space } from 'antd'
 import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance, apiInstance } from '../axios-instance';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import '../Antdform.css';
+import '../styles/Antdform.css';
 
 // creating antdform----------------->
 

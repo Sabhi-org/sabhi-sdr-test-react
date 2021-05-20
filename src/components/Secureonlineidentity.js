@@ -2,7 +2,7 @@ import React from 'react';
 import OnBoardImage from '../images/onboarding.png';
 import { Col, Row, Typography } from 'antd';
 
-import '../Secureonlineidentity.css';
+import '../styles/Secureonlineidentity.css';
 
 export default function Secureonlineidentity() {
     return (
@@ -42,7 +42,6 @@ export default function Secureonlineidentity() {
             </Row>
 
             <Row span={24}>
-
                 <Col offset={2}>
                     <div className="buttontwosecure" type="primary" shape="round" size='large'>
                         <p className="buttontwofontsecure">Recover</p>

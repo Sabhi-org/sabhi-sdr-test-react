@@ -17,8 +17,9 @@ import IdentityCardBackScan from './components/IdentityCardBackScan';
 import welcomenewuser from './components/welcomeNewUser';
 import SabhiONlineIdentity from './components/Sabhionlineidentity';
 import SecureOnlineIdentity from './components/Secureonlineidentity';
+import Termsandconditions from './components/TermsandCOnditions';
 // importing css files----------------->
-import './App.css';
+import './styles/App.css';
 
 // importing image files---------------->
 import sabhilogo from './images/dark.svg';
@@ -39,6 +40,8 @@ export default function App() {
         <Route path='/welcome' component={welcomenewuser} />
         <Route path='/sabhionlineidentity' component={SabhiONlineIdentity} />
         <Route path='/Secureonlineidentity' component={SecureOnlineIdentity} />
+        <Route path='/Termsandcond' component={Termsandconditions} />
+
       </Switch>
     </div>
   );

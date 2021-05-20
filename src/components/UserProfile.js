@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance } from "../axios-instance";
 import { io } from "socket.io-client";
 import Swal from 'sweetalert2';
-import '../Userprofile.css';
+import '../styles/Userprofile.css';
 
 export default function UserProfile() {
     const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };

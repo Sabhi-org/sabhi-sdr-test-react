@@ -19,7 +19,7 @@ import SabhiONlineIdentity from './components/Sabhionlineidentity';
 import SecureOnlineIdentity from './components/Secureonlineidentity';
 import Termsandconditions from './components/TermsandCOnditions';
 // importing css files----------------->
-import './styles/App.css';
+import './App.css';
 
 // importing image files---------------->
 import sabhilogo from './images/dark.svg';

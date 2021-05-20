@@ -6,9 +6,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 667px;
     width: 375px;
-    padding-top: 60px;
+    height: 667px;
+        padding-top: 60px;
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 25px;
@@ -209,7 +209,7 @@ margin-bottom: 9px;
     position: absolute;
     left: 0%;
     right: 0%;
-    top: 87.12%;
+    top: 89.12%;
     bottom: 0%;
 }
 

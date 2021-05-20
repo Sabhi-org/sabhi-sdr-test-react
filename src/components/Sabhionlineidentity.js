@@ -9,7 +9,7 @@ export default function Sabhionlineidentity() {
 
 
     return (
-        <div className="cover">
+        <div className="coverin">
 
 
             <Row>

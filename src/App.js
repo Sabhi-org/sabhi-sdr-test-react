@@ -31,16 +31,18 @@ export default function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/' component={SplashScreen} exact />
+        <Route path='/' component={SabhiONlineIdentity} exact />
+        <Route path='/Secureonlineidentity' component={SecureOnlineIdentity} />
+        <Route path='/Termsandcond' component={Termsandconditions} />
+        <Route path='/welcome' component={welcomenewuser} />
+        {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />
         <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
-        <Route path='/user_profile' component={UserProfile} />
-        <Route path='/welcome' component={welcomenewuser} />
-        <Route path='/sabhionlineidentity' component={SabhiONlineIdentity} />
-        <Route path='/Secureonlineidentity' component={SecureOnlineIdentity} />
-        <Route path='/Termsandcond' component={Termsandconditions} />
+        <Route path='/user_profile' component={UserProfile} /> */}
+
+
 
       </Switch>
     </div>

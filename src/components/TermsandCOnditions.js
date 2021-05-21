@@ -2,8 +2,14 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
 import '../styles/termsandc.css';
+import { useHistory } from 'react-router-dom';
 
 export default function TermsandCOnditions() {
+    let history = useHistory();
+    function gotonextscreen() {
+        history.push('/welcome');
+        console.log('clicked');
+    }
     return (
         <div className="screening">
             <div className="containsscreen">
@@ -120,7 +126,7 @@ export default function TermsandCOnditions() {
                         </div>
                     </Col>
                     <Col>
-                        <div className="buttononeinterms" type="primary" shape="round" size='large'>
+                        <div className="buttononeinterms" onClick={gotonextscreen} type="primary" shape="round" size='large'>
                             <p className="buttononefontinterms">Accept</p>
                         </div>
                     </Col>

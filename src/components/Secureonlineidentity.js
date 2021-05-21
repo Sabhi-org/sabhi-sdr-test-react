@@ -1,10 +1,17 @@
 import React from 'react';
 import OnBoardImage from '../images/onboarding.png';
 import { Col, Row, Typography } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 import '../styles/Secureonlineidentity.css';
 
 export default function Secureonlineidentity() {
+    let history = useHistory();
+
+    function gotonextscreen() {
+        history.push('/Termsandcond');
+        console.log('clicked');
+    }
     return (
         <div className="cover">
 
@@ -41,6 +48,8 @@ export default function Secureonlineidentity() {
                 </Col>
             </Row>
 
+
+
             <Row span={24}>
                 <Col offset={2}>
                     <div className="buttontwosecure" type="primary" shape="round" size='large'>
@@ -48,7 +57,7 @@ export default function Secureonlineidentity() {
                     </div>
                 </Col>
                 <Col>
-                    <div className="buttononesecure" type="primary" shape="round" size='large'>
+                    <div className="buttononesecure" onClick={gotonextscreen} type="primary" shape="round" size='large'>
                         <p className="buttononefontsecure">Create Sabhi ID</p>
                     </div>
                 </Col>

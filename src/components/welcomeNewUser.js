@@ -109,15 +109,16 @@ export default function welcomeNewUser() {
             </div>
 
             {/* bottom section of the screen */}
-
+           
             <div className="bottombar">
-                <div className="QRcodecircle"><QrcodeOutlined style={{ fontSize: '37px', color: 'white', marginLeft: '13px', marginTop: '12px' }} /></div>
-                <Row className="bar">
+
+                <Row>
                     <Col span={8}>
                         <ShrinkOutlined style={{ fontSize: '30px', color: '#35568D', marginLeft: '49px', marginTop: '17px' }} />
                         <p className="left">Profile</p>
                     </Col>
                     <Col span={8}>
+                    <div className="QRcodecircle"><QrcodeOutlined style={{ fontSize: '37px', color: 'white', marginLeft: '13px', marginTop: '12px' }} /></div>
                         <p className="center">Scan QR Code</p>
                     </Col>
                     <Col span={8}>

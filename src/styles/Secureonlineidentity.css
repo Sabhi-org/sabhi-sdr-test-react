@@ -102,6 +102,10 @@
     margin-left: 0px;
     
     }
+/* 
+    .buttontwosecure:hover {
+        background-color: #3e8e41;
+    } */
 
     .buttononefontsecure {
 
@@ -112,7 +116,6 @@
         line-height: 132%;
         text-align: center;
         color: #FFFFFF;
-       
         padding-top: 17px;
 
 }

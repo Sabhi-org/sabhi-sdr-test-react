@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from '../images/dark.svg';
 import { Col, Row, Typography } from 'antd';
+import { useHistory } from 'react-router-dom';
 import '../styles/Sabhionlineidentity.css';
 
 export default function Sabhionlineidentity() {
-
+    let history = useHistory();
     const { Text } = Typography;
 
+    useEffect(() => {
+
+        let interval = setTimeout(async () => {
+            history.push('/Secureonlineidentity');
+        }, 3000);
+
+        // willUnmout called
+        return () => {
+            clearInterval(interval);
+        }
+    }, []);
 
     return (
         <div className="coverin">
 
 
             <Row>
-                <img class="Screenlogo" src={Logo} />
+                <img className="Screenlogo" src={Logo} />
             </Row>
 
 

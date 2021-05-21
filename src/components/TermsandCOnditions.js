@@ -111,6 +111,21 @@ export default function TermsandCOnditions() {
                     </div>
                 </Row>
 
+
+
+                <Row span={24}>
+                    <Col>
+                        <div className="buttontwointerms" type="primary" shape="round" size='large'>
+                            <p className="buttontwofontinterms">Decline</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="buttononeinterms" type="primary" shape="round" size='large'>
+                            <p className="buttononefontinterms">Accept</p>
+                        </div>
+                    </Col>
+                </Row>
+
             </div>
         </div>
     );

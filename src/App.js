@@ -18,6 +18,7 @@ import welcomenewuser from './components/welcomeNewUser';
 import SabhiONlineIdentity from './components/Sabhionlineidentity';
 import SecureOnlineIdentity from './components/Secureonlineidentity';
 import Termsandconditions from './components/TermsandCOnditions';
+import Fewmoresteps from './components/fewmoresteps';
 // importing css files----------------->
 import './App.css';
 
@@ -35,6 +36,7 @@ export default function App() {
         <Route path='/Secureonlineidentity' component={SecureOnlineIdentity} />
         <Route path='/Termsandcond' component={Termsandconditions} />
         <Route path='/welcome' component={welcomenewuser} />
+        <Route path='/fewmoresteps' component={Fewmoresteps} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

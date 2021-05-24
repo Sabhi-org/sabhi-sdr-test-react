@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 export default function TermsandCOnditions() {
     let history = useHistory();
     function gotonextscreen() {
-        history.push('/welcome');
+        history.push('/fewmoresteps');
         console.log('clicked');
     }
     return (

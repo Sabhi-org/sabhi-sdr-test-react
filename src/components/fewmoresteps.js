@@ -1,9 +1,20 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import '../styles/fewmore.css';
+import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
 
 export default function Fewmoresteps() {
+    let history = useHistory();
+    function gotomoresteps() {
+
+
+        history.push('/');
+        console.log('clicked');
+
+    }
+
+
     return (
         <div className="screenofmore">
             <div className="containsfewscreen">
@@ -126,7 +137,7 @@ export default function Fewmoresteps() {
 
                 <Row span={24}>
                     <Col span={24}>
-                        <div className="buttontwoinfewmoresteps" type="primary" shape="round" size='large'>
+                        <div className="buttontwoinfewmoresteps" onClick={gotomoresteps} type="primary" shape="round" size='large'>
                             <p className="buttontwofontinfewmoresteps">Continue</p>
                         </div>
                     </Col>

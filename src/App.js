@@ -19,6 +19,7 @@ import SabhiONlineIdentity from './components/Sabhionlineidentity';
 import SecureOnlineIdentity from './components/Secureonlineidentity';
 import Termsandconditions from './components/TermsandCOnditions';
 import Fewmoresteps from './components/fewmoresteps';
+import Verifyyourphone from './components/verifyyourphone';
 // importing css files----------------->
 import './App.css';
 
@@ -37,6 +38,7 @@ export default function App() {
         <Route path='/Termsandcond' component={Termsandconditions} />
         <Route path='/welcome' component={welcomenewuser} />
         <Route path='/fewmoresteps' component={Fewmoresteps} />
+        <Route path='/verifyyourphone' component={Verifyyourphone} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

@@ -5,7 +5,18 @@ import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import Guyimage from '../images/aguy.png';
 
+
 export default function Verifyourphone() {
+    let history = useHistory();
+    function gotophonescreen() {
+
+
+        history.push('/');
+        console.log('clicked');
+
+    }
+
+
     return (
         <div className="coverinverifyyourphone">
 
@@ -67,7 +78,7 @@ export default function Verifyourphone() {
             <Row span={24}>
 
                 <Col span={21} offset={1}>
-                    <div className="buttoninverifyingphone" type="primary" shape="round" size='large'>
+                    <div className="buttoninverifyingphone" onClick={gotophonescreen} type="primary" shape="round" size='large'>
                         <p className="buttononefontverification">Next</p>
                     </div>
                 </Col>

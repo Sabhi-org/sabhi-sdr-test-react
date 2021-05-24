@@ -9,7 +9,7 @@ export default function Fewmoresteps() {
     function gotomoresteps() {
 
 
-        history.push('/');
+        history.push('/verifyyourphone');
         console.log('clicked');
 
     }

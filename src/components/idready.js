@@ -74,7 +74,7 @@ export default function IDready() {
 
 
             <Row span={24}>
-                <Col span={21} offset={1}>
+                <Col span={20} offset={1}>
                     <div className="buttoninidscreen" onClick={gotophonescreen} type="primary" shape="round" size='large'>
                         <p className="buttononforscanning">Start Scanning</p>
                     </div>

@@ -100,7 +100,7 @@ export default function Smsverify() {
 
 
                 <Row span={24}>
-                    <Col span={24}>
+                    <Col span={23}>
                         <div className="smsvendbutton" onClick={tothenext} type="primary" shape="round" size='large'>
                             <p className="confirmsmsv">Confirm</p>
                         </div>

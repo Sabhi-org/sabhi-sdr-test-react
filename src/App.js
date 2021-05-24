@@ -20,6 +20,9 @@ import SecureOnlineIdentity from './components/Secureonlineidentity';
 import Termsandconditions from './components/TermsandCOnditions';
 import Fewmoresteps from './components/fewmoresteps';
 import Verifyyourphone from './components/verifyyourphone';
+import Phonev from './components/phonev';
+import Smsverify from './components/smsverify';
+import Idready from './components/idready';
 // importing css files----------------->
 import './App.css';
 
@@ -39,15 +42,15 @@ export default function App() {
         <Route path='/welcome' component={welcomenewuser} />
         <Route path='/fewmoresteps' component={Fewmoresteps} />
         <Route path='/verifyyourphone' component={Verifyyourphone} />
+        <Route path='/phonev' component={Phonev} />
+        <Route path='/smsverify' component={Smsverify} />
+        <Route path='/idready' component={Idready} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />
         <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} /> */}
-
-
-
       </Switch>
     </div>
   );

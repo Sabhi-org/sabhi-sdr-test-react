@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
+import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, CopyOutlined } from '@ant-design/icons';
 import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import ding3 from '../images/ding3.png';
@@ -59,7 +59,7 @@ export default function IDready() {
 
             <Row span={24}>
                 <Col offset={2}>
-                    <div className="fontthreedesconeinid">your National Identity Card [] will</div>
+                    <div className="fontthreedesconeinid">your <span className="nic">National Identity Card [<CopyOutlined />]</span> will</div>
                     <div className="fontthreedesctwoinid">be scanned from front to back</div>
                     <div className="fontthreedescthreeinid">Please focus it inside the marker.</div>
                 </Col>

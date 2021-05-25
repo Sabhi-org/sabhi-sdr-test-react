@@ -3,12 +3,17 @@ import { Col, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
 import '../styles/termsandc.css';
 import { useHistory } from 'react-router-dom';
+import { Checkbox } from 'antd';
 
 export default function TermsandCOnditions() {
     let history = useHistory();
     function gotonextscreen() {
         history.push('/fewmoresteps');
         console.log('clicked');
+    }
+
+    function onChange(e) {
+        console.log(`checked = ${e.target.checked}`);
     }
     return (
         <div className="screening">
@@ -79,7 +84,8 @@ export default function TermsandCOnditions() {
                                         <p className="termsageverification">Age Verification</p>
                                     </Col>
                                     <Col>
-                                        <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />
+                                        {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
+                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -100,7 +106,8 @@ export default function TermsandCOnditions() {
                                         <p className="termsageverificationtwo">Country Verification</p>
                                     </Col>
                                     <Col>
-                                        <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />
+                                        {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
+                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>

@@ -74,9 +74,13 @@ margin-bottom: 0px;
     background-color: #FFFFFF;
     box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
     border-radius: 16px;
-
+    border-color: #FFFFFF;
     margin-top: 7px;
 }
+
+.buttonthreeinfewmore:hover {
+    border-color: #4DDFBC;
+    }
 
 .blockoneinfewmoreterms {
     width: 24px;

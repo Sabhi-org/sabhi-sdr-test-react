@@ -11,7 +11,7 @@ export default function IDready() {
     function gotophonescreen() {
 
 
-        history.push('/');
+        history.push('/user_profile');
         console.log('clicked');
 
     }

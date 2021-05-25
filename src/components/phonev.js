@@ -80,7 +80,8 @@ export default function Phonev() {
 
                 <Row span={24}>
                     <Col span={24}>
-                        <div className="barinphonev2"></div>
+                        {/* <div className="barinphonev2"></div> */}
+                        <input className="inputs"></input>
                     </Col>
                 </Row>
 

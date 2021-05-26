@@ -1,25 +1,43 @@
-import React from 'react';
-import { Col, Row } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Col, message, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+import { sabhiApiInstance } from '../axios-instance';
 import '../styles/phonev.css';
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 
 
 export default function Phonev() {
     let history = useHistory();
-    function gotosmsscreen() {
+    const [input, setInput] = useState(0);
+
+    // function gotosmsscreen() {
+    //     history.push('/smsverify');
+    //     console.log('clicked');
+    // }
 
 
-        history.push('/smsverify');
-        console.log('clicked');
+    async function handleClick() {
+        try {
+            console.log(input);
+            const response = await sabhiApiInstance.post('otp', { phoneNumber: input });
+            if (response.data.status) {
+                history.push('/smsverify');
+            } else {
+                message.warning('something went wrong please try again!');
+            }
 
+        } catch (error) {
+            message.error(error.message);
+        }
     }
+
     return (
         <div className="phonevscreen">
             <div className="containsphonev">
-
-
-
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
@@ -34,10 +52,6 @@ export default function Phonev() {
                         <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col>
                         <div className="phinevtitleone">
@@ -48,9 +62,6 @@ export default function Phonev() {
                         </div>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={15}>
                         <div className="insidephonev"></div>
@@ -59,8 +70,6 @@ export default function Phonev() {
                         <div className="barinphonev"></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <div className="containsphinevtext">
                         <p className="inphonevtextpara">Please enter your primary phone</p>
@@ -68,35 +77,27 @@ export default function Phonev() {
                         <p className="inphonevtextpara">sent to you.</p>
                     </div>
                 </Row>
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinphonev">Primary phone Number</small>
                     </Col>
                 </Row>
-
-
                 <Row span={24}>
                     <Col span={24}>
-                        {/* <div className="barinphonev2"></div> */}
-                        <input className="inputs"></input>
+                        {/* <input type="number" pattern="[0-9]*" className="inputs" onChange={handleChange}></input> */}
+                        <PhoneInput
+                            country={'pk'}
+                            onChange={phone => setInput(phone)}
+                        />
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={24}>
-                        <div className="buttonattheendofphonev" onClick={gotosmsscreen} type="primary" shape="round" size='large'>
+                        <div className="buttonattheendofphonev" onClick={handleClick} type="primary" shape="round" size='large'>
                             <p className="continuefromphoinv">Continue</p>
                         </div>
                     </Col>
                 </Row>
-
-
-
             </div>
         </div>
     );

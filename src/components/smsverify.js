@@ -1,10 +1,12 @@
-import React from 'react'; import { Col, Row } from 'antd';
+import React from 'react'; 
+import { Col, Row, Statistic } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 import '../styles/smsverify.css';
 
 export default function Smsverify() {
     let history = useHistory();
+    const { Countdown } = Statistic;
     function tothenext() {
 
 
@@ -12,6 +14,13 @@ export default function Smsverify() {
         console.log('clicked');
 
     }
+
+
+function onChange(val) {
+    if (4.95 * 1000 < val && val < 5 * 1000) {
+      console.log('changed!');
+    }
+  }
 
     const numOfFields = 4;
 
@@ -114,7 +123,7 @@ export default function Smsverify() {
                             <p className="resendsms">Resend Code</p>
                         </Col>
                         <Col span={9} offset={7}>
-                            <p className="resendsmstwo">Wait 05:00 mins</p>
+                            <p className="resendsmstwo"><Countdown title="" value={Date.now() + 10 * 1000 * 12} onChange={onChange} /></p>
                         </Col>
 
                     </Col>

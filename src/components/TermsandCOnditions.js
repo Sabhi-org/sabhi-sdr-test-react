@@ -10,6 +10,9 @@ export default function TermsandCOnditions() {
 
     let history = useHistory();
 
+    const [age, setAge] = useState();
+    const [country, setCountry] = useState();
+
     function acceptTermsAndConditions() {
         if (!age || !country) message.info('please accept terms and condition');
         else history.push('/fewmoresteps');
@@ -98,7 +101,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChangeAgeCheckBox} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -120,7 +123,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChangeCountryCheckBox} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -146,7 +149,7 @@ export default function TermsandCOnditions() {
                         </div>
                     </Col>
                     <Col>
-                        <div className="buttononeinterms" onClick={gotonextscreen} shape="round" size='large'>
+                        <div className="buttononeinterms" onClick={acceptTermsAndConditions} shape="round" size='large'>
                             <p className="buttononefontinterms">Accept</p>
                         </div>
                     </Col>

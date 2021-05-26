@@ -15,7 +15,7 @@ import OnBoardScreen from './components/OnBoardScreen';
 import IdentityCardFrontScan from './components/IdentityCardFrontScan';
 import IdentityCardBackScan from './components/IdentityCardBackScan';
 import welcomenewuser from './components/welcomeNewUser';
-import SabhiONlineIdentity from './components/Sabhionlineidentity';
+import SabhiONlineIdentity from './components/Sabhi_onlineidentity_screen01';
 import SecureOnlineIdentity from './components/Secureonlineidentity';
 import Termsandconditions from './components/TermsandCOnditions';
 import Fewmoresteps from './components/fewmoresteps';

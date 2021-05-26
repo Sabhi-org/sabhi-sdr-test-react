@@ -10,22 +10,22 @@ export default function TermsandCOnditions() {
 
     let history = useHistory();
 
-    function acceptTermsAndConditions() {
-        if (!age || !country) message.info('please accept terms and condition');
-        else history.push('/fewmoresteps');
-    }
+    // function acceptTermsAndConditions() {
+    //     if (!age || !country) message.info('please accept terms and condition');
+    //     else history.push('/fewmoresteps');
+    // }
 
     function declineTermsAndCondition() {
         history.push('/');
     }
 
-    function onChangeAgeCheckBox(e) {
-        setAge(e.target.checked);
-    }
+    // function onChangeAgeCheckBox(e) {
+    //     setAge(e.target.checked);
+    // }
 
-    function onChangeCountryCheckBox(e) {
-        setCountry(e.target.checked);
-    }
+    // function onChangeCountryCheckBox(e) {
+    //     setCountry(e.target.checked);
+    // }
 
 
     return (
@@ -98,7 +98,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -120,7 +120,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -146,7 +146,7 @@ export default function TermsandCOnditions() {
                         </div>
                     </Col>
                     <Col>
-                        <div className="buttononeinterms" onClick={gotonextscreen} shape="round" size='large'>
+                        <div className="buttononeinterms" shape="round" size='large'>
                             <p className="buttononefontinterms">Accept</p>
                         </div>
                     </Col>

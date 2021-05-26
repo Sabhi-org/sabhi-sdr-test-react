@@ -43,19 +43,16 @@ export default function Secureonlineidentity() {
                         <img className="largelogo" src={OnBoardImage} />
                     </Col>
                 </Row>
-
                 <Row span={24}>
                     <Col span={6} offset={2}>
                         <div className="fontonesecure">Secure</div>
                     </Col>
                 </Row>
-
                 <Row span={24}>
                     <Col span={19} offset={2}>
                         <div className="fonttwoidentity">Online Identity</div>
                     </Col>
                 </Row>
-
                 <Row span={24}>
                     <Col offset={2}>
                         <div className="fontthreedescone">Your online buisness identity, secure</div>
@@ -63,31 +60,24 @@ export default function Secureonlineidentity() {
                         <div className="fontthreedescthree">a Sabhi 3rd party service.</div>
                     </Col>
                 </Row>
-
                 <Row span={24}>
                     <Col offset={2}>
                         <div className="fontfourverify">View privacy policy</div>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
-
                     <div className="sticktobottom">
                         <Row span={24}>
-
-                        
-                        <Col offset={2}>
-                            <div className="buttontwosecure" type="primary" shape="round" size='large' onClick={recoverIdentity}>
-                                <p className="buttontwofontsecure">Recover</p>
-                            </div>
-                        </Col>
-                        <Col>
-                            <div className="buttononesecure" onClick={createIdentity} type="primary" shape="round" size='large'>
-                                <p className="buttononefontsecure">Create Sabhi ID</p>
-                            </div>
-                        </Col>
+                            <Col offset={2}>
+                                <div className="buttontwosecure" type="primary" shape="round" size='large' onClick={recoverIdentity}>
+                                    <p className="buttontwofontsecure">Recover</p>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="buttononesecure" onClick={createIdentity} type="primary" shape="round" size='large'>
+                                    <p className="buttononefontsecure">Create Sabhi ID</p>
+                                </div>
+                            </Col>
                         </Row>
                     </div>
                 </Row>

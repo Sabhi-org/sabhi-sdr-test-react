@@ -22,32 +22,23 @@ export default function Sabhionlineidentity() {
 
     return (
         <div className="coverin">
-
-
             <Row span={24}>
                 <Col span={8} offset={8}>
                     <div className="containsthelogo">
                         <img className="Screenlogo" src={Logo} />
                     </div>
-
                 </Col>
             </Row>
-
-
             <Row span={24}>
                 <Col span={5} offset={10}>
                     <div className="fontoneinfirstscreen">Sabhi</div>
                 </Col>
             </Row>
-
-
-
             <Row span={24}>
                 <Col span={14} offset={5}>
                     <div className="fonttwoinfirstscreen">Online Identity</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col span={18} offset={5}>
                     <div className="itcontainscopyright">
@@ -58,13 +49,10 @@ export default function Sabhionlineidentity() {
                     </div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col>
-
                 </Col>
             </Row>
-
         </div>
     );
 }

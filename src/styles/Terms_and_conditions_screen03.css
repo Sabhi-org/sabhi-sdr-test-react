@@ -1,11 +1,18 @@
+.screening {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
 
 .containsscreen {
     background:#F5F9FF;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 667px;
-    width: 375px;
+    height: 100vh;
+    width: 100vw;
     padding-top: 47px;
     padding-left:28px;
     padding-right:28px;
@@ -225,6 +232,11 @@ margin-bottom: 0px;
         line-height: 132%;
         text-align: center;
         color: #FFFFFF;
-       
         padding-top: 17px;
+}
+
+.stickybottom {
+    width: 100%;
+    position: fixed;
+    bottom: 2%;
 }

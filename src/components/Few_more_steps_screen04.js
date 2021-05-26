@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import '../styles/fewmore.css';
+import '../styles/Few_more_steps_screen04.css';
 import { useHistory } from 'react-router-dom';
-import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
+import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, BorderOutlined } from '@ant-design/icons';
 
 export default function Fewmoresteps() {
     let history = useHistory();
@@ -18,9 +18,6 @@ export default function Fewmoresteps() {
     return (
         <div className="screenofmore">
             <div className="containsfewscreen">
-
-
-
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
@@ -35,10 +32,6 @@ export default function Fewmoresteps() {
                         <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col>
                         <div className="fewtermstitleone">
@@ -49,9 +42,6 @@ export default function Fewmoresteps() {
                         </div>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={7}>
                         <div className="morestepsbarsmallbit"></div>
@@ -60,8 +50,6 @@ export default function Fewmoresteps() {
                         <div className="morestepsbar"></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <div className="containsfewmoretermstext">
                         <p className="fewmorestepstextpara">Follow through the steps to setup your</p>
@@ -69,8 +57,6 @@ export default function Fewmoresteps() {
                         <p className="fewmorestepstextpara">the following</p>
                     </div>
                 </Row>
-
-
                 <Col span={24}>
                     <Row>
                         <div className="buttonthreeinfewmore" type="primary" shape="round" size='large'>
@@ -90,9 +76,6 @@ export default function Fewmoresteps() {
                             </Col>
                         </div>
                     </Row>
-
-
-
                     <Row>
                         <div className="buttonfourinfewmoresteps" type="primary" shape="round" size='large'>
                             <Col span={24}>
@@ -111,8 +94,6 @@ export default function Fewmoresteps() {
                             </Col>
                         </div>
                     </Row>
-
-
                     <Row>
                         <div className="buttonfourinfewmoresteps" type="primary" shape="round" size='large'>
                             <Col span={24}>
@@ -132,19 +113,15 @@ export default function Fewmoresteps() {
                         </div>
                     </Row>
                 </Col>
-
-
-
                 <Row span={24}>
-                    <Col span={24}>
-                        <div className="buttontwoinfewmoresteps" onClick={gotomoresteps} type="primary" shape="round" size='large'>
-                            <p className="buttontwofontinfewmoresteps">Continue</p>
-                        </div>
-                    </Col>
+                    <div className="sticktobottomposition">
+                        <Col span={21}>
+                            <div className="buttontwoinfewmoresteps" onClick={gotomoresteps} type="primary" shape="round" size='large'>
+                                <p className="buttontwofontinfewmoresteps">Continue</p>
+                            </div>
+                        </Col>
+                    </div>
                 </Row>
-
-
-
             </div>
         </div>
     );

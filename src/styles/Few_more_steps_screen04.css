@@ -3,8 +3,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 667px;
-    width: 375px;
+    height: 100vh;
+    width: 100vw;
     padding-top: 47px;
     padding-left:28px;
     padding-right:28px;
@@ -181,4 +181,10 @@ margin-bottom: 0px;
         padding-top: 17px;
         
     padding-left: 123px;
+}
+
+.sticktobottomposition {
+    width: 100%;
+    position: fixed;
+    bottom: 2%;
 }

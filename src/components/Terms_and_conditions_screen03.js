@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Col, message, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
-import '../styles/termsandc.css';
+import '../styles/Terms_and_conditions_screen03.css';
 import { useHistory } from 'react-router-dom';
 import { Checkbox } from 'antd';
 
@@ -29,11 +29,8 @@ export default function TermsandCOnditions() {
 
 
     return (
-        <div className="screening">
-            <div className="containsscreen">
-
-
-
+        <div className="containsscreen">
+            <Col span={24}>
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
@@ -48,10 +45,6 @@ export default function TermsandCOnditions() {
                         <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col>
                         <div className="termstitleone">
@@ -62,9 +55,6 @@ export default function TermsandCOnditions() {
                         </div>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={1}>
                         <div className="barsmallbit"></div>
@@ -73,8 +63,6 @@ export default function TermsandCOnditions() {
                         <div className="bar"></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <div className="containstermstext">
                         <p className="termstextpara">when you apply to this application,</p>
@@ -82,8 +70,6 @@ export default function TermsandCOnditions() {
                         <p className="termstextpara">terms and condition</p>
                     </div>
                 </Row>
-
-
                 <Col span={24}>
                     <Row>
                         <div className="buttonthreeinterms" type="primary" shape="round" size='large'>
@@ -104,9 +90,6 @@ export default function TermsandCOnditions() {
                             </Col>
                         </div>
                     </Row>
-
-
-
                     <Row>
                         <div className="buttonfourinterms" type="primary" shape="round" size='large'>
                             <Col span={24}>
@@ -127,7 +110,6 @@ export default function TermsandCOnditions() {
                         </div>
                     </Row>
                 </Col>
-
                 <Row>
                     <div className="containstermstext">
                         <p className="termstextpara"><small><b>terms and Conditions</b></small></p>
@@ -136,23 +118,23 @@ export default function TermsandCOnditions() {
                         <p className="termstextpara">sed do eiusmod tempor incididunt</p>
                     </div>
                 </Row>
-
-
-
                 <Row span={24}>
-                    <Col>
-                        <div className="buttontwointerms" type="primary" shape="round" size='large' onClick={declineTermsAndCondition}>
-                            <p className="buttontwofontinterms">Decline</p>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div className="buttononeinterms" shape="round" size='large'>
-                            <p className="buttononefontinterms">Accept</p>
-                        </div>
-                    </Col>
+                    <div className="stickybottom">
+                        <Row span={24}>
+                            <Col>
+                                <div className="buttontwointerms" type="primary" shape="round" size='large' onClick={declineTermsAndCondition}>
+                                    <p className="buttontwofontinterms">Decline</p>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="buttononeinterms" shape="round" size='large'>
+                                    <p className="buttononefontinterms">Accept</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
                 </Row>
-
-            </div>
+            </Col>
         </div>
     );
 }

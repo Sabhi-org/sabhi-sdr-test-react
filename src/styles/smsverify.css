@@ -138,3 +138,18 @@ padding-left: 123px;
     
     margin-bottom: 0px;
 }
+
+.inputsinsms {
+    border:none;
+    /* border-bottom: 3px solid #35568D; */
+    padding: 5px 10px;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 40px;
+    font-size: 22px;
+    color: #35568D;
+    padding-top: 15px;
+    text-align: center;
+
+}

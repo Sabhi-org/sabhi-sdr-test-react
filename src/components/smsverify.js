@@ -12,6 +12,29 @@ export default function Smsverify() {
         console.log('clicked');
 
     }
+
+    const numOfFields = 4;
+
+    const handleChange = e => {
+        const { maxLength, value, name } = e.target;
+        const [fieldName, fieldIndex] = name.split("-");
+
+        // Check if they hit the max character length
+        if (value.length >= maxLength) {
+            // Check if it's not the last input field
+            if (parseInt(fieldIndex, 10) < 4) {
+                // Get the next input field
+                const nextSibling = document.querySelector(
+                    `input[name=ssn-${parseInt(fieldIndex, 10) + 1}]`
+                );
+
+                // If found, focus the next field
+                if (nextSibling !== null) {
+                    nextSibling.focus();
+                }
+            }
+        }
+    }
     return (
         <div className="smsvscreen">
             <div className="containssms">
@@ -71,16 +94,16 @@ export default function Smsverify() {
 
                 <Row>
                     <Col span={4} offset={2}>
-                        <div className="smscodecontainer"></div>
+                        <div className="smscodecontainer"> <input className="inputsinsms" maxlength="1" type="text" name="ssn-1" onChange={handleChange}></input></div>
                     </Col >
                     <Col span={4} offset={1}>
-                        <div className="smscodecontainer"></div>
+                        <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-2" onChange={handleChange}></input></div>
                     </Col>
                     <Col span={4} offset={1}>
-                        <div className="smscodecontainer"></div>
+                        <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-3" onChange={handleChange}></input></div>
                     </Col>
                     <Col span={4} offset={1}>
-                        <div className="smscodecontainer"></div>
+                        <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-4" onChange={handleChange}></input></div>
                     </Col>
                 </Row>
 

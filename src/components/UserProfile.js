@@ -111,17 +111,17 @@ export default function UserProfile() {
 
 
     return (
-        <div className="background">
+        <div className="formsowncontainer">
             {/* <Space size="large"> */}
-
+{/* 
             <Form
                 style={{ marginTop: "18px", paddingLeft: "25px", paddingRight: "33px" }}
                 layout="horizontal"
                 form={form}
                 name="basic"
-            >
+            > */}
                 {/* <Spin spinning={isLoading}> */}
-                <Avatar
+                {/* <Avatar
                     style={{ marginTop: "10px", marginLeft: "85px" }}
                     src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                     size={160}
@@ -180,10 +180,10 @@ export default function UserProfile() {
                     <Button type="primary" shape="round" style={btnStyle} size='large'>
                         Submit Form
                     </Button>
-                </Form.Item>
+                </Form.Item> */}
 
                 {/* </Spin> */}
-            </Form>
+            {/* </Form> */}
             {/* <Row>
                 Verified By: XYZ
                     </Row> */}

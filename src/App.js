@@ -19,10 +19,10 @@ import SabhiONlineIdentity from './components/Sabhi_onlineidentity_screen01';
 import SecureOnlineIdentity from './components/Secure_onlineidentity_screen02';
 import Termsandconditions from './components/Terms_and_conditions_screen03';
 import Fewmoresteps from './components/Few_more_steps_screen04';
-import Verifyyourphone from './components/verifyyourphone';
-import Phonev from './components/phonev';
-import Smsverify from './components/smsverify';
-import Idready from './components/idready';
+import Verifyyourphone from './components/Verify_your_phone_screen05';
+import Phonev from './components/Phone_verification_screen06';
+import Smsverify from './components/SMS_verification_screen07';
+import Idready from './components/ID_ready_for_scan_screen08';
 // importing css files----------------->
 import './App.css';
 

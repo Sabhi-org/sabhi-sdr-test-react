@@ -1,7 +1,7 @@
 import React from 'react'; import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
-import '../styles/smsverify.css';
+import '../styles/SMS_verification_screen07.css';
 
 export default function Smsverify() {
     let history = useHistory();
@@ -38,9 +38,6 @@ export default function Smsverify() {
     return (
         <div className="smsvscreen">
             <div className="containssms">
-
-
-
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
@@ -55,10 +52,6 @@ export default function Smsverify() {
                         <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col>
                         <div className="smsvtitleone">
@@ -69,9 +62,6 @@ export default function Smsverify() {
                         </div>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={15}>
                         <div className="insidesmsv"></div>
@@ -80,8 +70,6 @@ export default function Smsverify() {
                         <div className="barinsmsv"></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <div className="containssmsv">
                         <p className="smstextpara">A code has been sent to your primary</p>
@@ -89,9 +77,6 @@ export default function Smsverify() {
                         <p className="smstextpara">your number.</p>
                     </div>
                 </Row>
-
-
-
                 <Row>
                     <Col span={4} offset={2}>
                         <div className="smscodecontainer"> <input className="inputsinsms" maxlength="1" type="text" name="ssn-1" onChange={handleChange}></input></div>
@@ -106,8 +91,6 @@ export default function Smsverify() {
                         <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-4" onChange={handleChange}></input></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <Col span={24}>
                         <Col span={9} offset={8}>
@@ -116,22 +99,17 @@ export default function Smsverify() {
                         <Col span={9} offset={7}>
                             <p className="resendsmstwo">Wait 05:00 mins</p>
                         </Col>
-
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
-                    <Col span={23}>
-                        <div className="smsvendbutton" onClick={tothenext} type="primary" shape="round" size='large'>
-                            <p className="confirmsmsv">Confirm</p>
-                        </div>
-                    </Col>
+                    <div className="downed">
+                        <Col span={21}>
+                            <div className="smsvendbutton" onClick={tothenext} type="primary" shape="round" size='large'>
+                                <p className="confirmsmsv">Confirm</p>
+                            </div>
+                        </Col>
+                    </div>
                 </Row>
-
-
-
             </div>
         </div>
     );

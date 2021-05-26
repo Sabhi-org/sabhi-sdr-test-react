@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
-import '../styles/phonev.css';
+import '../styles/Phone_verification_screen06.css';
 
 
 export default function Phonev() {
@@ -17,9 +17,6 @@ export default function Phonev() {
     return (
         <div className="phonevscreen">
             <div className="containsphonev">
-
-
-
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
@@ -34,10 +31,6 @@ export default function Phonev() {
                         <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col>
                         <div className="phinevtitleone">
@@ -48,9 +41,6 @@ export default function Phonev() {
                         </div>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={15}>
                         <div className="insidephonev"></div>
@@ -59,8 +49,6 @@ export default function Phonev() {
                         <div className="barinphonev"></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <div className="containsphinevtext">
                         <p className="inphonevtextpara">Please enter your primary phone</p>
@@ -68,35 +56,26 @@ export default function Phonev() {
                         <p className="inphonevtextpara">sent to you.</p>
                     </div>
                 </Row>
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinphonev">Primary phone Number</small>
                     </Col>
                 </Row>
-
-
                 <Row span={24}>
                     <Col span={24}>
                         {/* <div className="barinphonev2"></div> */}
                         <input className="inputs"></input>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
-                    <Col span={24}>
-                        <div className="buttonattheendofphonev" onClick={gotosmsscreen} type="primary" shape="round" size='large'>
-                            <p className="continuefromphoinv">Continue</p>
-                        </div>
-                    </Col>
+                    <div className="imgoingtostick">
+                        <Col span={21}>
+                            <div className="buttonattheendofphonev" onClick={gotosmsscreen} type="primary" shape="round" size='large'>
+                                <p className="continuefromphoinv">Continue</p>
+                            </div>
+                        </Col>
+                    </div>
                 </Row>
-
-
-
             </div>
         </div>
     );

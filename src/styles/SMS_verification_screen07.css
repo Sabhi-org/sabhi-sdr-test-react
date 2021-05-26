@@ -1,16 +1,33 @@
-.containsphonev{
+.smscodecontainer {
+    width: 55px;
+    height: 55px;
+    
+    border-radius: 15px;
+    background: white;
+    border: 2px solid #35568D;
+}
+
+.containssms {
     background:#F5F9FF;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 667px;
-    width: 375px;
+    height: 100vh;
+    width: 100vw;
     padding-top: 47px;
     padding-left:28px;
     padding-right:28px;
 }
+.tinytextsmsv {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 132%;
+color: #95A7C6;
+}
 
-.phinevtitleone {
+.smsvtitleone {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 font-style: normal;
 font-weight: 278;
@@ -22,11 +39,12 @@ margin-bottom: 0px;
 margin-top: 16px;
 }
 
-.phinevtext {
-    margin-bottom: 0px;
+.smsvtext {
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 
-.verifyphinescreentitletwo {
+.smsvscreentitletwo {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 445;
@@ -35,24 +53,29 @@ margin-top: 16px;
     color: #35568D;
 }
 
-.phonescreenv {
+.smsvscreenv {
     margin-bottom: 20px;
 }
 
-.insidephonev {
+.insidesmsv {
     width: 100%;
     height: 4px;
     background-color: #4DDFBC;
 }
 
+.barinsmsv {
+     
+    width: 100%;
+    height: 4px;
+    background-color: #35568D;
+}
 
-
-.containsphinevtext {
+.containssmsv {
     margin-top: 14px;
     margin-bottom: 14px;
 }
 
-.inphonevtextpara {
+.smstextpara {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -63,10 +86,12 @@ margin-top: 16px;
     margin-bottom: 0px;
 }
 
-.buttonattheendofphonev {
+.smsvendbutton {
     width: 100%;
    
-    margin-top: 236px;
+   
+    margin-top: 152px;
+
 
 
     height: 56px;
@@ -74,10 +99,9 @@ margin-top: 16px;
     background-color: #4DDFBC;
     box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
     border-radius: 16px;
-    
 }
 
-.continuefromphoinv {
+.confirmsmsv {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -90,29 +114,34 @@ margin-top: 16px;
 padding-left: 123px;
 }
 
-.barinphonev2 {
+.resendsms {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #4DDFBC;
+    text-decoration: underline;
+    margin-bottom: 0px;
+
+    margin-top: 44px;
+
+}
+
+.resendsmstwo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #95A7C6;
     
-    margin-top: 45px;
-
-    width: 100%;
-    height: 4px;
-    background-color: #35568D;
+    margin-bottom: 0px;
 }
 
-
-
-.tinytextinphonev {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 132%;
-color: #95A7C6;
-}
-
-.inputs {
+.inputsinsms {
     border:none;
-    border-bottom: 3px solid #35568D;
+    /* border-bottom: 3px solid #35568D; */
     padding: 5px 10px;
     outline: none;
     background: none;
@@ -120,13 +149,13 @@ color: #95A7C6;
     height: 40px;
     font-size: 22px;
     color: #35568D;
+    padding-top: 15px;
+    text-align: center;
 
 }
 
-
-.barinphonev {
-    
+.downed {
     width: 100%;
-    height: 4px;
-    background-color: #35568D;
+    position: fixed;
+    bottom: 4%;
 }

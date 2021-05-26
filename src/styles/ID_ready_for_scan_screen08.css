@@ -1,15 +1,23 @@
-.coverinverifyyourphone {
-    height: 667px;
-    width: 375px;
+.abovespacinginID {
+    margin-top: 47px;
 }
 
-.largelogoverifyphone {
+.tinytextinid {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 132%;
+color: #FFFFFF;
+}
+
+.largeid {
     width: 300px;
     height: 300px;
     margin-top: 5px;
 }
 
-.fontonesecureinphone {
+.fontoneid {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -18,7 +26,7 @@
     color: #FFFFFF;
 }
 
-.fonttwoidentityinverify {
+.fonttwoinid {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 430;
@@ -26,10 +34,9 @@
     line-height: 132%;
     color: #4DDFBC;
     margin-bottom: 7px;
-
 }
 
-.fontthreedesconeinverify {
+.fontthreedesconeinid {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -38,7 +45,7 @@
     color: #FFFFFF;
 }
 
-.fontthreedesctwoinverify {
+.fontthreedesctwoinid {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -47,7 +54,7 @@
     color: #FFFFFF;
 }
 
-.fontthreedescthreeinverify {
+.fontthreedescthreeinid {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -56,7 +63,7 @@
     color: #FFFFFF;
 }
 
-.fontfourverifyinverifyphone {
+.fontfourveriid {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -64,32 +71,10 @@
     line-height: 132%;
     color: #4DDFBC;
     margin-top: 17px;
-    margin-bottom: 16px;
+    margin-bottom: 13px;
 }
 
-.buttontwosecureinverifyphone {
-    width: 108px;
-    height: 53px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
-    border-radius: 16px;
-    margin-left: 0px;
-}
-
-.buttonphoneverification {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 132%;
-    color: #35568D;
-    margin-bottom: 0px;
-    padding-top: 17px;
-    padding-left: 24px;
-}
-
-.buttoninverifyingphone {
-
+.buttoninidscreen {
     width: 100%;
     height: 53px;
     background-color: #4DDFBC;
@@ -99,7 +84,7 @@
     margin-left: 9px;
 }
 
-.buttononefontverification {
+.buttononforscanning {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -110,15 +95,17 @@
     padding-top: 17px;
 }
 
-.tinytextinverification {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 132%;
-color: #FFFFFF;
+.nic{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #4DDFBC;
 }
 
-.abovespacing {
-    margin-top: 47px;
+.stkme {
+    width: 100%;
+    position: fixed;
+    bottom: 4%;
 }

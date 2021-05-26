@@ -1,23 +1,15 @@
-.abovespacinginID {
-    margin-top: 47px;
+.coverinverifyyourphone {
+    height: 100vh;
+    width: 100vw;
 }
 
-.tinytextinid {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 132%;
-color: #FFFFFF;
-}
-
-.largeid {
+.largelogoverifyphone {
     width: 300px;
     height: 300px;
     margin-top: 5px;
 }
 
-.fontoneid {
+.fontonesecureinphone {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -26,7 +18,7 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.fonttwoinid {
+.fonttwoidentityinverify {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 430;
@@ -34,9 +26,10 @@ color: #FFFFFF;
     line-height: 132%;
     color: #4DDFBC;
     margin-bottom: 7px;
+
 }
 
-.fontthreedesconeinid {
+.fontthreedesconeinverify {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -45,7 +38,7 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.fontthreedesctwoinid {
+.fontthreedesctwoinverify {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -54,7 +47,7 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.fontthreedescthreeinid {
+.fontthreedescthreeinverify {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -63,7 +56,7 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.fontfourveriid {
+.fontfourverifyinverifyphone {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -71,10 +64,32 @@ color: #FFFFFF;
     line-height: 132%;
     color: #4DDFBC;
     margin-top: 17px;
-    margin-bottom: 13px;
+    margin-bottom: 16px;
 }
 
-.buttoninidscreen {
+.buttontwosecureinverifyphone {
+    width: 108px;
+    height: 53px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    margin-left: 0px;
+}
+
+.buttonphoneverification {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #35568D;
+    margin-bottom: 0px;
+    padding-top: 17px;
+    padding-left: 24px;
+}
+
+.buttoninverifyingphone {
+
     width: 100%;
     height: 53px;
     background-color: #4DDFBC;
@@ -84,7 +99,7 @@ color: #FFFFFF;
     margin-left: 9px;
 }
 
-.buttononforscanning {
+.buttononefontverification {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -95,11 +110,21 @@ color: #FFFFFF;
     padding-top: 17px;
 }
 
-.nic{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 132%;
-    color: #4DDFBC;
+.tinytextinverification {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 132%;
+color: #FFFFFF;
+}
+
+.abovespacing {
+    margin-top: 47px;
+}
+
+.sticked {
+    width: 100%;
+    position: fixed;
+    bottom: 4%;
 }

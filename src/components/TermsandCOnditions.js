@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Row } from 'antd';
+import React, { useState } from 'react';
+import { Col, message, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
 import '../styles/termsandc.css';
 import { useHistory } from 'react-router-dom';
@@ -8,16 +8,26 @@ import { Checkbox } from 'antd';
 export default function TermsandCOnditions() {
 
 
-
     let history = useHistory();
-    function gotonextscreen() {
-        history.push('/fewmoresteps');
-        console.log('clicked');
+
+    function acceptTermsAndConditions() {
+        if (!age || !country) message.info('please accept terms and condition');
+        else history.push('/fewmoresteps');
     }
 
-    function onChange(e) {
-        console.log(`checked = ${e.target.checked}`);
+    function declineTermsAndCondition() {
+        history.push('/');
     }
+
+    function onChangeAgeCheckBox(e) {
+        setAge(e.target.checked);
+    }
+
+    function onChangeCountryCheckBox(e) {
+        setCountry(e.target.checked);
+    }
+
+
     return (
         <div className="screening">
             <div className="containsscreen">
@@ -131,7 +141,7 @@ export default function TermsandCOnditions() {
 
                 <Row span={24}>
                     <Col>
-                        <div className="buttontwointerms" type="primary" shape="round" size='large'>
+                        <div className="buttontwointerms" type="primary" shape="round" size='large' onClick={declineTermsAndCondition}>
                             <p className="buttontwofontinterms">Decline</p>
                         </div>
                     </Col>

@@ -7,8 +7,6 @@ import { Checkbox } from 'antd';
 
 export default function TermsandCOnditions() {
 
-    const [age, setAge] = useState(false);
-    const [country, setCountry] = useState(false);
 
     let history = useHistory();
 
@@ -100,7 +98,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChangeAgeCheckBox} style={{ fontSize: '22px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -122,7 +120,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChangeCountryCheckBox} style={{ fontSize: '22px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChange} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -148,7 +146,7 @@ export default function TermsandCOnditions() {
                         </div>
                     </Col>
                     <Col>
-                        <div className="buttononeinterms" onClick={acceptTermsAndConditions} type="primary" shape="round" size='large'>
+                        <div className="buttononeinterms" onClick={gotonextscreen} shape="round" size='large'>
                             <p className="buttononefontinterms">Accept</p>
                         </div>
                     </Col>

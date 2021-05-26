@@ -45,12 +45,7 @@ margin-top: 16px;
     background-color: #4DDFBC;
 }
 
-.barinphonev {
-    
-    width: 100%;
-    height: 4px;
-    background-color: #35568D;
-}
+
 
 .containsphinevtext {
     margin-top: 14px;
@@ -113,4 +108,25 @@ font-weight: 500;
 font-size: 16px;
 line-height: 132%;
 color: #95A7C6;
+}
+
+.inputs {
+    border:none;
+    border-bottom: 3px solid #35568D;
+    padding: 5px 10px;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 40px;
+    font-size: 22px;
+    color: #35568D;
+
+}
+
+
+.barinphonev {
+    
+    width: 100%;
+    height: 4px;
+    background-color: #35568D;
 }

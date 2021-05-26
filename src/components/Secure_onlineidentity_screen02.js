@@ -3,7 +3,7 @@ import OnBoardImage from '../images/onboarding.png';
 import { Col, Row, message, Spin } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { apiInstance } from '../axios-instance';
-import '../styles/Secureonlineidentity.css';
+import '../styles/Secure_onlineidentity_screen02.css';
 
 export default function Secureonlineidentity() {
 
@@ -73,16 +73,23 @@ export default function Secureonlineidentity() {
 
 
                 <Row span={24}>
-                    <Col offset={2}>
-                        <div className="buttontwosecure" type="primary" shape="round" size='large' onClick={recoverIdentity}>
-                            <p className="buttontwofontsecure">Recover</p>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div className="buttononesecure" onClick={createIdentity} type="primary" shape="round" size='large'>
-                            <p className="buttononefontsecure">Create Sabhi ID</p>
-                        </div>
-                    </Col>
+
+                    <div className="sticktobottom">
+                        <Row span={24}>
+
+                        
+                        <Col offset={2}>
+                            <div className="buttontwosecure" type="primary" shape="round" size='large' onClick={recoverIdentity}>
+                                <p className="buttontwofontsecure">Recover</p>
+                            </div>
+                        </Col>
+                        <Col>
+                            <div className="buttononesecure" onClick={createIdentity} type="primary" shape="round" size='large'>
+                                <p className="buttononefontsecure">Create Sabhi ID</p>
+                            </div>
+                        </Col>
+                        </Row>
+                    </div>
                 </Row>
             </div>
         </Spin>

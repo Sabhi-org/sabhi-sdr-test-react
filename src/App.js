@@ -16,7 +16,7 @@ import IdentityCardFrontScan from './components/IdentityCardFrontScan';
 import IdentityCardBackScan from './components/IdentityCardBackScan';
 import welcomenewuser from './components/welcomeNewUser';
 import SabhiONlineIdentity from './components/Sabhi_onlineidentity_screen01';
-import SecureOnlineIdentity from './components/Secureonlineidentity';
+import SecureOnlineIdentity from './components/Secure_onlineidentity_screen02';
 import Termsandconditions from './components/TermsandCOnditions';
 import Fewmoresteps from './components/fewmoresteps';
 import Verifyyourphone from './components/verifyyourphone';
@@ -48,7 +48,7 @@ export default function App() {
         <Route path='/ocr_front' component={IdentityCardFrontScan} />
         <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
-        <Route path='/user_profile' component={UserProfile} /> 
+        <Route path='/user_profile' component={UserProfile} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

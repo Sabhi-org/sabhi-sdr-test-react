@@ -21,6 +21,7 @@ import Phonev from './components/Phone_verification_screen06';
 import Smsverify from './components/SMS_verification_screen07';
 import Idready from './components/ID_ready_for_scan_screen08';
 import frontpic from './components/Take_front_picture_screen09';
+import backpic from './components/Take_back_picture_screen10';
 
 
 
@@ -51,6 +52,7 @@ export default function App() {
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
         <Route path='/frontpic' component={frontpic} />
+        <Route path='/backpic' component={backpic} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

@@ -1,19 +1,18 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import '../styles/Take_front_picture_screen09.css';
+import '../styles/Take_back_picture_screen10.css';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 
-
-export default function Takefrontpicture() {
+export default function Takebackpic() {
     return (
-        <div className="frontpicback">
-            <div className="frontpicabove">
+        <div className="backpicback">
+            <div className="backpicabove">
                 <Row>
                     <Col span={2} offset={2}>
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
                     </Col>
                     <Col span={15}>
-                        <small className="samlltextback">Back</small>
+                        <small className="samlltextintheback">Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />
@@ -32,7 +31,7 @@ export default function Takefrontpicture() {
             <br></br>
 
             <Row>
-                <div className="continerforcamera">
+                <div className="continerforcameraforback">
 
                 </div>
             </Row>
@@ -42,19 +41,19 @@ export default function Takefrontpicture() {
             <Row>
                 <Row span={24}>
                     <Col span={24} offset={2}>
-                        <div className="textundercamone"> Please take the picture of the front of the</div>
-                        <div className="textundercamtwo">ID card.Make sure it is not blurry or</div>
-                        <div className="textundercamthree">dark and is inside the marker.</div>
+                        <div className="textbackundercamone"> Please take the picture of the back of the</div>
+                        <div className="textbackundercamtwo">ID card.Make sure it is not blurry or</div>
+                        <div className="textbackundercamthree">dark and is inside the marker.</div>
                     </Col>
                 </Row>
             </Row>
 
 
             <Row span={24}>
-                <div className="footbuttoncamera">
+                <div className="footbuttonbackcam">
                     <Col span={21} offset={1}>
-                        <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
-                            <p className="buttononforscanningfront">Start Scanning</p>
+                        <div className="buttoninidscreenbackcam" type="primary" shape="round" size='large'>
+                            <p className="buttononforbackcam">Start Scanning</p>
                         </div>
                     </Col>
                 </div>

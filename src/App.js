@@ -1,12 +1,9 @@
-// importing bootstrap elements------->
-import {
-  Container,
-  Card,
-  Row
-} from 'react-bootstrap';
+
 
 // importing components and router components------------>
 import { Route, Switch } from 'react-router-dom';
+
+
 // import FormSDR from './components/SDR.generator.form';
 import SplashScreen from './components/SplashScreen';
 import antsdrform from './components/Antd-form';
@@ -23,11 +20,15 @@ import Verifyyourphone from './components/Verify_your_phone_screen05';
 import Phonev from './components/Phone_verification_screen06';
 import Smsverify from './components/SMS_verification_screen07';
 import Idready from './components/ID_ready_for_scan_screen08';
+import frontpic from './components/Take_front_picture_screen09';
+
+
+
+
+
 // importing css files----------------->
 import './App.css';
 
-// importing image files---------------->
-import sabhilogo from './images/dark.svg';
 
 
 // rendering view------------------------>
@@ -49,6 +50,7 @@ export default function App() {
         <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} />
+        <Route path='/frontpic' component={frontpic} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

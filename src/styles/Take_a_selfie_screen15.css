@@ -1,0 +1,103 @@
+.selfiepack {
+    position: relative; 
+    height: 100vh;
+    width: 100vw;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.selfiepack::before{
+    content: "";
+      background-image: url('../images/profilepic_crop_1.jpg');
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.4;
+}
+
+.selfieabove {
+    padding-top: 47px;
+    position: relative;
+}
+
+.selfieback {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.cameraforselfie {
+    width: 67vw;
+    height: 45vh;
+    background-color: black;
+    border: 4px solid #4DDFBC;
+    border-radius: 10px;
+    padding: 10px;
+    margin:auto;
+    position: relative;
+    border-bottom-left-radius:20em 14em;;
+    border-bottom-right-radius:20em 14em;;
+    border-top-left-radius:20em 14em;
+    border-top-right-radius:20em 14em;
+}
+
+.selfieundercamone {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.selfieundercamtwo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.selfieundercamthree {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.footbuttonselfie {
+    width: 100%;
+    position: fixed;
+    bottom: 4%;
+}
+
+.buttoninselfie {
+    width: 100%;
+    height: 53px;
+    background-color: #4DDFBC;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    padding-left: 0px;
+    margin-left: 9px;
+}
+
+.selfiebuttonfont {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 17px;
+}

@@ -1,19 +1,18 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import '../styles/Take_a_selfie_screen15.css';
+import '../styles/Take_front_picture_screen09.css';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 
-
-export default function Takefrontpicture() {
+export default function Takeaselfie() {
     return (
-        <div className="frontpicback">
-            <div className="frontpicabove">
+        <div className="selfiepack">
+            <div className="selfieabove">
                 <Row>
                     <Col span={2} offset={2}>
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
                     </Col>
                     <Col span={15}>
-                        <small className="samlltextback">Back</small>
+                        <small className="selfieback">Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />
@@ -28,33 +27,31 @@ export default function Takefrontpicture() {
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
+
 
             <Row>
-                <div className="continerforcamera">
+                <div className="cameraforselfie">
 
                 </div>
             </Row>
             <br></br>
-            <br></br>
-            <br></br>
+
             <Row>
                 <Row span={24}>
                     <Col span={24} offset={2}>
-                        <div className="textundercamone"> Please take the picture of the front of the</div>
-                        <div className="textundercamtwo">ID card.Make sure it is not blurry or</div>
-                        <div className="textundercamthree">dark and is inside the marker.</div>
+                        <div className="selfieundercamone"> Please center your face in the marker</div>
+                        <div className="selfieundercamtwo">to record a selfie.Make sure the selfie</div>
+                        <div className="selfieundercamthree">is bright and clear.</div>
                     </Col>
                 </Row>
             </Row>
 
 
             <Row span={24}>
-                <div className="footbuttoncamera">
+                <div className="footbuttonselfie">
                     <Col span={21} offset={1}>
-                        <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
-                            <p className="buttononforscanningfront">Start Scanning</p>
+                        <div className="buttoninselfie" type="primary" shape="round" size='large'>
+                            <p className="selfiebuttonfont">Record Selfie</p>
                         </div>
                     </Col>
                 </div>

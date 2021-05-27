@@ -25,6 +25,7 @@ import backpic from './components/Take_back_picture_screen10';
 import checkpics from './components/Check_the_scans_screen11';
 import Addpersonaldetails from './components/Add_personal_details_screen12';
 import Makesure from './components/Make_sure_its_you_screen14';
+import Takeselfie from './components/Take_A_Selfie_screen15';
 
 
 
@@ -59,6 +60,7 @@ export default function App() {
         <Route path='/checkpics' component={checkpics} />
         <Route path='/addpersonal' component={Addpersonaldetails} />
         <Route path='/makesure' component={Makesure} />
+        <Route path='/takeselfie' component={Takeselfie} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

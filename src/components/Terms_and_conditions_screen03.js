@@ -15,9 +15,9 @@ export default function TermsandCOnditions() {
     //     else history.push('/fewmoresteps');
     // }
 
-    function declineTermsAndCondition() {
-        history.push('/');
-    }
+    // function declineTermsAndCondition() {
+    //     history.push('/');
+    // }
 
     // function onChangeAgeCheckBox(e) {
     //     setAge(e.target.checked);
@@ -26,6 +26,10 @@ export default function TermsandCOnditions() {
     // function onChangeCountryCheckBox(e) {
     //     setCountry(e.target.checked);
     // }
+
+    function nextscreen() {
+        history.push('/fewmoresteps')
+    }
 
 
     return (
@@ -122,12 +126,12 @@ export default function TermsandCOnditions() {
                     <div className="stickybottom">
                         <Row span={24}>
                             <Col>
-                                <div className="buttontwointerms" type="primary" shape="round" size='large' onClick={declineTermsAndCondition}>
+                                <div className="buttontwointerms" type="primary" shape="round" size='large'>
                                     <p className="buttontwofontinterms">Decline</p>
                                 </div>
                             </Col>
                             <Col>
-                                <div className="buttononeinterms" shape="round" size='large'>
+                                <div className="buttononeinterms" shape="round" size='large' onClick={nextscreen}>
                                     <p className="buttononefontinterms">Accept</p>
                                 </div>
                             </Col>

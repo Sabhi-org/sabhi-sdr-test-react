@@ -1,14 +1,16 @@
 import React from 'react';
 import { Col, Row, Typography } from 'antd';
 import { ShrinkOutlined, QrcodeOutlined, CodepenOutlined, SearchOutlined, RightOutlined } from '@ant-design/icons';
-
+import { useHistory } from 'react-router-dom';
 import '../styles/Welcome_new_user_screen12.css';
 
 export default function welcomeNewUser() {
+
     const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };
     const btnStyletwo = { background: '#FFFFFF', bordeRadius: '16px', 'borderColor': '#FFFFFF' };
 
     const { Text } = Typography;
+
 
     return (
         <div className="cover">

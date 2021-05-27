@@ -1,9 +1,15 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import '../styles/Take_front_picture_screen09.css';
+import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 
 export default function Takeaselfie() {
+
+    let history = useHistory();
+    function ontonext() {
+        history.push('/welcome');
+    }
     return (
         <div className="selfiepack">
             <div className="selfieabove">
@@ -50,7 +56,7 @@ export default function Takeaselfie() {
             <Row span={24}>
                 <div className="footbuttonselfie">
                     <Col span={21} offset={1}>
-                        <div className="buttoninselfie" type="primary" shape="round" size='large'>
+                        <div className="buttoninselfie" onClick={ontonext} type="primary" shape="round" size='large'>
                             <p className="selfiebuttonfont">Record Selfie</p>
                         </div>
                     </Col>

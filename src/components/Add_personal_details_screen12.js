@@ -1,10 +1,16 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import { useHistory } from 'react-router-dom';
+
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 import '../styles/Add_personal_details_screen12.css';
+import { useHistory } from 'react-router-dom';
 
 export default function Addpersonal() {
+    let history = useHistory();
+
+    function ontonextscreen() {
+        history.push('/makesure');
+    }
     return (
         <div className="addpersonalscreen">
             <div className="containspersonalinfo">
@@ -179,7 +185,7 @@ export default function Addpersonal() {
                 <Row span={24}>
                     <div className="personalscreenstick">
                         <Col span={21}>
-                            <div className="buttoninperscreen" type="primary" shape="round" size='large'>
+                            <div className="buttoninperscreen" onClick={ontonextscreen} type="primary" shape="round" size='large'>
                                 <p className="continuefrompersonalscreen">Continue</p>
                             </div>
                         </Col>

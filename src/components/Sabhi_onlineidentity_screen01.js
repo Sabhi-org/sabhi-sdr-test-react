@@ -8,17 +8,17 @@ export default function Sabhionlineidentity() {
     let history = useHistory();
     const { Text } = Typography;
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     let interval = setTimeout(async () => {
-    //         history.push('/Secureonlineidentity');
-    //     }, 3000);
+        let interval = setTimeout(async () => {
+            history.push('/Secureonlineidentity');
+        }, 3000);
 
-    //     // willUnmout called
-    //     return () => {
-    //         clearInterval(interval);
-    //     }
-    // }, []);
+        // willUnmout called
+        return () => {
+            clearInterval(interval);
+        }
+    }, []);
 
     return (
         <div className="coverin">

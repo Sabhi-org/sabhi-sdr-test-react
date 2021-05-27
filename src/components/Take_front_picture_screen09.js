@@ -2,9 +2,14 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import '../styles/Take_a_selfie_screen15.css';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
-
+import { useHistory } from 'react-router-dom';
 
 export default function Takefrontpicture() {
+    let history = useHistory();
+
+    function gotonextscreen() {
+        history.push('/backpic');
+    }
     return (
         <div className="frontpicback">
             <div className="frontpicabove">
@@ -53,8 +58,8 @@ export default function Takefrontpicture() {
             <Row span={24}>
                 <div className="footbuttoncamera">
                     <Col span={21} offset={1}>
-                        <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
-                            <p className="buttononforscanningfront">Start Scanning</p>
+                        <div className="buttoninthecamerafront" onClick={gotonextscreen} type="primary" shape="round" size='large'>
+                            <p className="buttononforscanningfront">Scan Front</p>
                         </div>
                     </Col>
                 </div>

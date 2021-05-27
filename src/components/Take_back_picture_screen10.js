@@ -2,8 +2,15 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import '../styles/Take_back_picture_screen10.css';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 
 export default function Takebackpic() {
+
+    let history = useHistory();
+
+    function gotonextscreen() {
+        history.push('/checkpics');
+    }
     return (
         <div className="backpicback">
             <div className="backpicabove">
@@ -52,8 +59,8 @@ export default function Takebackpic() {
             <Row span={24}>
                 <div className="footbuttonbackcam">
                     <Col span={21} offset={1}>
-                        <div className="buttoninidscreenbackcam" type="primary" shape="round" size='large'>
-                            <p className="buttononforbackcam">Start Scanning</p>
+                        <div className="buttoninidscreenbackcam" onClick={gotonextscreen} type="primary" shape="round" size='large'>
+                            <p className="buttononforbackcam">Scan Back</p>
                         </div>
                     </Col>
                 </div>

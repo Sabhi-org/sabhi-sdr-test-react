@@ -7,6 +7,10 @@ import '../styles/Make_sure_its_you_screen14.css';
 
 
 export default function Makesure() {
+    let history = useHistory();
+    function thenextone() {
+        history.push('/takeselfie');
+    }
     return (
         <div className="makesurecover">
             <div className="abovemakesure">
@@ -51,7 +55,7 @@ export default function Makesure() {
             <Row span={24}>
                 <div className="stkmeingirlscreen">
                     <Col span={21} offset={1}>
-                        <div className="buttonimmakesure" type="primary" shape="round" size='large'>
+                        <div className="buttonimmakesure" onClick={thenextone} type="primary" shape="round" size='large'>
                             <p className="buttononfornextinmakesure">Next</p>
                         </div>
                     </Col>

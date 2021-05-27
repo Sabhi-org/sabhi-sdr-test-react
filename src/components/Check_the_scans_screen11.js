@@ -1,12 +1,18 @@
 import React from 'react';
 import { Col, Row, Carousel } from 'antd';
+import { useHistory } from 'react-router-dom';
 import frontidpic from '../images/idcard_front.jpeg';
 import backidpic from '../images/id_card_back.jpg';
 import '../styles/Check_the_scans_screen11.css';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 
 export default function Checkthescans() {
+    let history = useHistory();
 
+
+    function nextscreen() {
+        history.push('/addpersonal');
+    }
     function onChange(a, b, c) {
         console.log(a, b, c);
     }
@@ -72,13 +78,13 @@ export default function Checkthescans() {
             <Row span={24}>
                 <div className="stickybottomchecks">
                     <Row span={24}>
-                        <Col  offset={2}>
+                        <Col offset={2}>
                             <div className="buttontwoinchecks" type="primary" shape="round" size='large'>
                                 <p className="buttontwofontchecks">Decline</p>
                             </div>
                         </Col>
                         <Col >
-                            <div className="buttononeinchecks" shape="round" size='large'>
+                            <div className="buttononeinchecks" onClick={nextscreen} shape="round" size='large'>
                                 <p className="buttononefontincecks">Accept</p>
                             </div>
                         </Col>

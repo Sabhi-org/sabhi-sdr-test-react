@@ -11,7 +11,7 @@ export default function IDready() {
     function gotophonescreen() {
 
 
-        history.push('/user_profile');
+        history.push('/frontpic');
         console.log('clicked');
 
     }

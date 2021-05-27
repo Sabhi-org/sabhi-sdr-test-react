@@ -1,0 +1,166 @@
+
+.checkscreencover {
+    position: relative; 
+    height: 100vh;
+    width: 100vw;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.checkscreencover::before{
+    content: "";
+      background-image: url('../images/croped_hand_3.jpg');
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.4;
+}
+
+.checkscreenbove {
+    padding-top: 47px;
+    position: relative;
+}
+
+.checkscreensmalltext {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.containerforcarosoul {
+    width: 87vw;
+    height: 30vh;
+    background-color: black;
+    border: 4px solid #4DDFBC;
+    border-radius: 10px;
+    padding: 10px;
+    margin:auto;
+    position: relative;
+}
+
+.checktextone {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.checktexttwo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.checktextthree {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.aftercheckbutton {
+    width: 100%;
+    position: fixed;
+    bottom: 4%;
+}
+
+.buttonafterchecking {
+    width: 100%;
+    height: 53px;
+    background-color: #4DDFBC;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    padding-left: 0px;
+    margin-left: 9px;
+}
+
+.textincheckbutton {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 17px;
+}
+
+.stickybottomchecks {
+    width: 100%;
+    position: fixed;
+    bottom: 2%;
+}
+
+.buttontwoinchecks {
+    width: 110px;
+
+    height: 56px;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    margin-left: 0px;
+}
+
+.buttontwofontchecks {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 132%;
+        color: #35568D;
+        margin-bottom: 0px;
+        /* padding-top: 17px;
+        
+    padding-left: 45px; */
+    text-align: center;
+    padding-top: 17px;
+}
+
+.buttononeinchecks {
+    width: 190px;
+
+    height: 56px;
+
+    background-color: #4DDFBC;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    padding-left: 0px;
+    margin-left: 9px;
+}
+
+.buttononefontincecks {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 17px;
+}
+
+.imageslider {
+    width: 100%;
+    height: 100%;
+}
+
+.fittheimage {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}

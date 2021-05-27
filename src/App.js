@@ -23,6 +23,7 @@ import Idready from './components/ID_ready_for_scan_screen08';
 import frontpic from './components/Take_front_picture_screen09';
 import backpic from './components/Take_back_picture_screen10';
 import checkpics from './components/Check_the_scans_screen11';
+import Addpersonaldetails from './components/Add_personal_details';
 
 
 
@@ -55,6 +56,7 @@ export default function App() {
         <Route path='/frontpic' component={frontpic} />
         <Route path='/backpic' component={backpic} />
         <Route path='/checkpics' component={checkpics} />
+        <Route path='/addpersonal' component={Addpersonaldetails} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

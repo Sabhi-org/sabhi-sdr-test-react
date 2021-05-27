@@ -2,18 +2,19 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
-import '../styles/Add_personal_details_screen12.css';
+import '../styles/National_IdentityCard_CNIC_screen16.css';
 
-export default function Addpersonal() {
+export default function Nationalidentitycard() {
     return (
-        <div className="addpersonalscreen">
-            <div className="containspersonalinfo">
+        <div className="cnicscreen">
+            <div className="containsnic">
+
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
                     </Col>
                     <Col span={18}>
-                        <small className="backtextinpersonal">Back</small>
+                        <small className="cnicback">Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
@@ -24,27 +25,27 @@ export default function Addpersonal() {
                 </Row>
                 <Row>
                     <Col>
-                        <div className="addpersoanltitle">
-                            <p className="personaltitle">Personal</p>
+                        <div className="cnicscreentitle">
+                            <p className="nicscreentitle">National</p>
                         </div>
-                        <div className="cnicscreentitlw2">
-                            <p className="addpersonalfont">Details</p>
+                        <div className="personaltitlw2">
+                            <p className="nationalfont">Identity Card (CNIC)</p>
                         </div>
                     </Col>
                 </Row>
                 <Row span={24}>
                     <Col span={15}>
-                        <div className="addpersonalbar"></div>
+                        <div className="cnicinbar"></div>
                     </Col>
                     <Col span={9}>
-                        <div className="personalscreenbar"></div>
+                        <div className="cnibarscreenbar"></div>
                     </Col>
                 </Row>
                 <Row>
-                    <div className="personaldescription">
-                        <p className="inperonalscreenevtextpara">Here are the details we scanned from</p>
-                        <p className="inperonalscreenevtextpara">your ID document.Please review them</p>
-                        <p className="inperonalscreenevtextpara">carefully.</p>
+                    <div className="nicdescription">
+                        <p className="cnicnationaltextpara">Here are the details we scanned from</p>
+                        <p className="cnicnationaltextpara">your ID document.You can also</p>
+                        <p className="cnicnationaltextpara">preview the scanned document.</p>
                     </div>
                 </Row>
 
@@ -54,12 +55,12 @@ export default function Addpersonal() {
 
                 <Row>
                     <Col span={18}>
-                        <small className="tinytextinpersonalscreen">Full Name</small>
+                        <small className="tinytextinnicscreen">Full Name</small>
                     </Col>
                 </Row>
                 <Row span={24}>
                     <Col span={24}>
-                        <input className="inputsinpersonalscreen"></input>
+                        <input className="inputsinpersocnicscreens"></input>
                     </Col>
                 </Row>
 
@@ -68,7 +69,7 @@ export default function Addpersonal() {
 
                 <Row>
                     <Col span={18}>
-                        <small className="tinytextinpersonalscreen">Father Name</small>
+                        <small className="tinytextinpersonalscreen">Last Name</small>
                     </Col>
                 </Row>
                 <Row span={24}>
@@ -80,30 +81,61 @@ export default function Addpersonal() {
 
 
 
+
+
+
+
+
+                <Row>
+                    <Col span={18}>
+                        <small className="tinytextinpersonalscreen">Street Address</small>
+                    </Col>
+                </Row>
+                <Row span={24}>
+                    <Col span={24}>
+                        <input className="inputsinpersonalscreen"></input>
+                    </Col>
+                </Row>
+
+
                 <Row span={24}>
                     <Col span={12}>
                         <Row>
                             <Col span={18}>
-                                <small className="tinytextinpersonalscreen">Gender</small>
+                                <small className="tinytextinpersonalscreen">City</small>
                             </Col>
                         </Row>
                         <Row span={24}>
                             <Col span={24}>
-                                <input className="inputsinpersonalscreengender"></input>
+                                <input className="inputsincnicscreengender"></input>
                             </Col>
                         </Row>
                     </Col>
                     <Col span={12}>
                         <Row>
                             <Col span={18}>
-                                <small className="tinytextinpersonalscreen">Country of Stay</small>
+                                <small className="tinytextinpersonalscreen">Postal Code</small>
                             </Col>
                         </Row>
                         <Row span={24}>
                             <Col span={24}>
-                                <input className="inputsinpersonalscreenstay"></input>
+                                <input className="inputsincnicscreenstay"></input>
                             </Col>
                         </Row>
+                    </Col>
+                </Row>
+
+
+
+
+                <Row>
+                    <Col span={18}>
+                        <small className="tinytextinpersonalscreen">Country of Residence</small>
+                    </Col>
+                </Row>
+                <Row span={24}>
+                    <Col span={24}>
+                        <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
 
@@ -120,7 +152,6 @@ export default function Addpersonal() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
 
 
 
@@ -176,15 +207,37 @@ export default function Addpersonal() {
 
 
 
-                <Row span={24}>
-                    <div className="personalscreenstick">
-                        <Col span={21}>
-                            <div className="buttoninperscreen" type="primary" shape="round" size='large'>
-                                <p className="continuefrompersonalscreen">Continue</p>
+                {/* <Row span={24}>
+                    <div className="nicscreenstick">
+                        <Col span={8}>
+                            <div className="buttonincnicscreen" type="primary" shape="round" size='large'>
+                                <p className="continuecnicscreen">Done</p>
                             </div>
                         </Col>
                     </div>
+                </Row> */}
+
+
+
+                <Row span={24}>
+                    <div className="nicscreenstick">
+                        <Row span={24}>
+                            <Col span={9} offset={1}>
+                                <div className="buttonincnicscreen" type="primary" shape="round" size='large'>
+                                    <p className="continuecnicscreen">Preview</p>
+                                </div>
+                            </Col>
+                            <Col span={9} offset={1}>
+                                <div className="buttonincnicscreen2" shape="round" size='large'>
+                                    <p className="continuecnicscreen2">Done</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
                 </Row>
+
+
+
 
 
             </div>

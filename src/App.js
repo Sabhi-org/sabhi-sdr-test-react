@@ -26,6 +26,7 @@ import checkpics from './components/Check_the_scans_screen11';
 import Addpersonaldetails from './components/Add_personal_details_screen12';
 import Makesure from './components/Make_sure_its_you_screen14';
 import Takeselfie from './components/Take_A_Selfie_screen15';
+import Cnic from './components/National_IdentityCard_CNIC_screen16';
 
 
 
@@ -61,6 +62,7 @@ export default function App() {
         <Route path='/addpersonal' component={Addpersonaldetails} />
         <Route path='/makesure' component={Makesure} />
         <Route path='/takeselfie' component={Takeselfie} />
+        <Route path='/cnic' component={Cnic} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

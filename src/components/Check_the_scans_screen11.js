@@ -72,12 +72,12 @@ export default function Checkthescans() {
             <Row span={24}>
                 <div className="stickybottomchecks">
                     <Row span={24}>
-                        <Col offset={2}>
+                        <Col  offset={2}>
                             <div className="buttontwoinchecks" type="primary" shape="round" size='large'>
                                 <p className="buttontwofontchecks">Decline</p>
                             </div>
                         </Col>
-                        <Col>
+                        <Col >
                             <div className="buttononeinchecks" shape="round" size='large'>
                                 <p className="buttononefontincecks">Accept</p>
                             </div>

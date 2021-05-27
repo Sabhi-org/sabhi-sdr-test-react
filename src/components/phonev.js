@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Col, message, Row } from 'antd';
+import { Col, message, Row, Spin, } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 import { sabhiApiInstance } from '../axios-instance';
@@ -13,19 +13,19 @@ import 'react-phone-input-2/lib/style.css'
 export default function Phonev() {
     let history = useHistory();
     const [input, setInput] = useState(0);
-
-    // function gotosmsscreen() {
-    //     history.push('/smsverify');
-    //     console.log('clicked');
-    // }
-
+    const [isLoading, setLoading] = useState(false);
 
     async function handleClick() {
         try {
-            console.log(input);
+            localStorage.setItem('PhoneNumber', input);
+            setLoading(true);
             const response = await sabhiApiInstance.post('otp', { phoneNumber: input });
             if (response.data.status) {
-                history.push('/smsverify');
+                setLoading(false);
+                message.loading('redirecting')
+                    .then(() => {
+                        history.push('/smsverify');
+                    })
             } else {
                 message.warning('something went wrong please try again!');
             }
@@ -36,69 +36,71 @@ export default function Phonev() {
     }
 
     return (
-        <div className="phonevscreen">
-            <div className="containsphonev">
-                <Row>
-                    <Col span={2}>
-                        <LeftOutlined style={{ color: "#95A7C6" }} />
-                    </Col>
-                    <Col span={18}>
-                        <small className="tinytextinphonev">Back</small>
-                    </Col>
-                    <Col span={2}>
-                        <QuestionCircleOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
-                    </Col>
-                    <Col span={2}>
-                        <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div className="phinevtitleone">
-                            <p className="phinevtext">Phone</p>
+        <Spin spinning={isLoading}>
+            <div className="phonevscreen">
+                <div className="containsphonev">
+                    {/* <Row>
+                        <Col span={2}>
+                            <LeftOutlined style={{ color: "#95A7C6" }} />
+                        </Col>
+                        <Col span={18}>
+                            <small className="tinytextinphonev">Back</small>
+                        </Col>
+                        <Col span={2}>
+                            <QuestionCircleOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
+                        </Col>
+                        <Col span={2}>
+                            <MoreOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
+                        </Col>
+                    </Row> */}
+                    <Row>
+                        <Col>
+                            <div className="phinevtitleone">
+                                <p className="phinevtext">Phone</p>
+                            </div>
+                            <div className="verifyphinescreentitletwo">
+                                <p className="phonescreenv">Verification</p>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row span={24}>
+                        <Col span={15}>
+                            <div className="insidephonev"></div>
+                        </Col>
+                        <Col span={9}>
+                            <div className="barinphonev"></div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <div className="containsphinevtext">
+                            <p className="inphonevtextpara">Please enter your primary phone</p>
+                            <p className="inphonevtextpara">number. An SMS with a code will be</p>
+                            <p className="inphonevtextpara">sent to you.</p>
                         </div>
-                        <div className="verifyphinescreentitletwo">
-                            <p className="phonescreenv">Verification</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row span={24}>
-                    <Col span={15}>
-                        <div className="insidephonev"></div>
-                    </Col>
-                    <Col span={9}>
-                        <div className="barinphonev"></div>
-                    </Col>
-                </Row>
-                <Row>
-                    <div className="containsphinevtext">
-                        <p className="inphonevtextpara">Please enter your primary phone</p>
-                        <p className="inphonevtextpara">number. An SMS with a code will be</p>
-                        <p className="inphonevtextpara">sent to you.</p>
-                    </div>
-                </Row>
-                <Row>
-                    <Col span={18}>
-                        <small className="tinytextinphonev">Primary phone Number</small>
-                    </Col>
-                </Row>
-                <Row span={24}>
-                    <Col span={24}>
-                        {/* <input type="number" pattern="[0-9]*" className="inputs" onChange={handleChange}></input> */}
-                        <PhoneInput
-                            country={'pk'}
-                            onChange={phone => setInput(phone)}
-                        />
-                    </Col>
-                </Row>
-                <Row span={24}>
-                    <Col span={24}>
-                        <div className="buttonattheendofphonev" onClick={handleClick} type="primary" shape="round" size='large'>
-                            <p className="continuefromphoinv">Continue</p>
-                        </div>
-                    </Col>
-                </Row>
+                    </Row>
+                    <Row>
+                        <Col span={18}>
+                            <small className="tinytextinphonev">Primary phone Number</small>
+                        </Col>
+                    </Row>
+                    <Row span={24}>
+                        <Col span={24}>
+                            {/* <input type="number" pattern="[0-9]*" className="inputs" onChange={handleChange}></input> */}
+                            <PhoneInput
+                                country={'pk'}
+                                onChange={phone => setInput(phone)}
+                            />
+                        </Col>
+                    </Row>
+                    <Row span={24}>
+                        <Col span={24}>
+                            <div className="buttonattheendofphonev" onClick={handleClick} type="primary" shape="round" size='large'>
+                                <p className="continuefromphoinv">Continue</p>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
             </div>
-        </div>
+        </Spin>
     );
 }

@@ -12,11 +12,9 @@ export default function Secureonlineidentity() {
 
     async function createIdentity() {
         try {
-            message.loading('creating identity...', 0.3)
-                .then(() => {
-                    setLoading(true);
-                });
-
+            message.info('creating identity...');
+            setLoading(true);
+            
             const response = await apiInstance.get('did');
             localStorage.setItem('DID', response.data.did);
             setLoading(false);

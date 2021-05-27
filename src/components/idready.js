@@ -8,17 +8,13 @@ import '../styles/idready.css';
 export default function IDready() {
 
     let history = useHistory();
+
     function gotophonescreen() {
-
-
-        history.push('/user_profile');
-        console.log('clicked');
-
+        history.push('/ocr_front');
     }
+
     return (
         <div className="coverinverifyyourphone">
-
-
             <div className="abovespacinginID">
                 <Row>
                     <Col span={2} offset={2}>
@@ -35,28 +31,21 @@ export default function IDready() {
                     </Col>
                 </Row>
             </div>
-
-
-
-
             <Row span={24}>
                 <Col offset={2}>
                     <img className="largeid" src={ding3} />
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col span={12} offset={2}>
                     <div className="fontoneid">Keep your</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col span={19} offset={2}>
                     <div className="fonttwoinid">ID ready for scan.</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col offset={2}>
                     <div className="fontthreedesconeinid">your <span className="nic">National Identity Card [<CopyOutlined />]</span> will</div>
@@ -64,15 +53,11 @@ export default function IDready() {
                     <div className="fontthreedescthreeinid">Please focus it inside the marker.</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col offset={2}>
                     <div className="fontfourveriid">Need help? View scanning FAQs</div>
                 </Col>
             </Row>
-
-
-
             <Row span={24}>
                 <Col span={20} offset={1}>
                     <div className="buttoninidscreen" onClick={gotophonescreen} type="primary" shape="round" size='large'>
@@ -80,7 +65,6 @@ export default function IDready() {
                     </div>
                 </Col>
             </Row>
-
         </div>
     );
 }

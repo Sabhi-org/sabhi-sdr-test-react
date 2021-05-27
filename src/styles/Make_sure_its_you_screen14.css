@@ -1,0 +1,91 @@
+.abovemakesure {
+    margin-top: 47px;
+}
+
+.tinymakesure {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 132%;
+color: #FFFFFF;
+}
+
+.girllogo {
+    width: 300px;
+    height: 300px;
+    margin-top: 5px;
+}
+
+.makesuretitleone {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.makesuretitletwo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 430;
+    font-size: 32px;
+    line-height: 132%;
+    color: #4DDFBC;
+    margin-bottom: 7px;
+}
+
+.makesurethreedesconeinid {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.makesuretwothreedesctwoinid {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.makesurescthreeinid{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 132%;
+    color: #FFFFFF;
+}
+
+.stkmeingirlscreen {
+    width: 100%;
+    position: fixed;
+    bottom: 4%;
+}
+
+.buttonimmakesure {
+    width: 100%;
+    height: 53px;
+    background-color: #4DDFBC;
+    box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
+    border-radius: 16px;
+    padding-left: 0px;
+    margin-left: 9px;
+}
+
+.buttononfornextinmakesure {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 17px;
+}

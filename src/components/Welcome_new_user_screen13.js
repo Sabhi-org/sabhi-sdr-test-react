@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row, Typography } from 'antd';
 import { ShrinkOutlined, QrcodeOutlined, CodepenOutlined, SearchOutlined, RightOutlined } from '@ant-design/icons';
 
-import '../styles/welcome.css';
+import '../styles/Welcome_new_user_screen12.css';
 
 export default function welcomeNewUser() {
     const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };
@@ -109,7 +109,7 @@ export default function welcomeNewUser() {
             </div>
 
             {/* bottom section of the screen */}
-           
+
             <div className="bottombar">
 
                 <Row>
@@ -118,7 +118,7 @@ export default function welcomeNewUser() {
                         <p className="left">Profile</p>
                     </Col>
                     <Col span={8}>
-                    <div className="QRcodecircle"><QrcodeOutlined style={{ fontSize: '37px', color: 'white', marginLeft: '13px', marginTop: '12px' }} /></div>
+                        <div className="QRcodecircle"><QrcodeOutlined style={{ fontSize: '37px', color: 'white', marginLeft: '13px', marginTop: '12px' }} /></div>
                         <p className="center">Scan QR Code</p>
                     </Col>
                     <Col span={8}>

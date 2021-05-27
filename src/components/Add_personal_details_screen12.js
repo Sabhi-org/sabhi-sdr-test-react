@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
-import '../styles/Add_personal_details.css';
+import '../styles/Add_personal_details_screen12.css';
 
 export default function Addpersonal() {
     return (

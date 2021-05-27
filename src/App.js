@@ -11,7 +11,7 @@ import UserProfile from './components/UserProfile';
 import OnBoardScreen from './components/OnBoardScreen';
 import IdentityCardFrontScan from './components/IdentityCardFrontScan';
 import IdentityCardBackScan from './components/IdentityCardBackScan';
-import welcomenewuser from './components/welcomeNewUser';
+import welcomenewuser from './components/Welcome_new_user_screen13';
 import SabhiONlineIdentity from './components/Sabhi_onlineidentity_screen01';
 import SecureOnlineIdentity from './components/Secure_onlineidentity_screen02';
 import Termsandconditions from './components/Terms_and_conditions_screen03';
@@ -23,7 +23,8 @@ import Idready from './components/ID_ready_for_scan_screen08';
 import frontpic from './components/Take_front_picture_screen09';
 import backpic from './components/Take_back_picture_screen10';
 import checkpics from './components/Check_the_scans_screen11';
-import Addpersonaldetails from './components/Add_personal_details';
+import Addpersonaldetails from './components/Add_personal_details_screen12';
+import Makesure from './components/Make_sure_its_you_screen14';
 
 
 
@@ -57,6 +58,7 @@ export default function App() {
         <Route path='/backpic' component={backpic} />
         <Route path='/checkpics' component={checkpics} />
         <Route path='/addpersonal' component={Addpersonaldetails} />
+        <Route path='/makesure' component={Makesure} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

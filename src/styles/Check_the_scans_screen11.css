@@ -40,7 +40,7 @@
     background-color: black;
     border: 4px solid #4DDFBC;
     border-radius: 10px;
-    padding: 10px;
+    /* padding: 10px; */
     margin:auto;
     position: relative;
 }
@@ -160,7 +160,8 @@
 }
 
 .fittheimage {
-    max-width: 100%;
-    max-height: 100%;
+    width: 87vw;
+    height: 29vh;
     display: block;
+    
 }

@@ -11,7 +11,7 @@ export default function Checkthescans() {
         console.log(a, b, c);
     }
 
-   
+
 
 
 

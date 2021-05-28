@@ -86,6 +86,12 @@ margin-bottom: 0px;
     border-color: #4DDFBC;
     }
 
+
+    .buttonthreeinfewmore:hover .blockoneinfewmoreterms {
+    
+        background-color: #4DDFBC;
+        }
+
 .blockoneinfewmoreterms {
     width: 24px;
     height: 24px;

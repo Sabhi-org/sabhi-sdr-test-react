@@ -15,11 +15,8 @@ import '../styles/Phone_verification_screen06.css';
 export default function Phonev() {
     let history = useHistory();
     function gotosmsscreen() {
-
-
         history.push('/smsverify');
         console.log('clicked');
-
     }
     return (
         <div className="phonevscreen">

@@ -1,13 +1,20 @@
-import React from 'react';
-import { Col, Row } from 'antd';
 
-import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
-import '../styles/Add_personal_details_screen12.css';
+//importing react--------------------->
+import React from 'react';
 import { useHistory } from 'react-router-dom';
+
+// importing antd components--------------->
+import { Col, Row } from 'antd';
+import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+
+// importing css style files---------------------------->
+import '../styles/Add_personal_details_screen12.css';
+
+
+
 
 export default function Addpersonal() {
     let history = useHistory();
-
     function ontonextscreen() {
         history.push('/makesure');
     }
@@ -53,11 +60,6 @@ export default function Addpersonal() {
                         <p className="inperonalscreenevtextpara">carefully.</p>
                     </div>
                 </Row>
-
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Full Name</small>
@@ -68,10 +70,6 @@ export default function Addpersonal() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Father Name</small>
@@ -82,10 +80,6 @@ export default function Addpersonal() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
-
-
                 <Row span={24}>
                     <Col span={12}>
                         <Row>
@@ -112,10 +106,6 @@ export default function Addpersonal() {
                         </Row>
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">CNIC number</small>
@@ -126,11 +116,6 @@ export default function Addpersonal() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Date of Birth</small>
@@ -141,9 +126,6 @@ export default function Addpersonal() {
                         <input className="inputsinpersonaldate"></input>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={12}>
                         <Row>
@@ -170,18 +152,12 @@ export default function Addpersonal() {
                         </Row>
                     </Col>
                 </Row>
-
-
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
-
-
-
-
                 <Row span={24}>
                     <div className="personalscreenstick">
                         <Col span={21}>
@@ -191,8 +167,6 @@ export default function Addpersonal() {
                         </Col>
                     </div>
                 </Row>
-
-
             </div>
         </div>
     );

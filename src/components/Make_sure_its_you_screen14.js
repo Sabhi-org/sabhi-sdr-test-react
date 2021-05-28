@@ -1,8 +1,16 @@
+
+// importing react and its components----->
 import React from 'react';
-import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, CopyOutlined } from '@ant-design/icons';
-import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
+
+// importing antd components---------------->
+import { Col, Row } from 'antd';
+import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+
+// importing image files-------------------------------->
 import girlandphone from '../images/onboarding2.png';
+
+// importing css style files-------------------------->
 import '../styles/Make_sure_its_you_screen14.css';
 
 
@@ -51,7 +59,6 @@ export default function Makesure() {
                     <div className="makesurescthreeinid">prompted to record a selfie.</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <div className="stkmeingirlscreen">
                     <Col span={21} offset={1}>

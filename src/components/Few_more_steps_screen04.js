@@ -1,20 +1,23 @@
+
+// importing react and its components---->
 import React from 'react';
-import { Col, Row } from 'antd';
-import '../styles/Few_more_steps_screen04.css';
 import { useHistory } from 'react-router-dom';
+
+// importing antd components-------->
+import { Col, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, BorderOutlined } from '@ant-design/icons';
 
+// importing css style files--------------------->
+import '../styles/Few_more_steps_screen04.css';
+
+
 export default function Fewmoresteps() {
+
     let history = useHistory();
     function gotomoresteps() {
-
-
         history.push('/verifyyourphone');
         console.log('clicked');
-
     }
-
-
     return (
         <div className="screenofmore">
             <div className="containsfewscreen">
@@ -69,9 +72,6 @@ export default function Fewmoresteps() {
                                         <p className="buttonthreeinfewmorefont">Phone Verification</p>
                                         <p className="fewmorestepsverification">Verify your phone number</p>
                                     </Col>
-                                    {/* <Col>
-                                        <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />
-                                    </Col> */}
                                 </Row>
                             </Col>
                         </div>

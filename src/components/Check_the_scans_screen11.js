@@ -1,14 +1,25 @@
+
+// importing react and its components------->
 import React from 'react';
-import { Col, Row, Carousel } from 'antd';
 import { useHistory } from 'react-router-dom';
+
+// importing antd components--------------------->
+import { Col, Row, Carousel } from 'antd';
+import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+
+
+// importing images-------------------------------------->
 import frontidpic from '../images/idcard_front.jpeg';
 import backidpic from '../images/id_card_back.jpg';
+
+
+// importing style files--------------------------->
 import '../styles/Check_the_scans_screen11.css';
-import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+
+
 
 export default function Checkthescans() {
     let history = useHistory();
-
 
     function nextscreen() {
         history.push('/addpersonal');
@@ -16,11 +27,6 @@ export default function Checkthescans() {
     function onChange(a, b, c) {
         console.log(a, b, c);
     }
-
-
-
-
-
     return (
         <div className="checkscreencover">
             <div className="checkscreenbove">
@@ -46,18 +52,15 @@ export default function Checkthescans() {
             <br></br>
             <br></br>
             <br></br>
-
             <Row>
                 <div className="containerforcarosoul">
                     <Carousel className="imageslider" afterChange={onChange}>
                         <div>
-
                             <img className="fittheimage" src={frontidpic} />
                         </div>
                         <div>
                             <img className="fittheimage" src={backidpic} />
                         </div>
-
                     </Carousel>
                 </div>
             </Row>
@@ -73,8 +76,6 @@ export default function Checkthescans() {
                     </Col>
                 </Row>
             </Row>
-
-
             <Row span={24}>
                 <div className="stickybottomchecks">
                     <Row span={24}>

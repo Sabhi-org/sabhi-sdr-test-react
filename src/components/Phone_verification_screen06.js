@@ -1,7 +1,14 @@
+
+// importing react and its components-------->
 import React from 'react';
-import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
+
+
+// importing antd components------------->
+import { Col, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+
+// importing css stylefiles---------------------------->
 import '../styles/Phone_verification_screen06.css';
 
 

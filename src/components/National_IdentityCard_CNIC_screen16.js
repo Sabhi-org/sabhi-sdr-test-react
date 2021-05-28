@@ -1,14 +1,19 @@
+
+// importing react and its components----->
 import React from 'react';
-import { Col, Row } from 'antd';
 import { useHistory } from 'react-router-dom';
+
+// importing antd components------------->
+import { Col, Row } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+
+// importing css style files----------------------------------->
 import '../styles/National_IdentityCard_CNIC_screen16.css';
 
 export default function Nationalidentitycard() {
     return (
         <div className="cnicscreen">
             <div className="containsnic">
-
                 <Row>
                     <Col span={2}>
                         <LeftOutlined style={{ color: "#95A7C6" }} />
@@ -48,11 +53,6 @@ export default function Nationalidentitycard() {
                         <p className="cnicnationaltextpara">preview the scanned document.</p>
                     </div>
                 </Row>
-
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinnicscreen">Full Name</small>
@@ -63,10 +63,6 @@ export default function Nationalidentitycard() {
                         <input className="inputsinpersocnicscreens"></input>
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Last Name</small>
@@ -77,15 +73,6 @@ export default function Nationalidentitycard() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
-
-
-
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Street Address</small>
@@ -96,8 +83,6 @@ export default function Nationalidentitycard() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
                 <Row span={24}>
                     <Col span={12}>
                         <Row>
@@ -124,10 +109,6 @@ export default function Nationalidentitycard() {
                         </Row>
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Country of Residence</small>
@@ -138,10 +119,6 @@ export default function Nationalidentitycard() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">CNIC number</small>
@@ -152,10 +129,6 @@ export default function Nationalidentitycard() {
                         <input className="inputsinpersonalscreen"></input>
                     </Col>
                 </Row>
-
-
-
-
                 <Row>
                     <Col span={18}>
                         <small className="tinytextinpersonalscreen">Date of Birth</small>
@@ -166,9 +139,6 @@ export default function Nationalidentitycard() {
                         <input className="inputsinpersonaldate"></input>
                     </Col>
                 </Row>
-
-
-
                 <Row span={24}>
                     <Col span={12}>
                         <Row>
@@ -195,30 +165,12 @@ export default function Nationalidentitycard() {
                         </Row>
                     </Col>
                 </Row>
-
-
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
-
-
-
-
-                {/* <Row span={24}>
-                    <div className="nicscreenstick">
-                        <Col span={8}>
-                            <div className="buttonincnicscreen" type="primary" shape="round" size='large'>
-                                <p className="continuecnicscreen">Done</p>
-                            </div>
-                        </Col>
-                    </div>
-                </Row> */}
-
-
-
                 <Row span={24}>
                     <div className="nicscreenstick">
                         <Row span={24}>
@@ -235,11 +187,6 @@ export default function Nationalidentitycard() {
                         </Row>
                     </div>
                 </Row>
-
-
-
-
-
             </div>
         </div>
     );

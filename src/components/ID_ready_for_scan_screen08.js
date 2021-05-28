@@ -1,19 +1,24 @@
+
+// importing react and its components---->
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
+// importing antd components-------------------->
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, CopyOutlined } from '@ant-design/icons';
 import { Col, Row } from 'antd';
-import { useHistory } from 'react-router-dom';
+
+// importing image files------------------------->
 import ding3 from '../images/ding3.png';
+
+// importing css style files--------------------------->
 import '../styles/ID_ready_for_scan_screen08.css';
 
 export default function IDready() {
 
     let history = useHistory();
     function gotophonescreen() {
-
-
         history.push('/frontpic');
         console.log('clicked');
-
     }
     return (
         <div className="coverinverifyyourphone">

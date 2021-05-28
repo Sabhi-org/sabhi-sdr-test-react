@@ -9,18 +9,11 @@ import Guyimage from '../images/aguy.png';
 export default function Verifyourphone() {
     let history = useHistory();
     function gotophonescreen() {
-
-
         history.push('/phonev');
         console.log('clicked');
-
     }
-
-
     return (
         <div className="coverinverifyyourphone">
-
-
             <div className="abovespacing">
                 <Row>
                     <Col span={2} offset={2}>
@@ -37,28 +30,21 @@ export default function Verifyourphone() {
                     </Col>
                 </Row>
             </div>
-
-
-
-
             <Row span={24}>
                 <Col offset={2}>
                     <img className="largelogoverifyphone" src={Guyimage} />
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col span={12} offset={2}>
                     <div className="fontonesecureinphone">We need to</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col span={19} offset={2}>
                     <div className="fonttwoidentityinverify">verify your phone</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col offset={2}>
                     <div className="fontthreedesconeinverify">For easy log-ins every time, we'll need</div>
@@ -66,15 +52,11 @@ export default function Verifyourphone() {
                     <div className="fontthreedescthreeinverify">two-factor authentication.</div>
                 </Col>
             </Row>
-
             <Row span={24}>
                 <Col offset={2}>
                     <div className="fontfourverifyinverifyphone">Need help? View 2FA Verify FAQs</div>
                 </Col>
             </Row>
-
-
-
             <Row span={24}>
                 <div className="sticked">
                     <Col span={21} offset={1}>
@@ -83,9 +65,7 @@ export default function Verifyourphone() {
                         </div>
                     </Col>
                 </div>
-
             </Row>
-
         </div>
     );
 }

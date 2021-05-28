@@ -35,10 +35,8 @@ export default function Takefrontpicture() {
             <br></br>
             <br></br>
             <br></br>
-
             <Row>
                 <div className="continerforcamera">
-
                 </div>
             </Row>
             <br></br>
@@ -53,8 +51,6 @@ export default function Takefrontpicture() {
                     </Col>
                 </Row>
             </Row>
-
-
             <Row span={24}>
                 <div className="footbuttoncamera">
                     <Col span={21} offset={1}>

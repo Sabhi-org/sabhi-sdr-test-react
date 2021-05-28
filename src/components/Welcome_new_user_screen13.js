@@ -14,11 +14,7 @@ export default function welcomeNewUser() {
 
     return (
         <div className="cover">
-
             <div className="background">
-
-                {/* top font section of screen */}
-
                 <Row span={24}>
                     <Col span={22}>
                         <div className="fontonewelcome">Welcome,</div>
@@ -28,8 +24,6 @@ export default function welcomeNewUser() {
                         <div className="block2"></div>
                     </Col>
                 </Row>
-
-
                 <Row>
                     <Col span={22}>
                         <div className="fontthreeprof">Profile</div>
@@ -38,13 +32,7 @@ export default function welcomeNewUser() {
                         <SearchOutlined style={{ fontSize: '20px', color: '#35568D', marginLeft: '6px', marginTop: '30px' }} />
                     </Col>
                 </Row>
-
                 <br></br>
-
-
-
-                {/* first set of buttons side by side */}
-
                 <Row span={20}>
                     <Col span={8}>
                         <div className="buttonone" type="primary" shape="round" size='large'>
@@ -57,13 +45,7 @@ export default function welcomeNewUser() {
                         </div>
                     </Col>
                 </Row>
-
-                {/* personel information section */}
-
                 <div className="fontfour">Personal Information</div>
-
-                {/* scan id section */}
-
                 <Col span={24}>
                     <Row>
                         <div className="buttonthree" type="primary" shape="round" size='large'>
@@ -83,9 +65,6 @@ export default function welcomeNewUser() {
                             </Col>
                         </div>
                     </Row>
-
-                    {/* record sefie section */}
-
                     <Row>
                         <div className="buttonfour" type="primary" shape="round" size='large'>
                             <Col span={24}>
@@ -105,15 +84,8 @@ export default function welcomeNewUser() {
                         </div>
                     </Row>
                 </Col>
-
-                {/* end of personel information section */}
-
             </div>
-
-            {/* bottom section of the screen */}
-
             <div className="bottombar">
-
                 <Row>
                     <Col span={8}>
                         <ShrinkOutlined style={{ fontSize: '30px', color: '#35568D', marginLeft: '49px', marginTop: '17px' }} />
@@ -127,7 +99,6 @@ export default function welcomeNewUser() {
                         <CodepenOutlined style={{ fontSize: '33px', color: '#95A7C6', marginLeft: '49px', marginTop: '12px', marginBottom: '4px' }} />
                         <p className="right">Applications</p>
                     </Col>
-
                 </Row>
             </div>
         </div>

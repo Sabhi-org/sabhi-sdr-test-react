@@ -33,15 +33,11 @@ export default function Takeaselfie() {
             <br></br>
             <br></br>
             <br></br>
-
-
             <Row>
                 <div className="cameraforselfie">
-
                 </div>
             </Row>
             <br></br>
-
             <Row>
                 <Row span={24}>
                     <Col span={24} offset={2}>
@@ -51,8 +47,6 @@ export default function Takeaselfie() {
                     </Col>
                 </Row>
             </Row>
-
-
             <Row span={24}>
                 <div className="footbuttonselfie">
                     <Col span={21} offset={1}>

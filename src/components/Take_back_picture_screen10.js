@@ -36,10 +36,8 @@ export default function Takebackpic() {
             <br></br>
             <br></br>
             <br></br>
-
             <Row>
                 <div className="continerforcameraforback">
-
                 </div>
             </Row>
             <br></br>
@@ -54,8 +52,6 @@ export default function Takebackpic() {
                     </Col>
                 </Row>
             </Row>
-
-
             <Row span={24}>
                 <div className="footbuttonbackcam">
                     <Col span={21} offset={1}>

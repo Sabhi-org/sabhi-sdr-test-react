@@ -110,7 +110,7 @@ class IdentityCardFrontScan extends Component {
             sabhiApiInstance.post(
                 `ocr/cnic/front`,
                 {
-                    file: this.state.capturedImage,
+                    cnicBase64: this.state.capturedImage,
                     did: localStorage.getItem('DID'),
                 }
             ).then(

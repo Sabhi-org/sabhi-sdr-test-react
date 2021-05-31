@@ -26,7 +26,7 @@ export default function UserProfile() {
     // socket
     useEffect(() => {
 
-        const ENDPOINT = 'http://localhost:12345/';
+        const ENDPOINT = 'https://0edb380a1d02.ngrok.io/';
         socket = io(ENDPOINT);
         console.log(socket);
         socket.on('chat', data => {
@@ -45,9 +45,9 @@ export default function UserProfile() {
     async function getData() {
         try {
             setIsloading(true);
-            const response = await sabhiApiInstance.get(`application/${did}`);
+            const response = await sabhiApiInstance.get(`ocr/${did}`);
             console.log(response.data.data[0]);
-            const { fullName, fatherName, profileImage, countryOfStay, gender, identityNumber, issueDate, birthDate, expireDate, permanentAddress, temporaryAddress } = response.data.data[0];
+            const { fullName, fatherName, profileImage, countryOfStay, gender, identityNumber, issueDate, birthDate, expireDate, permanentAddress, temporaryAddress } = response.data.data[0].userVerified;
             setImages({ profileImage: profileImage, });
             form.setFieldsValue({
                 fullName: fullName.value,
@@ -58,8 +58,6 @@ export default function UserProfile() {
                 issueDate: issueDate.value,
                 birthDate: birthDate.value,
                 expireDate: expireDate.value,
-                permanentAddress: permanentAddress.value,
-                temporaryAddress: temporaryAddress.value,
             });
             setIsloading(false);
         } catch (error) {
@@ -113,82 +111,80 @@ export default function UserProfile() {
     return (
         <div className="formsowncontainer">
             {/* <Space size="large"> */}
-{/* 
+
             <Form
                 style={{ marginTop: "18px", paddingLeft: "25px", paddingRight: "33px" }}
                 layout="horizontal"
                 form={form}
                 name="basic"
-            > */}
-                {/* <Spin spinning={isLoading}> */}
-                {/* <Avatar
-                    style={{ marginTop: "10px", marginLeft: "85px" }}
-                    src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
-                    size={160}
-                />
-                <Form.Item
-                    label="Name"
-                    name="fullName">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Father Name"
-                    name="fatherName">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Gender"
-                    name="gender">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Country of Stay"
-                    name="countryOfStay">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Identity Number"
-                    name="identityNumber">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Date of Issue"
-                    name="issueDate">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Date of Birth"
-                    name="birthDate">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Date of Expiry"
-                    name="expireDate">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Permanent Address"
-                    name="permanentAddress">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item
-                    label="Temporary Address"
-                    name="temporaryAddress">
-                    <Input size="small" disabled />
-                </Form.Item>
-                <Form.Item style={{ paddingLeft: "85px" }}>
-                    <Button type="primary" shape="round" style={btnStyle} size='large'>
-                        Submit Form
-                    </Button>
-                </Form.Item> */}
+            >
+                <Spin spinning={isLoading}>
+                    <Avatar
+                        style={{ marginTop: "10px", marginLeft: "85px" }}
+                        src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
+                        size={160}
+                    />
+                    <Form.Item
+                        label="Name"
+                        name="fullName">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Father Name"
+                        name="fatherName">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Gender"
+                        name="gender">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Country of Stay"
+                        name="countryOfStay">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Identity Number"
+                        name="identityNumber">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Date of Issue"
+                        name="issueDate">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Date of Birth"
+                        name="birthDate">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Date of Expiry"
+                        name="expireDate">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Permanent Address"
+                        name="permanentAddress">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item
+                        label="Temporary Address"
+                        name="temporaryAddress">
+                        <Input size="small" disabled />
+                    </Form.Item>
+                    <Form.Item style={{ paddingLeft: "85px" }}>
+                        <Button type="primary" shape="round" style={btnStyle} size='large'>
+                            Submit Form
+                        </Button>
+                    </Form.Item>
 
-                {/* </Spin> */}
-            {/* </Form> */}
-            {/* <Row>
+                </Spin>
+            </Form>
+            <Row>
                 Verified By: XYZ
-                    </Row> */}
-
-            {/* </Space> */}
+            </Row>
         </div >
     );
 }

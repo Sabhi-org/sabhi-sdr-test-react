@@ -4,7 +4,7 @@ import { Webcam } from './webcam';
 import { sabhiApiInstance } from '../axios-instance';
 // for class component only will change later
 import { withRouter } from "react-router-dom";
-class IdentityCardFrontScan extends Component {
+class Selfie extends Component {
     constructor() {
         super();
         this.webcam = null;
@@ -60,7 +60,7 @@ class IdentityCardFrontScan extends Component {
 
         return (
             <div>
-                <h4> Scan Cnic Front</h4>
+                <h4> Take Selfie</h4>
                 {uploading}
                 <video autoPlay playsInline muted id="webcam" width="100%" style={style} />
                 <br />
@@ -105,10 +105,10 @@ class IdentityCardFrontScan extends Component {
             // save image to local storage
         } else {
             this.setState({ 'uploading': true });
-            sabhiApiInstance.post(
-                `ocr/cnic/front`,
+            sabhiApiInstance.put(
+                `ocr/profile`,
                 {
-                    cnicBase64: this.state.capturedImage,
+                    profileImage: this.state.capturedImage,
                     did: localStorage.getItem('DID'),
                 }
             ).then(
@@ -138,7 +138,7 @@ class IdentityCardFrontScan extends Component {
         this.setState({ 'uploading': false });
         if (data.status === 200) {
             alert('Image Uploaded to Sabhi Media Library');
-            this.props.history.push('/selfie');
+            this.props.history.push('/form_sdr');
             this.discardImage();
         } else {
             alert('Sorry, we encountered an error uploading your image');
@@ -150,6 +150,9 @@ class IdentityCardFrontScan extends Component {
         let error = false;
         if (images.length > 0) {
             this.setState({ 'uploading': true });
+            console.log(images);
+            console.log(images[0].val);
+            localStorage.setItem('ImageFront', images[0].val);
             for (let i = 0; i < images.length; i++) {
                 
                 // upload
@@ -161,7 +164,7 @@ class IdentityCardFrontScan extends Component {
                     }
                 ).then((data) => this.checkUploadStatus(data)).catch((error) => {
                     error = true;
-                });
+                })
             }
             this.setState({ 'uploading': false });
             if (!error) {
@@ -170,4 +173,4 @@ class IdentityCardFrontScan extends Component {
         }
     }
 }
-export default IdentityCardFrontScan;
+export default Selfie;

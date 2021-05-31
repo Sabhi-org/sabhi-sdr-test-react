@@ -1,6 +1,6 @@
 // importing antd components------------------------->
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Col, Row, Image, Avatar, Spin, Space } from 'antd';
+import { Form, Input, Button, Col, Row, Image, Avatar, Spin, Space, message } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { sabhiApiInstance, apiInstance } from '../axios-instance';
 import { InfoCircleOutlined } from '@ant-design/icons';
@@ -19,8 +19,8 @@ export default function Antdform() {
         try {
             setIsloading(true);
             const response = await sabhiApiInstance.get(`ocr/${did}`);
-            const { identityCardFrontData, identityCardBackData, profileImage, identityCardFrontImage, identityCardBackImage } = response.data.data[0];
-            setImages({ profileImage: profileImage, identityCardFrontImage: identityCardFrontImage, identityCardBackImage: identityCardBackImage });
+            const { identityCardFrontData, profileImage, identityCardFrontImage } = response.data.data[0];
+            setImages({ profileImage: profileImage, identityCardFrontImage: identityCardFrontImage, });
             form.setFieldsValue({
                 fullName: identityCardFrontData.nameEnglish,
                 fatherName: identityCardFrontData.fatherNameEnglish,
@@ -30,12 +30,13 @@ export default function Antdform() {
                 issueDate: identityCardFrontData.dateOfIssue,
                 birthDate: identityCardFrontData.dateOfBirth,
                 expireDate: identityCardFrontData.dateOfExpiry,
-                permanentAddress: identityCardBackData.permenantAddress,
-                temporaryAddress: identityCardBackData.presentAddress,
+                permanentAddress: "",
+                temporaryAddress: "",
             });
             setIsloading(false);
         } catch (error) {
             console.log(error);
+            message.error(error.message);
         }
     }
 
@@ -46,7 +47,8 @@ export default function Antdform() {
 
     const createVerifiablePresentation = async (values) => {
         try {
-            const response = await apiInstance.post('vp', values);
+            const response = await sabhiApiInstance.post('vp', values);
+            console.log(response.data);
         } catch (error) {
             console.error(error);
         }
@@ -57,7 +59,6 @@ export default function Antdform() {
         setIsloading(true);
         values.profileImage = images.profileImage;
         values.did = did;
-        values.identityCardBackImage = images.identityCardBackImage;
         values.identityCardFrontImage = images.identityCardFrontImage;
         createVerifiablePresentation(values);
         setIsloading(false);
@@ -86,7 +87,6 @@ export default function Antdform() {
                 onFinishFailed={onFinishFailed}
             // style={{ height: "1900px" }}  
             >
-
                 <Form.Item label="Name" required tooltip="This is a required field" name="fullName">
                     <Input placeholder="input placeholder" />
                 </Form.Item>
@@ -120,8 +120,6 @@ export default function Antdform() {
                 <Form.Item>
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </Form.Item>
-
-
             </Form>
         </div>
     );

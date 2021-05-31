@@ -23,6 +23,7 @@ import Verifyyourphone from './components/verifyyourphone';
 import Phonev from './components/phonev';
 import Smsverify from './components/smsverify';
 import Idready from './components/idready';
+import Selfie from './components/Selfie';
 // importing css files----------------->
 import './App.css';
 
@@ -37,6 +38,7 @@ export default function App() {
     <div className="App">
       <Switch>
         <Route path='/' component={SabhiONlineIdentity} exact />
+        {/* <Route path="/" component={IdentityCardFrontScan}  exact/> */}
         <Route path='/Secureonlineidentity' component={SecureOnlineIdentity} />
         <Route path='/Termsandcond' component={Termsandconditions} />
         <Route path='/welcome' component={welcomenewuser} />
@@ -49,6 +51,7 @@ export default function App() {
         <Route path='/ocr_back' component={IdentityCardBackScan} />
         <Route path='/form_sdr' component={antsdrform} />
         <Route path='/user_profile' component={UserProfile} /> 
+        <Route path='/selfie' component={Selfie} />
         {/* <Route path='/' component={SplashScreen} exact />
         <Route path='/onboard' component={OnBoardScreen} />
         <Route path='/ocr_front' component={IdentityCardFrontScan} />

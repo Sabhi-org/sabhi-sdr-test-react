@@ -1,6 +1,7 @@
 .App {
     /* padding: 30px; */
     display: flex;
+    overflow: hidden;
     /* height: 667px; */
     /* background: rgb(95, 130, 189);
     background: linear-gradient(180deg, rgba(95, 130, 189, 1) 0%, rgba(47, 77, 125, 1) 100%);

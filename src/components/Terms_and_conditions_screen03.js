@@ -8,28 +8,31 @@ import { Checkbox } from 'antd';
 export default function TermsandCOnditions() {
 
 
-    let history = useHistory();
+     let history = useHistory();
 
-    // function acceptTermsAndConditions() {
-    //     if (!age || !country) message.info('please accept terms and condition');
-    //     else history.push('/fewmoresteps');
-    // }
+    const [age, setAge] = useState();
+    const [country, setCountry] = useState();
 
-    // function declineTermsAndCondition() {
-    //     history.push('/');
-    // }
-
-    // function onChangeAgeCheckBox(e) {
-    //     setAge(e.target.checked);
-    // }
-
-    // function onChangeCountryCheckBox(e) {
-    //     setCountry(e.target.checked);
-    // }
-
-    function nextscreen() {
-        history.push('/fewmoresteps')
+    function acceptTermsAndConditions() {
+        if (!age || !country) message.info('please accept terms and condition');
+        else history.push('/fewmoresteps');
     }
+
+    function declineTermsAndCondition() {
+        history.push('/');
+    }
+
+    function onChangeAgeCheckBox(e) {
+        setAge(e.target.checked);
+    }
+
+    function onChangeCountryCheckBox(e) {
+        setCountry(e.target.checked);
+    }
+
+//     function nextscreen() {
+//         history.push('/fewmoresteps')
+//     }
 
 
     return (
@@ -88,7 +91,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChangeAgeCheckBox} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -107,7 +110,7 @@ export default function TermsandCOnditions() {
                                     </Col>
                                     <Col>
                                         {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChangeCountryCheckBox} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -126,12 +129,12 @@ export default function TermsandCOnditions() {
                     <div className="stickybottom">
                         <Row span={24}>
                             <Col>
-                                <div className="buttontwointerms" type="primary" shape="round" size='large'>
+                                <div className="buttontwointerms" onClick={declineTermsAndCondition} type="primary" shape="round" size='large'>
                                     <p className="buttontwofontinterms">Decline</p>
                                 </div>
                             </Col>
                             <Col>
-                                <div className="buttononeinterms" shape="round" size='large' onClick={nextscreen}>
+                                <div className="buttononeinterms" onClick={acceptTermsAndConditions} shape="round" size='large' onClick={nextscreen}>
                                     <p className="buttononefontinterms">Accept</p>
                                 </div>
                             </Col>

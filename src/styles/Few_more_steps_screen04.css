@@ -98,7 +98,6 @@ margin-bottom: 0px;
     background: #35568D;
     margin: 0px;
     border-radius: 2px;
-    
     margin-left: 26px;
     margin-top: 24px;
 
@@ -193,9 +192,9 @@ margin-bottom: 0px;
         line-height: 132%;
         color: #FFFFFF;
         margin-bottom: 0px;
-        padding-top: 17px;
+        /* padding-top: 17px;
         
-    padding-left: 123px;
+    padding-left: 123px; */
 }
 
 .sticktobottomposition {

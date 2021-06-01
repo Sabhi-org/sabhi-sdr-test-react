@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, message, Row } from 'antd';
+import { Col, message, Row, Button } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, RightOutlined, BorderOutlined } from '@ant-design/icons';
 import '../styles/Terms_and_conditions_screen03.css';
 import { useHistory } from 'react-router-dom';
@@ -8,7 +8,21 @@ import { Checkbox } from 'antd';
 export default function TermsandCOnditions() {
 
 
-     let history = useHistory();
+    let history = useHistory();
+
+    const [disable, setDisable] = useState(true);
+
+    const btnDeclinestyle = {
+        width: '150px',
+        height: '56px',
+        background: '#FFFFFF',
+        borderRadius: '16px',
+        marginLeft: '0px',
+        border: 'none'
+    };
+
+
+
 
     const [age, setAge] = useState();
     const [country, setCountry] = useState();
@@ -30,9 +44,9 @@ export default function TermsandCOnditions() {
         setCountry(e.target.checked);
     }
 
-//     function nextscreen() {
-//         history.push('/fewmoresteps')
-//     }
+    function goBack() {
+        history.push('/Secureonlineidentity')
+    }
 
 
     return (
@@ -43,7 +57,7 @@ export default function TermsandCOnditions() {
                         <LeftOutlined style={{ color: "#95A7C6" }} />
                     </Col>
                     <Col span={18}>
-                        <small className="tinytext">Back</small>
+                        <small className="tinytext" onClick={goBack}>Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
@@ -129,12 +143,13 @@ export default function TermsandCOnditions() {
                     <div className="stickybottom">
                         <Row span={24}>
                             <Col>
-                                <div className="buttontwointerms" onClick={declineTermsAndCondition} type="primary" shape="round" size='large'>
+                                <Button type="primary" style={btnDeclinestyle} onClick={declineTermsAndCondition}><p className="buttontwofontinterms">Decline</p></Button>
+                                {/* <div className="buttontwointerms" onClick={declineTermsAndCondition} type="primary" shape="round" size='large'>
                                     <p className="buttontwofontinterms">Decline</p>
-                                </div>
+                                </div> */}
                             </Col>
                             <Col>
-                                <div className="buttononeinterms" onClick={acceptTermsAndConditions} shape="round" size='large' onClick={nextscreen}>
+                                <div className="buttononeinterms" onClick={acceptTermsAndConditions} shape="round" size='large'>
                                     <p className="buttononefontinterms">Accept</p>
                                 </div>
                             </Col>

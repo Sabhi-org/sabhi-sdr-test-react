@@ -1,10 +1,10 @@
 
 // importing react and its components---->
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 // importing antd components-------->
-import { Col, Row } from 'antd';
+import { Col, Row, Button, Checkbox } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined, BorderOutlined } from '@ant-design/icons';
 
 // importing css style files--------------------->
@@ -13,11 +13,34 @@ import '../styles/Few_more_steps_screen04.css';
 
 export default function Fewmoresteps() {
 
+    const [disable, setDisable] = useState(true);
+
+    const btncontinuestyle = {
+        width: '100%',
+        height: '56px',
+        background: '#4DDFBC',
+        borderRadius: '16px',
+        marginTop: '37px',
+        border: 'none'
+    };
+
+    const checkBoxstyle = {
+        fontSize: '22px',
+        color: '#686868',
+        marginLeft: '0px',
+        marginTop: '30px'
+    }
+
     let history = useHistory();
     function gotomoresteps() {
         history.push('/verifyyourphone');
         console.log('clicked');
     }
+
+    function goBack() {
+        history.push('/Termsandcond');
+    }
+
     return (
         <div className="screenofmore">
             <div className="containsfewscreen">
@@ -26,7 +49,7 @@ export default function Fewmoresteps() {
                         <LeftOutlined style={{ color: "#95A7C6" }} />
                     </Col>
                     <Col span={18}>
-                        <small className="tinytext">Back</small>
+                        <small className="tinytext" onClick={goBack}>Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#95A7C6", fontWeight: "500px", fontSize: "22px" }} />
@@ -65,7 +88,7 @@ export default function Fewmoresteps() {
                         {/* <div className="hovercover">
                             sasasa
                         </div> */}
-                        <div className="buttonthreeinfewmore" type="primary" shape="round" size='large'>
+                        <div className="buttonthreeinfewmore" onClick={() => setDisable(false)} type="primary" shape="round" size='large'>
                             <Col span={24}>
                                 <Row>
                                     <Col span={4}>
@@ -91,7 +114,7 @@ export default function Fewmoresteps() {
                                         <p className="fewmoreageverificationtwo">Secure your ID</p>
                                     </Col>
                                     <Col>
-                                        <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />
+                                        <Checkbox style={checkBoxstyle}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -109,7 +132,7 @@ export default function Fewmoresteps() {
                                         <p className="fewmoreageverificationtwo">Backup your ID for safety</p>
                                     </Col>
                                     <Col>
-                                        <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />
+                                        <Checkbox style={checkBoxstyle}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -119,9 +142,10 @@ export default function Fewmoresteps() {
                 <Row span={24}>
                     <div className="sticktobottomposition">
                         <Col span={21}>
-                            <div className="buttontwoinfewmoresteps" onClick={gotomoresteps} type="primary" shape="round" size='large'>
+                            <Button type="primary" style={btncontinuestyle} onClick={gotomoresteps} disabled={disable}><p className="buttontwofontinfewmoresteps">Continue</p></Button>
+                            {/* <div className="buttontwoinfewmoresteps" onClick={gotomoresteps} type="primary" shape="round" size='large' disabled>
                                 <p className="buttontwofontinfewmoresteps">Continue</p>
-                            </div>
+                            </div> */}
                         </Col>
                     </div>
                 </Row>

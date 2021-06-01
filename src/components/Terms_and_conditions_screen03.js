@@ -21,6 +21,12 @@ export default function TermsandCOnditions() {
         border: 'none'
     };
 
+    const scheckBoxstyle = {
+        fontSize: '22px',
+        color: '#686868',
+        marginLeft: '0px',
+        marginTop: '30px'
+    };
 
 
 
@@ -104,8 +110,7 @@ export default function TermsandCOnditions() {
                                         <p className="termsageverification">Age Verification</p>
                                     </Col>
                                     <Col>
-                                        {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChangeAgeCheckBox} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChangeAgeCheckBox} style={scheckBoxstyle}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>
@@ -123,8 +128,7 @@ export default function TermsandCOnditions() {
                                         <p className="termsageverificationtwo">Country Verification</p>
                                     </Col>
                                     <Col>
-                                        {/* <BorderOutlined style={{ fontSize: '18px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} /> */}
-                                        <Checkbox onChange={onChangeCountryCheckBox} style={{ fontSize: '22px', color: '#686868', marginLeft: '0px', marginTop: '30px' }}></Checkbox>
+                                        <Checkbox onChange={onChangeCountryCheckBox} style={scheckBoxstyle}></Checkbox>
                                     </Col>
                                 </Row>
                             </Col>

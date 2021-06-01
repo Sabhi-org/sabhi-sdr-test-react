@@ -143,9 +143,6 @@ export default function Fewmoresteps() {
                     <div className="sticktobottomposition">
                         <Col span={21}>
                             <Button type="primary" style={btncontinuestyle} onClick={gotomoresteps} disabled={disable}><p className="buttontwofontinfewmoresteps">Continue</p></Button>
-                            {/* <div className="buttontwoinfewmoresteps" onClick={gotomoresteps} type="primary" shape="round" size='large' disabled>
-                                <p className="buttontwofontinfewmoresteps">Continue</p>
-                            </div> */}
                         </Col>
                     </div>
                 </Row>

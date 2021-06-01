@@ -1,24 +1,49 @@
 
 // importing react and its components-------->
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
 // importing antd components------------->
-import { Col, Row } from 'antd';
+import { Col, message, Row, Spin } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
+import { sabhiApiInstance } from '../axios-instance';
 
 // importing css stylefiles---------------------------->
+import PhoneInput from 'react-phone-input-2'
 import '../styles/Phone_verification_screen06.css';
 
 
 export default function Phonev() {
+    
+    
     let history = useHistory();
-    function gotosmsscreen() {
-        history.push('/smsverify');
-        console.log('clicked');
+    const [input, setInput] = useState(0);
+    const [isLoading, setLoading] = useState(false);
+
+    async function handleClick() {
+        try {
+            localStorage.setItem('PhoneNumber', input);
+            setLoading(true);
+            const response = await sabhiApiInstance.post('otp', { phoneNumber: input });
+            if (response.data.status) {
+                setLoading(false);
+                message.loading('redirecting')
+                    .then(() => {
+                        history.push('/smsverify');
+                    })
+            } else {
+                message.warning('something went wrong please try again!');
+            }
+
+        } catch (error) {
+            message.error(error.message);
+        }
     }
+    
+    
     return (
+        <Spin spinning={isLoading}>
         <div className="phonevscreen">
             <div className="containsphonev">
                 <Row>
@@ -68,13 +93,17 @@ export default function Phonev() {
                 <Row span={24}>
                     <Col span={24}>
                         {/* <div className="barinphonev2"></div> */}
-                        <input className="inputs"></input>
+//                         <input className="inputs"></input>
+                            <PhoneInput
+                                country={'pk'}
+                                onChange={phone => setInput(phone)}
+                            />
                     </Col>
                 </Row>
                 <Row span={24}>
                     <div className="imgoingtostick">
                         <Col span={21}>
-                            <div className="buttonattheendofphonev" onClick={gotosmsscreen} type="primary" shape="round" size='large'>
+                            <div className="buttonattheendofphonev" onClick={handleClick} type="primary" shape="round" size='large'>
                                 <p className="continuefromphoinv">Continue</p>
                             </div>
                         </Col>
@@ -82,5 +111,6 @@ export default function Phonev() {
                 </Row>
             </div>
         </div>
+ </Spin>
     );
 }

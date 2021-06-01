@@ -12,6 +12,11 @@ export default function Verifyourphone() {
         history.push('/phonev');
         console.log('clicked');
     }
+
+    function goBack() {
+        history.push('/fewmoresteps');
+    }
+
     return (
         <div className="coverinverifyyourphone">
             <div className="abovespacing">
@@ -20,7 +25,7 @@ export default function Verifyourphone() {
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
                     </Col>
                     <Col span={15}>
-                        <small className="tinytextinverification">Back</small>
+                        <small className="tinytextinverification" onClick={goBack}>Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />

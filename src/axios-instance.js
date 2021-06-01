@@ -8,7 +8,8 @@ const apiInstance = axios.create({
 
 const sabhiApiInstance = axios.create({
     // baseURL: 'http://localhost:12345/',
-    baseURL: 'https://sabhi-task.com/',
+    baseURL: 'https://sabhi-api.herokuapp.com/'
+   // baseURL: 'https://sabhi-task.com/',
 });
 
 module.exports = {

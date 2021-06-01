@@ -7,35 +7,33 @@ import '../styles/Secure_onlineidentity_screen02.css';
 
 export default function Secureonlineidentity() {
 
-    const [isLoading, setLoading] = useState(false);
+     const [isLoading, setLoading] = useState(false);
     let history = useHistory();
 
-    // async function createIdentity() {
-    //     try {
-    //         message.loading('creating identity...', 0.3)
-    //             .then(() => {
-    //                 setLoading(true);
-    //             });
-
-    //         const response = await apiInstance.get('did');
-    //         localStorage.setItem('DID', response.data.did);
-    //         setLoading(false);
-    //         message.success('Identity created succesfully!')
-    //             .then(() => message.loading('redirecting...', 0.3)
-    //                 .then(() => history.push('/Termsandcond')));
-    //     } catch (error) {
-    //         setLoading(false);
-    //         message.error("something went wrong please try again!");
-    //     }
-    // }
-
-    // function recoverIdentity() {
-    //     message.info('this option will be available soon!');
-    // }
-
-    function createIdentity() {
-        history.push('/Termsandcond');
+    async function createIdentity() {
+        try {
+            message.info('creating identity...');
+            setLoading(true);
+            
+            const response = await apiInstance.get('did');
+            localStorage.setItem('DID', response.data.did);
+            setLoading(false);
+            message.success('Identity created succesfully!')
+                .then(() => message.loading('redirecting...', 0.3)
+                    .then(() => history.push('/Termsandcond')));
+        } catch (error) {
+            setLoading(false);
+            message.error("something went wrong please try again!");
+        }
     }
+
+    function recoverIdentity() {
+        message.info('this option will be available soon!');
+    }
+
+//     function createIdentity() {
+//         history.push('/Termsandcond');
+//     }
 
     return (
         <Spin spinning={isLoading}>
@@ -71,7 +69,7 @@ export default function Secureonlineidentity() {
                     <div className="sticktobottom">
                         <Row span={24}>
                             <Col offset={2}>
-                                <div className="buttontwosecure" type="primary" shape="round" size='large'>
+                                <div className="buttontwosecure" type="primary" shape="round" size='large' onClick={recoverIdentity}>
                                     <p className="buttontwofontsecure">Recover</p>
                                 </div>
                             </Col>

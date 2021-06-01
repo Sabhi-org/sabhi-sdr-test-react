@@ -61,10 +61,14 @@ export default function Antdform() {
         values.did = did;
         values.identityCardFrontImage = images.identityCardFrontImage;
         createVerifiablePresentation(values);
-        setIsloading(false);
-        history.push({
-            pathname: '/user_profile',
-        });
+        
+        message.loading('redirecting...', 3)
+            .then(() => {
+                setIsloading(false);
+                history.push({
+                    pathname: '/user_profile',
+                });
+            })
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -73,55 +77,57 @@ export default function Antdform() {
 
     // rendering antd form ---------------------->
     return (
-        <div class="backs">
-            <Avatar
-                style={{ marginTop: "18px", marginLeft: "95px" }}
-                src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
-                size={140}
-            />
-            <Form
-                layout="horizontal"
-                form={form}
-                name="basic"
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-            // style={{ height: "1900px" }}  
-            >
-                <Form.Item label="Name" required tooltip="This is a required field" name="fullName">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Father Name" required tooltip="This is a required field" name="fatherName">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Gender" required tooltip="This is a required field" name="gender">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Country of Stay" required tooltip="This is a required field" name="countryOfStay">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Identity Number" required tooltip="This is a required field" name="identityNumber">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Date of Issue" required tooltip="This is a required field" name="issueDate">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Date of Birth" required tooltip="This is a required field" name="birthDate">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Date of Expiry" required tooltip="This is a required field" name="expireDate">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Permanent Address" required tooltip="This is a required field" name="permanentAddress">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Temporary Address" required tooltip="This is a required field" name="temporaryAddress">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit">Submit</Button>
-                </Form.Item>
-            </Form>
-        </div>
+        <Spin spinning={isLoading}>
+            <div class="backs">
+                <Avatar
+                    style={{ marginTop: "18px", marginLeft: "95px" }}
+                    src={<Image src={images.profileImage ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
+                    size={140}
+                />
+                <Form
+                    layout="horizontal"
+                    form={form}
+                    name="basic"
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                // style={{ height: "1900px" }}  
+                >
+                    <Form.Item label="Name" required tooltip="This is a required field" name="fullName">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Father Name" required tooltip="This is a required field" name="fatherName">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Gender" required tooltip="This is a required field" name="gender">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Country of Stay" required tooltip="This is a required field" name="countryOfStay">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Identity Number" required tooltip="This is a required field" name="identityNumber">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Date of Issue" required tooltip="This is a required field" name="issueDate">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Date of Birth" required tooltip="This is a required field" name="birthDate">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Date of Expiry" required tooltip="This is a required field" name="expireDate">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Permanent Address" required tooltip="This is a required field" name="permanentAddress">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Temporary Address" required tooltip="This is a required field" name="temporaryAddress">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item style={{ paddingLeft: "135px" }}>
+                        <Button type="primary" htmlType="submit">Submit</Button>
+                    </Form.Item>
+                </Form>
+            </div>
+        </Spin>
     );
 
 }

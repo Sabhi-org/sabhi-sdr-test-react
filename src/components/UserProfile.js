@@ -174,8 +174,8 @@ export default function UserProfile() {
                         name="temporaryAddress">
                         <Input size="small" disabled />
                     </Form.Item>
-                    <Form.Item style={{ paddingLeft: "85px" }}>
-                        <Button type="primary" shape="round" style={btnStyle} size='large'>
+                    <Form.Item style={{ paddingLeft: "95px" }}>
+                        <Button type="primary"  size='large'>
                             Submit Form
                         </Button>
                     </Form.Item>

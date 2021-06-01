@@ -20,6 +20,11 @@ export default function IDready() {
         history.push('/frontpic');
         console.log('clicked');
     }
+
+
+    function goBack() {
+        history.push('/smsverify');
+    }
     return (
         <div className="coverinverifyyourphone">
             <div className="abovespacinginID">
@@ -28,7 +33,7 @@ export default function IDready() {
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
                     </Col>
                     <Col span={15}>
-                        <small className="tinytextinid">Back</small>
+                        <small className="tinytextinid" onClick={goBack}>Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />

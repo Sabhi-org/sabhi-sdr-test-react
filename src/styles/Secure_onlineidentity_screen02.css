@@ -134,3 +134,7 @@
             position: fixed;
             bottom: 2%;
         }
+
+        .ant-spin-blur {
+            height: 100vh;
+        }

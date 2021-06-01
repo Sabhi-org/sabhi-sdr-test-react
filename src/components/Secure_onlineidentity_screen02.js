@@ -7,14 +7,14 @@ import '../styles/Secure_onlineidentity_screen02.css';
 
 export default function Secureonlineidentity() {
 
-     const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(false);
     let history = useHistory();
 
     async function createIdentity() {
         try {
             message.info('creating identity...');
             setLoading(true);
-            
+
             const response = await apiInstance.get('did');
             localStorage.setItem('DID', response.data.did);
             setLoading(false);
@@ -31,13 +31,14 @@ export default function Secureonlineidentity() {
         message.info('this option will be available soon!');
     }
 
-//     function createIdentity() {
-//         history.push('/Termsandcond');
-//     }
+    //     function createIdentity() {
+    //         history.push('/Termsandcond');
+    //     }
 
     return (
         <Spin spinning={isLoading}>
             <div className="cover">
+
                 <Row span={24}>
                     <Col offset={2}>
                         <img className="largelogo" src={OnBoardImage} />
@@ -81,7 +82,9 @@ export default function Secureonlineidentity() {
                         </Row>
                     </div>
                 </Row>
+
             </div>
         </Spin>
+
     );
 }

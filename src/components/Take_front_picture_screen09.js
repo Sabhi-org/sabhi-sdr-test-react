@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     imgBox: {
-        maxWidth: "80%",
-        maxHeight: "80%",
-        margin: "10px"
+        maxWidth: "83vw",
+        maxHeight: "28vh",
+        margin: "0px"
     },
     img: {
         height: "inherit",
@@ -36,6 +36,12 @@ export default function Takefrontpicture() {
     function gotonextscreen() {
         history.push('/backpic');
     }
+
+    function goBack() {
+        history.push('/idready');
+    }
+
+
     const classes = useStyles(); const [source, setSource] = useState(""); const handleCapture = (target) => {
         if (target.files) {
             if (target.files.length !== 0) {
@@ -53,7 +59,7 @@ export default function Takefrontpicture() {
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
                     </Col>
                     <Col span={15}>
-                        <small className="samlltextback">Back</small>
+                        <small className="samlltextback" onClick={goBack}>Back</small>
                     </Col>
                     <Col span={2}>
                         <QuestionCircleOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />
@@ -68,13 +74,11 @@ export default function Takefrontpicture() {
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
             <Row>
                 <div className="continerforcamera">
                     <div className={classes.root}>
                         {source &&
-                            <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
+                            <Box display="flex" justifyContent="center" className={classes.imgBox}>
                                 <img src={source} alt={"snap"} className={classes.img}></img>
                             </Box>}
                         <input

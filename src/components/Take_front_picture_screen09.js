@@ -73,32 +73,23 @@ export default function Takefrontpicture() {
             <Row>
                 <div className="continerforcamera">
                     <div className={classes.root}>
-                        <Grid container>
-                            <Grid item xs={12}>
-                                <h5>Capture your image</h5>
-                                {source &&
-                                    <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
-                                        <img src={source} alt={"snap"} className={classes.img}></img>
-                                    </Box>}
-                                <input
-                                    accept="image/*"
-                                    className={classes.input}
-                                    id="icon-button-file"
-                                    type="file"
-                                    capture="environment"
-                                    onChange={(e) => handleCapture(e.target)}
-                                />
-                                <label htmlFor="icon-button-file">
-                                    <IconButton
-                                        color="primary"
-                                        aria-label="upload picture"
-                                        component="span"
-                                    >
-                                        <PhotoCameraRoundedIcon fontSize="large" color="primary" />
-                                    </IconButton>
-                                </label>
-                            </Grid>
-                        </Grid>
+                        {source &&
+                            <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
+                                <img src={source} alt={"snap"} className={classes.img}></img>
+                            </Box>}
+                        <input
+                            accept="image/*"
+                            className={classes.input}
+                            id="icon-button-file"
+                            type="file"
+                            capture="environment"
+                            onChange={(e) => handleCapture(e.target)}
+                        />
+                        <label htmlFor="icon-button-file">
+                            <IconButton color="primary" aria-label="upload picture" component="span">
+                                <PhotoCameraRoundedIcon fontSize="large" color="primary" />
+                            </IconButton>
+                        </label>
                     </div>
                 </div>
             </Row>

@@ -32,10 +32,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Takefrontpicture() {
+
+    const [disable, setDisable] = useState(true);
+
     let history = useHistory();
 
     function gotonextscreen() {
-        history.push('/backpic');
+        history.push('/takeselfie');
     }
 
     function goBack() {
@@ -111,20 +114,34 @@ export default function Takefrontpicture() {
                     </Col>
                 </Row>
             </Row>
+
+
             <Row span={24}>
                 <div className="footbuttoncamera">
-                    <Col span={21} offset={1}>
-                        <label className="camerabuttonnew" htmlFor="icon-button-file">
-                            <IconButton color="primary" aria-label="upload picture" component="span"><p className="buttononforscanningfront">Scan Front</p>
+                    <Row span={24}>
 
-                            </IconButton>
-                        </label>
-                        <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
-                            {/* <p className="buttononforscanningfront">Scan Front</p> */}
-                        </div>
-                    </Col>
+                        <Col span={10} offset={1}>
+                            <label className="camerabuttonnew" htmlFor="icon-button-file">
+                                <IconButton color="primary" onClick={() => setDisable(false)} aria-label="upload picture" component="span">
+                                    <p className="buttononforscanningfront">Scan ID</p>
+                                </IconButton>
+                            </label>
+                            <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
+                                {/* <p className="buttononforscanningfront">Scan Front</p> */}
+                            </div>
+                        </Col>
+
+
+                        <Col span={10} offset={1}>
+                            <div className="buttoninthecamerafronttwo" onClick={gotonextscreen} type="primary" shape="round" size='large' disabled={disable}>
+                                <p className="buttononforscanningfront">Continue</p>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
             </Row>
+
+
         </div>
     );
 }

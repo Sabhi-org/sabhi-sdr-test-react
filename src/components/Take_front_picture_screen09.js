@@ -105,9 +105,9 @@ export default function Takefrontpicture() {
             <Row>
                 <Row span={24}>
                     <Col span={24} offset={2}>
-                        <div className="textundercamone"> Please take the picture of the front of the</div>
-                        <div className="textundercamtwo">ID card.Make sure it is not blurry or</div>
-                        <div className="textundercamthree">dark and is inside the marker.</div>
+                        <div className="textundercamone"> Please take front picture of ID</div>
+                        {/* <div className="textundercamtwo">ID card.Make sure it is not blurry or</div>
+                        <div className="textundercamthree">dark and is inside the marker.</div> */}
                     </Col>
                 </Row>
             </Row>

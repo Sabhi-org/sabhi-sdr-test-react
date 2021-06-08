@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     imgBox: {
-        maxWidth: "320px",
-        maxHeight: "210px",
+        maxWidth: "100%",
+        maxHeight: "auto",
         margin: "0px"
     },
     img: {
@@ -76,10 +76,10 @@ export default function Takefrontpicture() {
                 </Row>
             </div>
             <br></br>
+            {/* <br></br> */}
+            {/* <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            <br></br> */}
             <Row>
                 <div className="continerforcamera">
                     <div className={classes.root}>
@@ -100,8 +100,8 @@ export default function Takefrontpicture() {
                 </div>
             </Row>
             <br></br>
-            <br></br>
-            <br></br>
+            {/* <br></br>
+            <br></br> */}
             <Row>
                 <Row span={24}>
                     <Col span={24} offset={2}>

@@ -59,7 +59,7 @@ export default function Takefrontpicture() {
 
     return (
         <div className="frontpicback">
-            <div className="frontpicabove">
+            {/* <div className="frontpicabove">
                 <Row>
                     <Col span={2} offset={2}>
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
@@ -74,7 +74,7 @@ export default function Takefrontpicture() {
                         <MoreOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-            </div>
+            </div> */}
             <br></br>
             {/* <br></br> */}
             {/* <br></br>

@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Takefrontpicture() {
 
-    const [disable, setDisable] = useState(true);
+    const [isDisabled, setDisable] = useState(false);
 
     let history = useHistory();
 
@@ -122,7 +122,7 @@ export default function Takefrontpicture() {
 
                         <Col span={10} offset={1}>
                             <label className="camerabuttonnew" htmlFor="icon-button-file">
-                                <IconButton color="primary" onClick={() => setDisable(false)} aria-label="upload picture" component="span">
+                                <IconButton color="primary" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
                                     <p className="buttononforscanningfront">Scan ID</p>
                                 </IconButton>
                             </label>
@@ -131,12 +131,17 @@ export default function Takefrontpicture() {
                             </div>
                         </Col>
 
+                        {
+                            isDisabled &&
+                            <Col span={10} offset={1}>
+                                <div className="buttoninthecamerafronttwo" onClick={gotonextscreen} type="primary" shape="round" size='large'>
+                                    <p className="buttononforscanningfront">Continue</p>
+                                </div>
+                            </Col>
+                        }
 
-                        <Col span={10} offset={1}>
-                            <div className="buttoninthecamerafronttwo" onClick={gotonextscreen} type="primary" shape="round" size='large' disabled={disable}>
-                                <p className="buttononforscanningfront">Continue</p>
-                            </div>
-                        </Col>
+
+                        
                     </Row>
                 </div>
             </Row>

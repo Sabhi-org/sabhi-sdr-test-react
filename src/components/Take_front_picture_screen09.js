@@ -12,17 +12,18 @@ import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: "100%",
+        width: "100%",
+        height: "auto",
         textAlign: 'center',
     },
     imgBox: {
-        maxWidth: "83vw",
-        maxHeight: "28vh",
+        maxWidth: "320px",
+        maxHeight: "210px",
         margin: "0px"
     },
     img: {
-        height: "inherit",
-        maxWidth: "inherit",
+        width: "100%",
+        height: "auto",
     },
     input: {
         display: "none"
@@ -42,7 +43,9 @@ export default function Takefrontpicture() {
     }
 
 
-    const classes = useStyles(); const [source, setSource] = useState(""); const handleCapture = (target) => {
+    const classes = useStyles();
+    const [source, setSource] = useState("");
+    const handleCapture = (target) => {
         if (target.files) {
             if (target.files.length !== 0) {
                 const file = target.files[0];
@@ -51,6 +54,9 @@ export default function Takefrontpicture() {
             }
         }
     };
+
+
+
     return (
         <div className="frontpicback">
             <div className="frontpicabove">
@@ -89,11 +95,7 @@ export default function Takefrontpicture() {
                             capture="environment"
                             onChange={(e) => handleCapture(e.target)}
                         />
-                        <label htmlFor="icon-button-file">
-                            <IconButton color="primary" aria-label="upload picture" component="span">
-                                <PhotoCameraRoundedIcon fontSize="large" color="primary" />
-                            </IconButton>
-                        </label>
+
                     </div>
                 </div>
             </Row>
@@ -112,8 +114,13 @@ export default function Takefrontpicture() {
             <Row span={24}>
                 <div className="footbuttoncamera">
                     <Col span={21} offset={1}>
-                        <div className="buttoninthecamerafront" onClick={gotonextscreen} type="primary" shape="round" size='large'>
-                            <p className="buttononforscanningfront">Scan Front</p>
+                        <label className="camerabuttonnew" htmlFor="icon-button-file">
+                            <IconButton color="primary" aria-label="upload picture" component="span"><p className="buttononforscanningfront">Scan Front</p>
+
+                            </IconButton>
+                        </label>
+                        <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
+                            {/* <p className="buttononforscanningfront">Scan Front</p> */}
                         </div>
                     </Col>
                 </div>

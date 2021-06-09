@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Col, Row } from 'antd';
+import { Col, message, Row, Spin } from 'antd';
 import '../styles/Take_a_selfie_screen15.css';
-import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 
-import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
+import { sabhiApiInstance } from '../axios-instance';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -34,11 +32,33 @@ const useStyles = makeStyles((theme) => ({
 export default function Takefrontpicture() {
 
     const [isDisabled, setDisable] = useState(false);
+    const [base64, setBase64] = useState('');
+    const [isLoading, setLoading] = useState(false);
+    const [source, setSource] = useState('');
 
     let history = useHistory();
 
-    function gotonextscreen() {
-        history.push('/takeselfie');
+    async function gotonextscreen() {
+        try {
+            setLoading(true);
+            console.log(localStorage.getItem('DID'));
+            console.log(base64);
+            const response = await sabhiApiInstance.post('ocr/cnic/front', {
+                did: localStorage.getItem('DID'),
+                cnicBase64: base64,
+            });
+            console.log(response.data);
+            if (response.data.status) {
+                setLoading(false);
+                history.push('/takeselfie');
+            } else {
+                setLoading(false);
+                message.warning('something went wrong, please try again!');
+            } 
+        } catch (error) {
+            setLoading(false);
+            message.error('something went wrong,  please try again!');
+        }
     }
 
     function goBack() {
@@ -47,22 +67,37 @@ export default function Takefrontpicture() {
 
 
     const classes = useStyles();
-    const [source, setSource] = useState("");
+
     const handleCapture = (target) => {
         if (target.files) {
             if (target.files.length !== 0) {
                 const file = target.files[0];
                 const newUrl = URL.createObjectURL(file);
                 setSource(newUrl);
+                getBase64(file, result => {
+                    setBase64(result);
+                });
             }
         }
     };
 
+    const getBase64 = (file, cb) => {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            cb(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
+
 
 
     return (
-        <div className="frontpicback">
-            {/* <div className="frontpicabove">
+        <Spin spinning={isLoading} tip="Image processing in progress...">
+            <div className="frontpicback">
+                {/* <div className="frontpicabove">
                 <Row>
                     <Col span={2} offset={2}>
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
@@ -78,75 +113,71 @@ export default function Takefrontpicture() {
                     </Col>
                 </Row>
             </div> */}
-            {/* <br></br> */}
-            {/* <br></br> */}
-            {/* <br></br>
+                {/* <br></br> */}
+                {/* <br></br> */}
+                {/* <br></br>
             <br></br>
             <br></br> */}
-            <Row>
-                <div className="continerforcamera">
-                    <div className={classes.root}>
-                        {source &&
-                            <Box display="flex" justifyContent="center" className={classes.imgBox}>
-                                <img src={source} alt={"snap"} className={classes.img}></img>
-                            </Box>}
-                        <input
-                            accept="image/*"
-                            className={classes.input}
-                            id="icon-button-file"
-                            type="file"
-                            capture="environment"
-                            onChange={(e) => handleCapture(e.target)}
-                        />
+                <Row>
+                    <div className="continerforcamera">
+                        <div className={classes.root}>
+                            {source &&
+                                <Box display="flex" justifyContent="center" className={classes.imgBox}>
+                                    <img src={source} alt={"snap"} className={classes.img}></img>
+                                </Box>}
+                            <input
+                                accept="image/*"
+                                className={classes.input}
+                                id="icon-button-file"
+                                type="file"
+                                capture="environment"
+                                onChange={(e) => handleCapture(e.target)}
+                            />
 
+                        </div>
                     </div>
-                </div>
-            </Row>
-            <br></br>
-            {/* <br></br>
-            <br></br> */}
-            <Row>
-                <Row span={24}>
-                    <Col span={24} offset={2}>
-                        <div className="textundercamone"> Please take front picture of ID</div>
-                        {/* <div className="textundercamtwo">ID card.Make sure it is not blurry or</div>
-                        <div className="textundercamthree">dark and is inside the marker.</div> */}
-                    </Col>
                 </Row>
-            </Row>
-
-
-            <Row span={24}>
-                <div className="footbuttoncamera">
+                <br></br>
+                {/* <br></br>
+            <br></br> */}
+                <Row>
                     <Row span={24}>
+                        <Col span={24} offset={2}>
+                            <div className="textundercamone"> Please take front picture of ID</div>
+                            {/* <div className="textundercamtwo">ID card.Make sure it is not blurry or</div>
+                        <div className="textundercamthree">dark and is inside the marker.</div> */}
+                        </Col>
+                    </Row>
+                </Row>
 
-                        <Col span={10} offset={1}>
-                            <label className="buttoninthecamerafront" htmlFor="icon-button-file">
-                                <IconButton color="primary" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
-                                    <p className="buttononforscanningfrontinscan">Scan ID</p>
-                                </IconButton>
-                            </label>
-                            {/* <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
+
+                <Row span={24}>
+                    <div className="footbuttoncamera">
+                        <Row span={24}>
+
+                            <Col span={10} offset={1}>
+                                <label className="buttoninthecamerafront" htmlFor="icon-button-file">
+                                    <IconButton color="primary" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
+                                        <p className="buttononforscanningfrontinscan">Scan ID</p>
+                                    </IconButton>
+                                </label>
+                                {/* <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
                                 <p className="buttononforscanningfront">Scan Front</p>
                             </div> */}
-                        </Col>
-
-                        {
-                            isDisabled &&
-                            <Col span={10} offset={1}>
-                                <div className="buttoninthecamerafronttwo" onClick={gotonextscreen} type="primary" shape="round" size='large'>
-                                    <p className="buttononforscanningfront">Continue</p>
-                                </div>
                             </Col>
-                        }
 
-
-                        
-                    </Row>
-                </div>
-            </Row>
-
-
-        </div>
+                            {
+                                isDisabled &&
+                                <Col span={10} offset={1}>
+                                    <div className="buttoninthecamerafronttwo" onClick={gotonextscreen} type="primary" shape="round" size='large'>
+                                        <p className="buttononforscanningfront">Continue</p>
+                                    </div>
+                                </Col>
+                            }
+                        </Row>
+                    </div>
+                </Row>
+            </div>
+        </Spin>
     );
 }

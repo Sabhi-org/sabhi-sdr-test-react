@@ -4,6 +4,7 @@ import '../styles/Take_back_picture_screen10.css';
 import { LeftOutlined, QuestionCircleOutlined, MoreOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 
+
 export default function Takebackpic() {
 
     let history = useHistory();

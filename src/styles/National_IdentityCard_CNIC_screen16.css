@@ -1,34 +1,36 @@
 .containsnic {
-    background:#F5F9FF;
+    background: #f5f9ff;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100vw;
     padding-top: 47px;
-    padding-left:28px;
-    padding-right:28px;
+    padding-left: 28px;
+    padding-right: 28px;
 }
 
 .cnicback {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 132%;
-color: #95A7C6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #95a7c6;
 }
 
 .cnicscreentitle {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 278;
-font-size: 32px;
-line-height: 111%;
-color: #35568D;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 278;
+    font-size: 32px;
+    line-height: 111%;
+    color: #35568d;
 
-margin-bottom: 0px;
-margin-top: 16px;
+    margin-bottom: 0px;
+    margin-top: 16px;
 }
 
 .nicscreentitle {
@@ -36,12 +38,13 @@ margin-top: 16px;
 }
 
 .cnicscreentitlw2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: 445;
     font-size: 32px;
     line-height: 111%;
-    color: #35568D;
+    color: #35568d;
 }
 
 .nationalfont {
@@ -51,13 +54,13 @@ margin-top: 16px;
 .cnicinbar {
     width: 100%;
     height: 4px;
-    background-color: #4DDFBC;
+    background-color: #4ddfbc;
 }
 
 .cnibarscreenbar {
     width: 100%;
     height: 4px;
-    background-color: #4DDFBC;
+    background-color: #4ddfbc;
 }
 
 .nicdescription {
@@ -66,61 +69,63 @@ margin-top: 16px;
 }
 
 .cnicnationaltextpara {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 132%;
-    
-    color: #95A7C6;
+
+    color: #95a7c6;
     margin-bottom: 0px;
 }
 
 .tinytextinnicscreen {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 132%;
-color: #95A7C6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 132%;
+    color: #95a7c6;
 }
 
 .inputsinpersocnicscreens {
-    border:none;
-    border-bottom: 3px solid #35568D;
+    border: none;
+    border-bottom: 3px solid #35568d;
     padding: 5px 10px;
     outline: none;
     background: none;
     width: 100%;
     height: 40px;
     font-size: 22px;
-    color: #35568D;
+    color: #35568d;
     margin-bottom: 20px;
 }
 
 .inputsincnicscreengender {
-    border:none;
-    border-bottom: 3px solid #35568D;
+    border: none;
+    border-bottom: 3px solid #35568d;
     padding: 5px 10px;
     outline: none;
     background: none;
     width: 90%;
     height: 40px;
     font-size: 22px;
-    color: #35568D;
+    color: #35568d;
     margin-bottom: 20px;
 }
 
 .inputsincnicscreenstay {
-    border:none;
-    border-bottom: 3px solid #35568D;
+    border: none;
+    border-bottom: 3px solid #35568d;
     padding: 5px 10px;
     outline: none;
     background: none;
     width: 100%;
     height: 40px;
     font-size: 22px;
-    color: #35568D;
+    color: #35568d;
     margin-bottom: 20px;
 }
 
@@ -132,55 +137,54 @@ color: #95A7C6;
 
 .buttonincnicscreen {
     width: 100%;
-   
-    margin-top: 236px;
 
+    margin-top: 236px;
 
     height: 56px;
 
-    background-color: #F5F9FF;
+    background-color: #f5f9ff;
     box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
     border-radius: 16px;
 }
 
 .continuecnicscreen {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 132%;
-    color: #35568D;
+    color: #35568d;
     margin-bottom: 0px;
     padding-top: 17px;
-    
+
     padding-left: 40px;
 }
 
-
-
 .buttonincnicscreen2 {
     width: 100%;
-   
-    margin-top: 236px;
 
+    margin-top: 236px;
 
     height: 56px;
 
-    background-color: #4DDFBC;
+    background-color: #4ddfbc;
     box-shadow: 0px 4px 32px rgba(6, 45, 80, 0.1);
     border-radius: 16px;
 }
 
 .continuecnicscreen2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 132%;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 0px;
     padding-top: 17px;
-    
-padding-left: 50px;
+
+    padding-left: 50px;
 }
+
 

@@ -78,7 +78,7 @@ export default function Takefrontpicture() {
                     </Col>
                 </Row>
             </div> */}
-            <br></br>
+            {/* <br></br> */}
             {/* <br></br> */}
             {/* <br></br>
             <br></br>

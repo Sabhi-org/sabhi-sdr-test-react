@@ -30,7 +30,7 @@ export default function Sabhionlineidentity() {
                 </Col>
             </Row>
             <Row span={24}>
-                <Col span={5} offset={10}>
+                <Col span={5} offset={9}>
                     <div className="fontoneinfirstscreen">Sabhi</div>
                 </Col>
             </Row>

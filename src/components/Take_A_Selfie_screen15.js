@@ -96,7 +96,7 @@ export default function Takeaselfie() {
                     </div>
                 </div>
             </Row>
-            <br></br>
+            {/* <br></br> */}
             <Row>
                 <Row span={24}>
                     <Col span={24} offset={2}>

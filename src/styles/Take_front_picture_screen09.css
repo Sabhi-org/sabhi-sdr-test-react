@@ -33,7 +33,7 @@
 
 .frontpicback::before{
     content: "";
-      background-image: url('../images/croped_hand_3.jpg');
+      background-image: url('../images/croped_hand_4.jpg');
       background-size: cover;
       position: absolute;
       top: 0px;

@@ -9,7 +9,7 @@
 
 .selfiepack::before{
     content: "";
-      background-image: url('../images/profilepic_crop_1.jpg');
+      background-image: url('../images/profilepic_crop_3.jpg');
       background-size: cover;
       position: absolute;
       top: 0px;

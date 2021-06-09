@@ -154,9 +154,9 @@ export default function Smsverify() {
                             <Col span={9} offset={8}>
                                 <p className="resendsms" onClick={resendCode}>Resend Code</p>
                             </Col>
-                            <Col span={9} offset={7}>
+                            {/* <Col span={9} offset={7}>
                                 <p className="resendsmstwo">Wait 05:00 mins</p>
-                            </Col>
+                            </Col> */}
                         </Col>
                     </Row>
                     <Row span={24}>

@@ -27,7 +27,7 @@ export default function IDready() {
     }
     return (
         <div className="coverinverifyyourphone">
-            <div className="abovespacinginID">
+            {/* <div className="abovespacinginID">
                 <Row>
                     <Col span={2} offset={2}>
                         <LeftOutlined style={{ color: "#F5F9FF" }} />
@@ -42,7 +42,7 @@ export default function IDready() {
                         <MoreOutlined style={{ color: "#F5F9FF", fontWeight: "500px", fontSize: "22px" }} />
                     </Col>
                 </Row>
-            </div>
+            </div> */}
             <Row span={24}>
                 <Col offset={2}>
                     <img className="largeid" src={ding3} />

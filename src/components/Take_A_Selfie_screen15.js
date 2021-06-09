@@ -126,14 +126,14 @@ export default function Takeaselfie() {
                     <Row span={24}>
 
                         <Col span={10} offset={1}>
-                            <label className="camerabuttonforselfie" htmlFor="icon-button-file">
+                            <label className="realbutton" htmlFor="icon-button-file">
                                 <IconButton color="primary" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
-                                    <p className="sefiefont">Take Selfie</p>
+                                    <p className="fontcontinueinselfie">Take Selfie</p>
                                 </IconButton>
                             </label>
-                            <div className="realbutton" type="primary" shape="round" size='large'>
-                                {/* <p className="buttononforscanningfront">Scan Front</p> */}
-                            </div>
+                            {/* <div className="realbutton" type="primary" shape="round" size='large'>
+                                <p className="buttononforscanningfront">Scan Front</p>
+                            </div> */}
                         </Col>
 
                         {

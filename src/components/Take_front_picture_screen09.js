@@ -121,14 +121,14 @@ export default function Takefrontpicture() {
                     <Row span={24}>
 
                         <Col span={10} offset={1}>
-                            <label className="camerabuttonnew" htmlFor="icon-button-file">
+                            <label className="buttoninthecamerafront" htmlFor="icon-button-file">
                                 <IconButton color="primary" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
-                                    <p className="buttononforscanningfront">Scan ID</p>
+                                    <p className="buttononforscanningfrontinscan">Scan ID</p>
                                 </IconButton>
                             </label>
-                            <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
-                                {/* <p className="buttononforscanningfront">Scan Front</p> */}
-                            </div>
+                            {/* <div className="buttoninthecamerafront" type="primary" shape="round" size='large'>
+                                <p className="buttononforscanningfront">Scan Front</p>
+                            </div> */}
                         </Col>
 
                         {

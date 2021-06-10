@@ -37,6 +37,7 @@ export default function Phonev() {
             }
 
         } catch (error) {
+            setLoading(false);
             message.error(error.message);
         }
     }

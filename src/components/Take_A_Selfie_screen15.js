@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { sabhiApiInstance } from '../axios-instance';
+import imageCompression from 'browser-image-compression';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +38,7 @@ export default function Takeaselfie() {
     const [isLoading, setLoading] = useState(false);
 
     let history = useHistory();
-    
+
     async function ontonext() {
         try {
             setLoading(true);
@@ -69,16 +70,35 @@ export default function Takeaselfie() {
 
     const classes = useStyles();
     const [source, setSource] = useState("");
-    const handleCapture = (target) => {
-        if (target.files) {
-            if (target.files.length !== 0) {
-                const file = target.files[0];
-                const newUrl = URL.createObjectURL(file);
-                setSource(newUrl);
-                getBase64(file, result => {
-                    setBase64(result);
-                });
+    const handleCapture = async (target) => {
+        try {
+            if (target.files) {
+                if (target.files.length !== 0) {
+                    const file = target.files[0];
+                    // const newUrl = URL.createObjectURL(file);
+
+
+                    // compress image
+                    const options = {
+                        maxSizeMB: 1,
+                        maxWidthOrHeight: 1920,
+                        useWebWorker: true,
+                    };
+
+                    const compressedFile = await imageCompression(file, options);
+                    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+                    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+                    const newUrl = URL.createObjectURL(compressedFile);
+
+                    setSource(newUrl);
+                    getBase64(compressedFile, result => {
+                        console.log(result);
+                        setBase64(result);
+                    });
+                }
             }
+        } catch (error) {
+            message.error(error.message);
         }
     };
 

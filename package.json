@@ -8,6 +8,7 @@
     "antd": "^4.12.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "browser-image-compression": "^1.0.14",
     "caniuse-lite": "^1.0.30001204",
     "mobiscroll-react": "^4.0.0",
     "qrcode.react": "^1.0.1",

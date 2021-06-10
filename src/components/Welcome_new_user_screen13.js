@@ -1,20 +1,76 @@
-import React from 'react';
-import { Col, Row, Typography } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Col, Row, Typography, Modal, Button, message, } from 'antd';
 import { ShrinkOutlined, QrcodeOutlined, CodepenOutlined, SearchOutlined, RightOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import '../styles/Welcome_new_user_screen12.css';
+import { io } from "socket.io-client";
 
-export default function welcomeNewUser() {
-
+function WelcomeNewUser() {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [omniData, setOmniData] = useState("");
     const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };
     const btnStyletwo = { background: '#FFFFFF', bordeRadius: '16px', 'borderColor': '#FFFFFF' };
 
     const { Text } = Typography;
 
 
+
+
+
+
+    let socket;
+    useEffect(() => {
+        const ENDPOINT = 'https://sabhiapi.ngrok.io/';
+        socket = io(ENDPOINT);
+        console.log(socket);
+        socket.on('chat', data => {
+            console.log(data);
+        });
+
+        socket.on('displayOmniCheck', data => {
+            console.log(data);
+            setOmniData(data.message);
+            showModal();
+        });
+
+    }, []);
+
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        let s;
+        const ENDPOINT = 'https://sabhiapi.ngrok.io/';
+        s = io(ENDPOINT);
+        s.emit('omniResponse', { status: true, message: "omni is accepted!" });
+        message.success('verified');
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
+
     return (
+
+
         <div className="cover">
             <div className="background">
+
+
+
+                {/* <Button type="primary" onClick={showModal}>
+                    Open Modal
+                </Button> */}
+                <Modal title="Omni Check" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Yes" cancelText="No">
+                    <p>{omniData}</p>
+                </Modal>
+
+
+
                 <Row span={24}>
                     <Col span={22}>
                         <div className="fontonewelcome">Welcome,</div>
@@ -104,3 +160,5 @@ export default function welcomeNewUser() {
         </div>
     );
 }
+
+export default WelcomeNewUser;

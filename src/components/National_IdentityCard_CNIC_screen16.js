@@ -54,6 +54,8 @@ export default function Nationalidentitycard() {
             values.profileImage = images.profileImage;
             values.did = did;
             values.identityCardFrontImage = images.identityCardFrontImage;
+            if (values.fatherName !== '') values.husbandName = '';
+            else values.husbandName = values.fatherName;
             console.log(values);
             const response = await sabhiApiInstance.post('vp', values);
             if (response.data.status) {
@@ -61,6 +63,7 @@ export default function Nationalidentitycard() {
                 history.push('/welcome');
             } else message.error('something went wrong, please try again!');
         } catch (error) {
+            setIsloading(false);
             message.error('something went wrong, please try again!');
         }
     };
@@ -135,7 +138,7 @@ export default function Nationalidentitycard() {
                         </Row>
                         <Row>
                             <Col span={18}>
-                                <small className="tinytextinpersonalscreen">Father Name</small>
+                                <small className="tinytextinpersonalscreen">Father / Husband Name</small>
                             </Col>
                         </Row>
                         <Row span={24}>
@@ -146,7 +149,7 @@ export default function Nationalidentitycard() {
                             </Col>
                         </Row>
                         <Row span={24}>
-                            <Col span={12}>
+                            <Col span={8}>
                                 <Row>
                                     <Col span={18}>
                                         <small className="tinytextinpersonalscreen">Gender</small>
@@ -160,22 +163,22 @@ export default function Nationalidentitycard() {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col span={12}>
+                            <Col span={16}>
                                 <Row>
                                     <Col span={18}>
-                                        <small className="tinytextinpersonalscreen">Country Of Stay</small>
+                                        <small className="tinytextinpersonalscreen">CNIC</small>
                                     </Col>
                                 </Row>
                                 <Row span={24}>
                                     <Col span={24}>
-                                        <Form.Item name="countryOfStay">
-                                            <input className="inputsincnicscreenstay" />
+                                        <Form.Item name="identityNumber">
+                                            <input className="inputsinpersonalscreen" />
                                         </Form.Item>
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
-                        <Row>
+                        {/* <Row>
                             <Col span={18}>
                                 <small className="tinytextinpersonalscreen">Identity Number</small>
                             </Col>
@@ -186,14 +189,14 @@ export default function Nationalidentitycard() {
                                     <input className="inputsinpersonalscreen" />
                                 </Form.Item>
                             </Col>
-                        </Row>
+                        </Row> */}
                         <Row>
                             <Col span={18}>
                                 <small className="tinytextinpersonalscreen">Date Of Issue</small>
                             </Col>
                         </Row>
                         <Row span={24}>
-                            <Col span={24}>
+                            <Col span={12}>
                                 <Form.Item name="issueDate">
                                     <input className="inputsinpersonalscreen" />
                                 </Form.Item>

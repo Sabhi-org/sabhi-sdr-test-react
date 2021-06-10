@@ -12,13 +12,13 @@ export default function Secureonlineidentity() {
 
     async function createIdentity() {
         try {
-            message.info('creating identity...');
+            message.info('creating identity...', 0.2);
             setLoading(true);
 
             const response = await apiInstance.get('did');
             localStorage.setItem('DID', response.data.did);
             setLoading(false);
-            message.success('Identity created succesfully!')
+            message.success('Identity created succesfully!', 0.2)
                 .then(() => message.loading('redirecting...', 0.3)
                     .then(() => history.push('/Termsandcond')));
         } catch (error) {

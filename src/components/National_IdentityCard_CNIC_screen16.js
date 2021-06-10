@@ -71,7 +71,7 @@ export default function Nationalidentitycard() {
 
 
     return (
-        <Spin spinning={isLoading} tip="retrieving records...">
+        <Spin spinning={isLoading}>
             <div className="cnicscreen">
                 <div className="containsnic">
                     <Row>
@@ -199,7 +199,38 @@ export default function Nationalidentitycard() {
                                 </Form.Item>
                             </Col>
                         </Row>
-                        <Row>
+
+                        <Row span={24}>
+                            <Col span={12}>
+                                <Row>
+                                    <Col span={18}>
+                                        <small className="tinytextinpersonalscreen">Date Of Brith</small>
+                                    </Col>
+                                </Row>
+                                <Row span={24}>
+                                    <Col span={24}>
+                                        <Form.Item name="birthDate">
+                                            <input className="inputsincnicscreengender" />
+                                        </Form.Item>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col span={12}>
+                                <Row>
+                                    <Col span={18}>
+                                        <small className="tinytextinpersonalscreen">Date of Expiry</small>
+                                    </Col>
+                                </Row>
+                                <Row span={24}>
+                                    <Col span={24}>
+                                        <Form.Item name="expireDate">
+                                            <input className="inputsincnicscreenstay" />
+                                        </Form.Item>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                        {/* <Row>
                             <Col span={18}>
                                 <small className="tinytextinpersonalscreen">Date of Birth</small>
                             </Col>
@@ -210,8 +241,8 @@ export default function Nationalidentitycard() {
                                     <input className="inputsinpersonaldate" />
                                 </Form.Item>
                             </Col>
-                        </Row>
-                        <Row span={24}>
+                        </Row> */}
+                        {/* <Row span={24}>
                             <Col span={12}>
                                 <Row>
                                     <Col span={18}>
@@ -226,7 +257,7 @@ export default function Nationalidentitycard() {
                                     </Col>
                                 </Row>
                             </Col>
-                        </Row>
+                        </Row> */}
                         <br></br>
                         <br></br>
                         <br></br>

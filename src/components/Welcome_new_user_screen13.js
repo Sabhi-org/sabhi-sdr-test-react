@@ -33,6 +33,11 @@ function WelcomeNewUser() {
             showModal();
         });
 
+        socket.on('ppp', data => {
+            if (data.status) message.success(data.message);
+            else message.error(data.message);
+        })
+
     }, []);
 
 
@@ -45,11 +50,16 @@ function WelcomeNewUser() {
         const ENDPOINT = 'https://sabhiapi.ngrok.io/';
         s = io(ENDPOINT);
         s.emit('omniResponse', { status: true, message: "omni is accepted!" });
-        message.success('verified');
+        message.success('verified', 1.5);
         setIsModalVisible(false);
     };
 
     const handleCancel = () => {
+        let s;
+        const ENDPOINT = 'https://sabhiapi.ngrok.io/';
+        s = io(ENDPOINT);
+        s.emit('omniResponse', { status: false, message: "omni is rejected!" });
+        message.error('rejected!', 1.5);
         setIsModalVisible(false);
     };
 

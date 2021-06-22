@@ -17,15 +17,21 @@ export default function Smsverify() {
     async function confirmVerificationCode() {
         try {
             const verifyOtpValue = first + second + third + four;
+            setLoading(true);
             const response = await sabhiApiInstance.post('/otp/verify', {
                 otp: verifyOtpValue,
             });
-            if (!response.data.status) message.info(response.data.message);
+            if (!response.data.status) {
+                setLoading(false);
+                message.info(response.data.message);
+            }
             if (response.data.status) {
+                setLoading(false);
                 message.success('otp verified!');
                 history.push('/idready');
             }
         } catch (error) {
+            setLoading(false);
             message.error('something went wrong please try again!');
         }
     }
@@ -47,9 +53,11 @@ export default function Smsverify() {
                 message.success('otp resent successfully!');
                 setLoading(false);
             } else {
+                setLoading(false);
                 message.info('something went wrong please try again');
             }
         } catch (error) {
+            setLoading(false);
             message.error('something went wrong please try again!');
         }
     }
@@ -137,16 +145,24 @@ export default function Smsverify() {
                     </Row>
                     <Row>
                         <Col span={4} offset={2}>
-                            <div className="smscodecontainer"> <input className="inputsinsms" maxlength="1" type="text" name="ssn-1" onChange={handleChange}></input></div>
+                            <div className="smscodecontainer">
+                                <input className="inputsinsms" maxlength="1" type="text" name="ssn-1" onChange={handleChange} pattern="[0-9]*" inputmode="numeric" />
+                            </div>
                         </Col >
                         <Col span={4} offset={1}>
-                            <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-2" onChange={handleChange}></input></div>
+                            <div className="smscodecontainer">
+                                <input className="inputsinsms" maxlength="1" type="text" name="ssn-2" onChange={handleChange} pattern="[0-9]*" inputmode="numeric" />
+                            </div>
                         </Col>
                         <Col span={4} offset={1}>
-                            <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-3" onChange={handleChange}></input></div>
+                            <div className="smscodecontainer">
+                                <input className="inputsinsms" maxlength="1" type="text" name="ssn-3" onChange={handleChange} pattern="[0-9]*" inputmode="numeric" />
+                            </div>
                         </Col>
                         <Col span={4} offset={1}>
-                            <div className="smscodecontainer"><input className="inputsinsms" maxlength="1" type="text" name="ssn-4" onChange={handleChange}></input></div>
+                            <div className="smscodecontainer">
+                                <input className="inputsinsms" maxlength="1" type="text" name="ssn-4" onChange={handleChange} pattern="[0-9]*" inputmode="numeric" />
+                            </div>
                         </Col>
                     </Row>
                     <Row>

@@ -38,6 +38,7 @@ export default function Nationalidentitycard() {
                 expireDate: identityCardFrontData.dateOfExpiry,
             });
             setIsloading(false);
+            
         } catch (error) {
             message.error(error.message);
         }
@@ -51,6 +52,7 @@ export default function Nationalidentitycard() {
     const onFinish = async (values) => {
         try {
             setIsloading(true);
+            localStorage.setItem('userName', values.fullName);
             values.profileImage = images.profileImage;
             values.did = did;
             values.identityCardFrontImage = images.identityCardFrontImage;

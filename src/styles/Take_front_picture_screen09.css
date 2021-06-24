@@ -139,7 +139,15 @@
     line-height: 132%;
     text-align: center;
     color: #FFFFFF;
-    padding-top: 5px;
-    padding-left: 38px;
+    /* padding-top: 5px; */
+    /* padding-left: 38px; */
+
+
+    padding-left: 0px;
+    padding-top: 17px;
+
     
+}
+.MuiIconButton-root {
+    padding: 0px;
 }

@@ -10,16 +10,17 @@ function WelcomeNewUser() {
     const [omniData, setOmniData] = useState("");
     const btnStyle = { background: '#4DDFBC', bordeRadius: '16px', 'borderColor': '#4DDFBC' };
     const btnStyletwo = { background: '#FFFFFF', bordeRadius: '16px', 'borderColor': '#FFFFFF' };
-
+    const [verification, setVerification] = useState("");
     const { Text } = Typography;
 
 
-
+    let user = localStorage.getItem('userName');
 
 
 
     let socket;
     useEffect(() => {
+        setVerification('Pending verification');
         const ENDPOINT = 'https://sabhiapi.ngrok.io/';
         socket = io(ENDPOINT);
         console.log(socket);
@@ -34,9 +35,15 @@ function WelcomeNewUser() {
         });
 
         socket.on('ppp', data => {
-            if (data.status) message.success(data.message);
-            else message.error(data.message);
-        })
+            if (data.status) {
+                message.success(data.message);
+                setVerification('Verified')
+            }
+            else {
+                message.error(data.message);
+                setVerification('Rejected');
+            }
+        });
 
     }, []);
 
@@ -84,7 +91,7 @@ function WelcomeNewUser() {
                 <Row span={24}>
                     <Col span={22}>
                         <div className="fontonewelcome">Welcome,</div>
-                        <div className="fonttwonewuser">New User!</div>
+                        <div className="fonttwonewuser">{user}</div>
                     </Col>
                     <Col>
                         <div className="block2"></div>
@@ -121,8 +128,8 @@ function WelcomeNewUser() {
                                         <div className="block"></div>
                                     </Col>
                                     <Col span={16}>
-                                        <p className="buttonthreefont">Scan ID Card</p>
-                                        <p className="pending">Pending</p>
+                                        <p className="buttonthreefont">National ID Card</p>
+                                        <p className="pending">{verification}</p>
                                     </Col>
                                     <Col>
                                         <RightOutlined style={{ fontSize: '14px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />
@@ -139,8 +146,8 @@ function WelcomeNewUser() {
                                         <div className="block"></div>
                                     </Col>
                                     <Col span={16}>
-                                        <p className="buttonfourfont">Record Selfie</p>
-                                        <p className="pending">Pending</p>
+                                        <p className="buttonfourfont">Selfie</p>
+                                        <p className="pending">{verification}</p>
                                     </Col>
                                     <Col>
                                         <RightOutlined style={{ fontSize: '14px', color: '#95A7C6', marginLeft: '0px', marginTop: '30px' }} />

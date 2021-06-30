@@ -184,8 +184,8 @@ export default function Takeaselfie() {
 
                             <Col span={10} offset={1}>
                                 <label className="realbutton" htmlFor="icon-button-file">
-                                    <IconButton color="primary" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
-                                        <p className="fontcontinueinselfie">Take Selfie</p>
+                                    <IconButton className="buttononeinselfie" onClick={() => setDisable(true)} aria-label="upload picture" component="span">
+                                        <p className="buttononeinselfiefont">Take Selfie</p>
                                     </IconButton>
                                 </label>
                                 {/* <div className="realbutton" type="primary" shape="round" size='large'>

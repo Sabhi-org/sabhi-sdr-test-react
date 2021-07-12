@@ -19,6 +19,20 @@
       opacity: 0.4;
 }
 
+@media screen and (max-width: 375px) {
+    .selfiepack::before{
+        content: "";
+          background-image: url('../images/profilepic_crop_4.jpg');
+          background-size: cover;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          left: 0px;
+          opacity: 0.4;
+    }
+  }
+
 .selfieabove {
     padding-top: 47px;
     position: relative;
